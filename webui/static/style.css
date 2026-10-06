@@ -6291,6 +6291,7 @@ body.helper-mode-active #dashboard-activity-feed:hover {
     display: flex; justify-content: space-between; align-items: center;
     padding: 16px 18px 12px;
     border-bottom: 1px solid var(--white-a06);
+    gap: 8px;
 }
 .notif-panel-title { font-size: 14px; font-weight: 700; color: #fff; }
 /* System health, as symbols in the notification panel header. Health is a STATE,
@@ -6300,7 +6301,6 @@ body.helper-mode-active #dashboard-activity-feed:hover {
 /* Pushed right, but with room either side: the header buttons ran together into
    "HistoryClear All" once the pill landed between them. */
 .notif-health { display: inline-flex; align-items: center; margin-left: auto; }
-.notif-panel-header { gap: 8px; }
 .notif-panel-header .notif-panel-clear + .notif-panel-clear { margin-left: 4px; }
 .notif-health-btn {
     display: inline-flex; align-items: center; gap: 8px; cursor: pointer;
@@ -28888,11 +28888,9 @@ div.artist-hero-badge {
     grid-template-columns: repeat(auto-fit, minmax(48px, 1fr));
     gap: 12px 10px;
 }
-.artist-enrich-circle {
-    min-width: 0;
-}
 
 .artist-enrich-circle {
+    min-width: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -37266,6 +37264,7 @@ div.artist-hero-badge {
     padding: 8px 4px;
     border-radius: var(--radius-lg);
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
 }
 
 .genre-dive-artist:first-child {
@@ -37372,10 +37371,6 @@ div.artist-hero-badge {
     width: 8px;
     height: 8px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-}
-
-.genre-dive-artist {
-    position: relative;
 }
 
 /* Tracks */
@@ -49701,7 +49696,7 @@ textarea.enhanced-meta-field-input { min-height: 72px; resize: vertical; }
 .lib-row-btn:hover,
 .lib-row-btn[aria-expanded="true"] { color: #fff; background: var(--white-a10); }
 .lib-row-btn:focus-visible { outline: none; box-shadow: 0 0 0 2px rgba(var(--accent-rgb), 0.5); }
-.lib-row-more { color: var(--white-a40); }
+.lib-row-more { color: var(--white-a40); position: relative; }
 .enhanced-track-table tbody tr:hover .lib-row-more { color: var(--white-a60); }
 .lib-row-more.busy::after {
     content: '';
@@ -49713,7 +49708,6 @@ textarea.enhanced-meta-field-input { min-height: 72px; resize: vertical; }
     transform: translate(9px, -9px);
     animation: libPulse 1s ease-in-out infinite;
 }
-.lib-row-more { position: relative; }
 @keyframes libPulse { 50% { opacity: 0.3; } }
 .enhanced-track-report-btn:hover { color: var(--lib-warn); background: rgba(255, 184, 77, 0.12); }
 
@@ -54952,10 +54946,6 @@ tr.tag-diff-same {
     align-items: center;
 }
 
-.repair-album-tag {
-    white-space: nowrap;
-}
-
 .repair-album-tag.corrupt_audio {
     background: rgba(239, 68, 68, 0.15);
     color: #fca5a5;
@@ -55098,6 +55088,7 @@ tr.tag-diff-same {
 }
 
 .repair-album-tag {
+    white-space: nowrap;
     font-size: 9.5px;
     font-weight: 600;
     text-transform: uppercase;
@@ -59709,7 +59700,7 @@ tr.tag-diff-same {
 /* ── Responsive ── */
 @media (max-width: 900px) {
 
-    .explorer-controls { flex-wrap: wrap; }
+    .explorer-controls { flex-wrap: wrap; width: 100%; }
 }
     /* display: flex;
     align-items: center;
@@ -59756,8 +59747,6 @@ tr.tag-diff-same {
 /* Responsive */
 @media (max-width: 900px) {
     .explorer-container { padding: 16px; }
-
-    .explorer-controls { width: 100%; }
     .explorer-root-name { font-size: 18px; }
 }
 
@@ -66610,12 +66599,11 @@ body.max-performance #page-particles-canvas {
     max-width: 1500px; margin: 0 auto; width: 100%; }
 .wl-list-sortbar { display: flex; gap: 8px; margin-bottom: 14px; justify-content: space-between; }
 .wl-list-sorts { display: flex; gap: 8px; }
-.wl-list-sep { cursor: pointer; }
 .wl-list-sep:hover { background: var(--white-a04); }
 .wl-list-chevron { font-size: 11px; color: var(--white-a35); transition: transform 0.18s ease; }
 .wl-list-chevron.open { transform: rotate(90deg); }
 .wl-list-section { display: flex; flex-direction: column; }
-.wl-list-sep { display: flex; align-items: center; gap: 10px; padding: 14px 10px 8px;
+.wl-list-sep { cursor: pointer; display: flex; align-items: center; gap: 10px; padding: 14px 10px 8px;
     border-bottom: 1px solid var(--white-a06); margin-bottom: 4px;
     position: sticky; top: 0; background: rgba(11,11,15,0.92); backdrop-filter: blur(6px); z-index: 2; }
 .wl-list-avatar { width: 26px; height: 26px; border-radius: var(--radius-circle); object-fit: cover;
@@ -68651,6 +68639,7 @@ body[data-artist-source="source"] .artist-detail-page #library-artist-enhance-bt
         box-shadow 0.24s ease;
     overflow: hidden;
     isolation: isolate;
+    animation: dashCardMount 0.55s cubic-bezier(0.22, 0.61, 0.36, 1) both;
 }
 
 /* Cursor-following accent blob — two-layer "liquid" effect that spans
@@ -68753,9 +68742,6 @@ body.max-performance .dash-card::after {
 @keyframes dashCardMount {
     from { opacity: 0; transform: translateY(14px); }
     to   { opacity: 1; transform: translateY(0); }
-}
-.dash-card {
-    animation: dashCardMount 0.55s cubic-bezier(0.22, 0.61, 0.36, 1) both;
 }
 .dash-card[data-card="services"]        { animation-delay: 0.00s; }
 .dash-card[data-card="stats"]           { animation-delay: 0.06s; }
@@ -69843,6 +69829,7 @@ body.max-performance .dash-card::after {
     .dash-card[data-card="library"] .library-status-header {
         min-width: 0;
         flex-basis: 100%;
+        flex-wrap: wrap;
     }
     /* The band stacks: art + name + countdown up top, result chips next,
        the ownership bar full-width beneath. Actions stay touchable. */
@@ -69890,9 +69877,6 @@ body.max-performance .dash-card::after {
     }
     .dash-card[data-card="library"] .library-status-stat + .library-status-stat {
         border-left: none;
-    }
-    .dash-card[data-card="library"] .library-status-header {
-        flex-wrap: wrap;
     }
     .dash-card[data-card="library"] .library-status-actions {
         flex-direction: row;
@@ -71934,8 +71918,8 @@ body.max-performance .dash-card::after {
     cursor: pointer;
     text-align: left;
     transition: background 0.15s ease, border-color 0.15s ease;
+    position: relative;
 }
-.em-worker-row { position: relative; }
 .em-worker-row:hover { background: var(--white-a05); }
 .em-worker-row.active {
     background: rgba(var(--accent-rgb), 0.14);
@@ -72035,12 +72019,11 @@ body.max-performance .dash-card::after {
     transition: transform 0.2s ease, border-color 0.2s ease;
 }
 .em-stat-card:hover { transform: translateY(-2px); border-color: rgba(var(--accent-rgb), 0.3); }
-.em-bar-fill { box-shadow: 0 0 10px rgba(var(--accent-rgb), 0.5); }
 .em-stat-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
 .em-stat-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--white-a60); }
 .em-stat-pct { font-size: 20px; font-weight: 800; color: #fff; }
 .em-bar { height: 7px; border-radius: var(--radius-pill); background: var(--white-a10); overflow: hidden; }
-.em-bar-fill { height: 100%; border-radius: var(--radius-pill); background: linear-gradient(90deg, rgba(var(--accent-rgb),0.7), rgba(var(--accent-rgb),1)); transition: width 0.4s ease; }
+.em-bar-fill { box-shadow: 0 0 10px rgba(var(--accent-rgb), 0.5); height: 100%; border-radius: var(--radius-pill); background: linear-gradient(90deg, rgba(var(--accent-rgb),0.7), rgba(var(--accent-rgb),1)); transition: width 0.4s ease; }
 .em-stat-legend { display: flex; gap: 10px; margin-top: 9px; font-size: 11px; flex-wrap: wrap; }
 .em-leg--matched { color: #4ade80; }
 .em-leg--nf { color: #ff9b9b; }
@@ -79629,13 +79612,10 @@ a.chat-jbx-title:hover { color: rgb(var(--accent-light-rgb)); }
         min-height: 0;
     }
 
-    #chat-page .chat-head {
-        padding: 10px 12px;
-    }
-
     /* the header is one row that scrolls sideways, the topic hides. wrapped,
        the title, topic and six buttons took 212px of a 624px chat */
     #chat-page .chat-head {
+        padding: 10px 12px;
         flex-wrap: nowrap;
         overflow-x: auto;
         scrollbar-width: none;
@@ -79698,6 +79678,7 @@ a.chat-jbx-title:hover { color: rgb(var(--accent-light-rgb)); }
 
     #chat-page .chat-input--bare {
         padding: 8px;
+        flex: 1 1 auto;
     }
 
     #chat-page .chat-send-fab {
@@ -79713,10 +79694,6 @@ a.chat-jbx-title:hover { color: rgb(var(--accent-light-rgb)); }
     #chat-page [data-chat-poll-btn],
     #chat-page .chat-gif-btn {
         display: none;
-    }
-
-    #chat-page .chat-input--bare {
-        flex: 1 1 auto;
     }
 
     /* the plain-text note keeps its first line; the rest is desktop detail */
