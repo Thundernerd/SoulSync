@@ -49342,22 +49342,6 @@ div.artist-hero-badge {
     font-weight: 500;
 }
 
-.hydrabase-input-group {
-    display: flex;
-    gap: 8px;
-}
-
-.hydrabase-input-group input {
-    flex: 1;
-}
-
-.hydrabase-icon {
-    width: 18px;
-    height: 18px;
-    filter: invert(1);
-    vertical-align: middle;
-}
-
 .hydra-payload {
     width: 100%;
     background: rgba(0, 0, 0, 0.3);
@@ -49540,13 +49524,6 @@ div.artist-hero-badge {
     to { opacity: 1; }
 }
 
-.profile-picker-container {
-    text-align: center;
-    max-width: 700px;
-    width: 100%;
-    padding: 40px 20px;
-}
-
 .profile-picker-title {
     font-size: 28px;
     font-weight: 600;
@@ -49614,47 +49591,8 @@ div.artist-hero-badge {
     white-space: nowrap;
 }
 
-.profile-picker-card .profile-badge {
-    font-size: 10px;
-    color: #6366f1;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-
 .profile-picker-actions {
     margin-top: 16px;
-}
-
-.profile-manage-btn {
-    background: transparent;
-    border: 1px solid var(--white-a15);
-    color: #9ca3af;
-    padding: 10px 24px;
-    border-radius: var(--radius-md);
-    font-size: 13px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.profile-manage-btn:hover {
-    border-color: var(--white-a30);
-    color: #e5e7eb;
-}
-
-.profile-picker-cancel {
-    background: transparent;
-    border: none;
-    color: #6b7280;
-    padding: 10px 24px;
-    font-size: 13px;
-    cursor: pointer;
-    margin-top: 8px;
-    transition: color 0.2s ease;
-}
-
-.profile-picker-cancel:hover {
-    color: #e5e7eb;
 }
 
 /* PIN Dialog */
@@ -49666,37 +49604,6 @@ div.artist-hero-badge {
     align-items: center;
     justify-content: center;
     z-index: 100000;
-}
-
-.profile-pin-content {
-    background: #1f2937;
-    border: 1px solid var(--white-a10);
-    border-radius: var(--radius-xl);
-    padding: 32px;
-    text-align: center;
-    min-width: 300px;
-}
-
-.profile-pin-avatar {
-    width: 60px;
-    height: 60px;
-    border-radius: 10px;
-    margin: 0 auto 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    font-weight: 700;
-    color: #fff;
-    overflow: hidden;
-    position: relative;
-}
-
-.profile-pin-name {
-    color: #e5e7eb;
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 20px;
 }
 
 .profile-pin-input {
@@ -49721,48 +49628,10 @@ div.artist-hero-badge {
     border-color: #6366f1;
 }
 
-.profile-pin-buttons {
-    display: flex;
-    gap: 12px;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.profile-pin-cancel, .profile-pin-submit {
-    padding: 8px 20px;
-    border-radius: var(--radius-md);
-    font-size: 13px;
-    cursor: pointer;
-    border: none;
-}
-
-.profile-pin-cancel {
-    background: var(--white-a10);
-    color: #9ca3af;
-}
-
-.profile-pin-submit {
-    background: #6366f1;
-    color: #fff;
-}
-
 .profile-pin-error {
     color: #ef4444;
     font-size: 13px;
     margin-top: 12px;
-}
-
-.profile-pin-forgot {
-    display: block;
-    color: var(--white-a35);
-    font-size: 12px;
-    margin-top: 10px;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.profile-pin-forgot:hover {
-    color: rgba(138, 43, 226, 0.8);
 }
 
 /* Profile Management Panel */
@@ -49780,249 +49649,9 @@ div.artist-hero-badge {
 }
 
 @keyframes pm-fade { from { opacity: 0; } to { opacity: 1; } }
-@keyframes pm-rise { from { opacity: 0; transform: translateY(14px) scale(0.985); } to { opacity: 1; transform: none; } }
-
-.profile-manage-content {
-    position: relative;
-    background:
-        radial-gradient(120% 80% at 50% -10%, rgba(99, 102, 241, 0.16), transparent 60%),
-        linear-gradient(180deg, #1c2230 0%, #161a24 100%);
-    border: 1px solid var(--white-a09);
-    border-radius: 20px;
-    padding: 0 0 24px;
-    width: 460px;
-    max-width: calc(100vw - 32px);
-    max-height: 86vh;
-    overflow-y: auto;
-    box-shadow: 0 28px 80px -20px rgba(0, 0, 0, 0.7), 0 0 0 1px var(--white-a03) inset;
-    animation: pm-rise 0.26s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.profile-manage-header {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 22px 24px 18px;
-    border-bottom: 1px solid var(--white-a06);
-    position: sticky;
-    top: 0;
-    background: linear-gradient(180deg, rgba(28, 34, 48, 0.96), rgba(28, 34, 48, 0.82));
-    backdrop-filter: blur(8px);
-    z-index: 2;
-    margin-bottom: 18px;
-}
-
-.profile-manage-header::before {
-    content: "";
-    flex: 0 0 40px;
-    height: 40px;
-    border-radius: var(--radius-lg);
-    background:
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2'/%3E%3Ccircle cx='9' cy='7' r='4'/%3E%3Cpath d='M23 21v-2a4 4 0 0 0-3-3.87'/%3E%3Cpath d='M16 3.13a4 4 0 0 1 0 7.75'/%3E%3C/svg%3E") center / 21px no-repeat,
-        linear-gradient(135deg, #6366f1, #8b5cf6);
-    box-shadow: 0 6px 18px -4px rgba(99, 102, 241, 0.6);
-}
-
-.profile-manage-header h3 {
-    color: #f3f4f6;
-    font-size: 19px;
-    font-weight: 650;
-    margin: 0;
-    flex: 1;
-    letter-spacing: -0.2px;
-}
-
-.profile-manage-header h3 small {
-    display: block;
-    color: rgba(229, 231, 235, 0.5);
-    font-size: 12px;
-    font-weight: 400;
-    margin-top: 2px;
-    letter-spacing: 0;
-}
-
-.profile-manage-close-btn {
-    background: var(--white-a05);
-    border: 1px solid var(--white-a08);
-    color: #9ca3af;
-    font-size: 20px;
-    line-height: 1;
-    width: 32px;
-    height: 32px;
-    border-radius: 9px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.15s ease;
-}
-
-.profile-manage-close-btn:hover {
-    background: rgba(239, 68, 68, 0.14);
-    border-color: rgba(239, 68, 68, 0.3);
-    color: #f87171;
-    transform: rotate(90deg);
-}
-
-.profile-manage-list {
-    display: flex;
-    flex-direction: column;
-    gap: 9px;
-    margin-bottom: 22px;
-    padding: 0 24px;
-}
-
-.profile-manage-item {
-    display: flex;
-    align-items: center;
-    gap: 13px;
-    padding: 12px 14px;
-    background: var(--white-a03);
-    border: 1px solid var(--white-a06);
-    border-radius: 13px;
-    transition: transform 0.16s ease, background 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease;
-}
-
-.profile-manage-item:hover {
-    transform: translateY(-2px);
-    background: rgba(255, 255, 255, 0.055);
-    border-color: var(--white-a12);
-    box-shadow: 0 10px 24px -14px rgba(0, 0, 0, 0.8);
-}
-
-/* The profile you're currently signed in as */
-.profile-manage-item.is-current {
-    background: rgba(99, 102, 241, 0.1);
-    border-color: rgba(99, 102, 241, 0.45);
-    box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.25) inset;
-}
-
-.profile-manage-item .profile-avatar {
-    width: 42px;
-    height: 42px;
-    border-radius: 11px;
-    font-size: 17px;
-    flex-shrink: 0;
-    box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.6);
-}
-
-.profile-manage-item .profile-info {
-    flex: 1;
-    min-width: 0;
-}
-
-.profile-manage-item .profile-info .name {
-    color: #f3f4f6;
-    font-size: 14.5px;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 7px;
-}
-
-.profile-manage-item .profile-info .role {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    margin-top: 5px;
-}
-
-.profile-role-pill {
-    display: inline-flex;
-    align-items: center;
-    font-size: 10.5px;
-    font-weight: 600;
-    letter-spacing: 0.3px;
-    text-transform: uppercase;
-    padding: 2px 8px;
-    border-radius: var(--radius-pill);
-    background: var(--white-a07);
-    color: rgba(229, 231, 235, 0.72);
-    border: 1px solid var(--white-a08);
-}
-
-.profile-role-pill--admin {
-    background: rgba(99, 102, 241, 0.16);
-    color: #a5b4fc;
-    border-color: rgba(99, 102, 241, 0.35);
-}
-
-.profile-role-pill--current {
-    background: rgba(16, 185, 129, 0.16);
-    color: #6ee7b7;
-    border-color: rgba(16, 185, 129, 0.35);
-}
-
-.profile-manage-actions {
-    display: flex;
-    gap: 6px;
-    align-items: center;
-    flex-shrink: 0;
-}
-
-.profile-manage-item .profile-edit-btn,
-.profile-manage-item .profile-delete-btn {
-    background: var(--white-a04);
-    border: 1px solid var(--white-a07);
-    color: #9ca3af;
-    cursor: pointer;
-    width: 34px;
-    height: 34px;
-    padding: 0;
-    border-radius: 9px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.15s ease;
-}
-
-.profile-manage-item .profile-edit-btn svg,
-.profile-manage-item .profile-delete-btn svg {
-    width: 15px;
-    height: 15px;
-}
-
-.profile-manage-item .profile-edit-btn:hover {
-    color: #c7d2fe;
-    background: rgba(99, 102, 241, 0.16);
-    border-color: rgba(99, 102, 241, 0.4);
-    transform: translateY(-1px);
-}
-
-.profile-manage-item .profile-delete-btn:hover {
-    color: #fca5a5;
-    background: rgba(239, 68, 68, 0.16);
-    border-color: rgba(239, 68, 68, 0.4);
-    transform: translateY(-1px);
-}
 
 .profile-manage-add, .admin-pin-section {
     padding: 0 24px;
-}
-
-.profile-edit-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 14px;
-    background: rgba(99, 102, 241, 0.07);
-    border: 1px solid rgba(99, 102, 241, 0.25);
-    border-radius: var(--radius-lg);
-    margin-top: 8px;
-    animation: pm-rise 0.2s ease;
-}
-
-.profile-edit-buttons {
-    display: flex;
-    gap: 8px;
-}
-
-.profile-edit-buttons .profile-create-btn {
-    flex: 1;
-}
-
-.profile-edit-buttons .profile-picker-cancel {
-    flex: 1;
 }
 
 .profile-manage-add h4, .admin-pin-section h4 {
@@ -50043,72 +49672,6 @@ div.artist-hero-badge {
     background: linear-gradient(180deg, #6366f1, #8b5cf6);
 }
 
-.profile-input {
-    width: 100%;
-    padding: 11px 14px;
-    background: rgba(0, 0, 0, 0.28);
-    border: 1px solid var(--white-a10);
-    border-radius: 10px;
-    color: #e5e7eb;
-    font-size: 14px;
-    margin-bottom: 10px;
-    outline: none;
-    box-sizing: border-box;
-    transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
-}
-
-.profile-input:focus {
-    border-color: rgba(99, 102, 241, 0.7);
-    background: rgba(0, 0, 0, 0.38);
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
-}
-
-.profile-input::placeholder {
-    font-size: 12.5px;
-    color: rgba(229, 231, 235, 0.38);
-}
-
-.profile-color-picker {
-    display: flex;
-    gap: 9px;
-    margin-bottom: 12px;
-    flex-wrap: wrap;
-}
-
-.profile-color-swatch {
-    width: 30px;
-    height: 30px;
-    border-radius: 9px;
-    cursor: pointer;
-    border: 2px solid transparent;
-    box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.5);
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-    position: relative;
-}
-
-.profile-color-swatch:hover {
-    transform: scale(1.18) translateY(-1px);
-}
-
-.profile-color-swatch.selected {
-    border-color: #fff;
-    box-shadow: 0 0 0 2px var(--white-a25), 0 4px 12px -2px rgba(0, 0, 0, 0.6);
-    transform: scale(1.1);
-}
-
-.profile-color-swatch.selected::after {
-    content: "✓";
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    font-size: 13px;
-    font-weight: 700;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-}
-
 /* .profile-create-btn migrated to .btn .btn--block .btn--primary. The class
    is kept on the markup (init.js sets it) as a hook for the scoped
    `.profile-edit-buttons .profile-create-btn { flex: 1 }` layout rule. */
@@ -50119,189 +49682,12 @@ div.artist-hero-badge {
     border-top: 1px solid var(--white-a08);
 }
 
-.admin-pin-note {
-    color: #9ca3af;
-    font-size: 12px;
-    margin: 0 0 10px;
-}
-
-/* Profile Settings in Management Panel */
-.profile-settings-section {
-    margin: 12px 0;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-/* own-library folder on the profile card (#1199): a path, so monospace, with
-   a folder mark and the same frame as .profile-input */
-.profile-folder-field {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.profile-folder-input {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 0 12px;
-    background: rgba(0, 0, 0, 0.28);
-    border: 1px solid var(--white-a10);
-    border-radius: 10px;
-    transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
-}
-
-.profile-folder-input:focus-within {
-    border-color: rgba(99, 102, 241, 0.7);
-    background: rgba(0, 0, 0, 0.38);
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
-}
-
-.profile-folder-input svg {
-    width: 16px;
-    height: 16px;
-    flex: none;
-    color: rgba(165, 180, 252, 0.9);
-}
-
-.profile-folder-input input {
-    flex: 1;
-    min-width: 0;
-    padding: 11px 0;
-    background: transparent;
-    border: 0;
-    outline: none;
-    color: #e5e7eb;
-    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-    font-size: 13px;
-    letter-spacing: 0.01em;
-}
-
-.profile-folder-input input::placeholder {
-    color: rgba(229, 231, 235, 0.35);
-}
-
-.profile-settings-help {
-    font-size: 12px;
-    color: #9ca3af;
-    margin: -4px 0 10px;
-    line-height: 1.4;
-}
-
-.profile-settings-label {
-    color: #d1d5db;
-    font-size: 12px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-top: 4px;
-}
-
 /* Side-access flash guard: seeded pre-paint by the inline <head> script from
    the cached last-known sides, so a single-side profile never sees the
    Music↔Video switcher flash in on reload. updateProfileIndicator keeps the
    class (and the cache) in sync once the real profile arrives. */
 html.side-locked .side-toggle {
     display: none !important;
-}
-
-/* Side access picker (music | video | both) — sits above Page Access in the
-   create + edit profile forms. */
-.profile-sides-picker {
-    display: flex;
-    gap: 6px;
-    margin-bottom: 10px;
-}
-.profile-sides-picker label {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    padding: 7px 10px;
-    border-radius: 10px;
-    background: var(--white-a04);
-    border: 1px solid var(--white-a08);
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--white-a60);
-    cursor: pointer;
-    transition: all 0.15s ease;
-    user-select: none;
-}
-.profile-sides-picker label:hover {
-    border-color: var(--white-a18);
-}
-.profile-sides-picker label:has(input:checked) {
-    background: rgba(var(--accent-rgb), 0.14);
-    border-color: rgba(var(--accent-rgb), 0.5);
-    color: #fff;
-}
-.profile-sides-picker input {
-    accent-color: rgb(var(--accent-rgb));
-    margin: 0;
-}
-
-.profile-page-checkboxes {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4px 12px;
-}
-.profile-page-group-label {
-    grid-column: 1 / -1;
-    margin-top: 10px;
-    padding-top: 8px;
-    border-top: 1px solid var(--white-a08);
-    font-size: 10.5px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    color: var(--white-a40);
-}
-.profile-page-group-label--first {
-    margin-top: 0;
-    padding-top: 0;
-    border-top: none;
-}
-.profile-page-group-note {
-    display: block;
-    margin-top: 3px;
-    font-size: 10.5px;
-    font-weight: 500;
-    text-transform: none;
-    letter-spacing: 0;
-    color: var(--white-a30);
-}
-
-.profile-page-checkboxes label {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    color: #d1d5db;
-    font-size: 13px;
-    cursor: pointer;
-    padding: 3px 0;
-}
-
-.profile-page-checkboxes label input[type="checkbox"] {
-    accent-color: rgba(var(--accent-rgb), 1);
-    cursor: pointer;
-}
-
-.profile-checkbox-label {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    color: #d1d5db;
-    font-size: 13px;
-    cursor: pointer;
-    padding: 4px 0;
-}
-
-.profile-checkbox-label input[type="checkbox"] {
-    accent-color: rgba(var(--accent-rgb), 1);
-    cursor: pointer;
 }
 
 /* Download-disabled state — hide download buttons globally */
