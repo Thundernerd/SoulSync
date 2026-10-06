@@ -57,10 +57,16 @@ function ownText(el: Element): string {
  *  deliberately not among them — React binds listeners instead. */
 const ATTRS = ['src', 'alt', 'title', 'aria-hidden'] as const;
 
+/** The port adds the shared enrich-worker* classes (the look every orb has in
+ *  common, style.css) in front of the recorded per-worker ones; the rest of the
+ *  class list must still be the vanilla's. */
+const portedClasses = (el: Element) =>
+  Array.from(el.classList).filter((c) => !c.startsWith('enrich-worker'));
+
 function compareTrees(vanilla: Element, ported: Element, path: string) {
   expect(`${path} tag:${ported.tagName}`).toBe(`${path} tag:${vanilla.tagName}`);
   expect(`${path} id:${ported.id}`).toBe(`${path} id:${vanilla.id}`);
-  expect(`${path} class:${Array.from(ported.classList).join('.')}`).toBe(
+  expect(`${path} class:${portedClasses(ported).join('.')}`).toBe(
     `${path} class:${Array.from(vanilla.classList).join('.')}`,
   );
   for (const attr of ATTRS) {
@@ -134,6 +140,16 @@ describe('the artefact differential', () => {
 
     compareTrees(vanilla, ported, 'header-actions');
   });
+
+  it('puts the shared enrich-worker classes first, so [class$="-button-container"] still matches', async () => {
+    const view = await mountHeader();
+    const orbs = view.container.querySelectorAll('.orb-stage > .header-actions > div');
+    expect(orbs.length).toBeGreaterThan(0);
+    for (const orb of orbs) {
+      expect(orb.className).toMatch(/^enrich-worker \S+-button-container$/);
+      expect(orb.querySelector(':scope > button')!.className).toMatch(/^enrich-worker-btn /);
+    }
+  });
 });
 
 describe('the orb stage', () => {
@@ -193,7 +209,7 @@ describe('state rendering', () => {
       );
     });
     const button = view.container.querySelector('#musicbrainz-button')!;
-    expect(button.className).toBe('musicbrainz-button active');
+    expect(button.className).toBe('enrich-worker-btn musicbrainz-button active');
     expect(view.container.querySelector('#mb-tooltip-status')!.textContent).toBe('Running');
     expect(view.container.querySelector('#mb-tooltip-current')!.textContent).toBe('Artist: "BYLT"');
     expect(view.container.querySelector('#mb-tooltip-progress')!.textContent).toBe(
