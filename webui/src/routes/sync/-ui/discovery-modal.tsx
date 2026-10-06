@@ -188,7 +188,7 @@ function RowActions({
         <button
           type="button"
           className="rematch-btn"
-          style={{ marginLeft: 4, color: '#ff6b6b' }}
+          style={{ marginLeft: 4, color: 'var(--danger-light)' }}
           title="Remove this match"
           onClick={() => onUnmatchTrack?.(row)}
         >
