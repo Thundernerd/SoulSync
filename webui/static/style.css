@@ -4331,18 +4331,13 @@ body.helper-mode-active #dashboard-activity-feed:hover {
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s ease;
-    border: 1px solid var(--white-a10);
     white-space: nowrap;
-    background: var(--white-a06);
-    color: var(--white-a80);
 }
 
 .test-button:hover,
 .detect-button:hover {
-    background: rgba(var(--accent-rgb), 0.15);
     border-color: rgba(var(--accent-rgb), 0.3);
     color: rgb(var(--accent-light-rgb));
-    transform: translateY(-1px);
 }
 
 /* ===== QUALITY PROFILE STYLES ===== */
@@ -5334,19 +5329,6 @@ body.helper-mode-active #dashboard-activity-feed:hover {
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    border: none;
-}
-
-.reset-button {
-    background: rgba(255, 107, 107, 0.1);
-    color: #ff6b6b;
-    border: 1px solid rgba(255, 107, 107, 0.25);
-}
-
-.reset-button:hover {
-    background: rgba(255, 107, 107, 0.2);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.15);
 }
 
 .export-button,
@@ -5361,21 +5343,6 @@ body.helper-mode-active #dashboard-activity-feed:hover {
     background: var(--white-a10);
     color: #ffffff;
     transform: translateY(-1px);
-}
-
-.cancel-button {
-    padding: 6px 12px;
-    background: rgba(255, 107, 107, 0.1);
-    color: #ff6b6b;
-    border: 1px solid rgba(255, 107, 107, 0.3);
-    border-radius: var(--radius-sm);
-    font-size: 12px;
-    cursor: pointer;
-    margin-top: 8px;
-}
-
-.cancel-button:hover {
-    background: rgba(255, 107, 107, 0.2);
 }
 
 .status-display {
@@ -5467,32 +5434,6 @@ body.helper-mode-active #dashboard-activity-feed:hover {
     margin-bottom: 16px;
 }
 
-.playlist-selector {
-    width: 100%;
-    padding: 12px 16px;
-    background: var(--white-a05);
-    border: 1px solid var(--white-a10);
-    border-radius: var(--radius-md);
-    color: #ffffff;
-    font-size: 14px;
-    margin-bottom: 16px;
-}
-
-.sync-button {
-    background: rgb(var(--accent-light-rgb));
-    color: #000000;
-    padding: 12px 24px;
-    border: none;
-    border-radius: var(--radius-md);
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-.sync-button:hover {
-    background: #1fdf64;
-}
-
 .sync-progress {
     background: var(--white-a02);
     border: 1px solid var(--white-a05);
@@ -5501,25 +5442,11 @@ body.helper-mode-active #dashboard-activity-feed:hover {
 }
 
 .progress-bar {
-    width: 100%;
-    height: 8px;
-    background: var(--white-a10);
-    border-radius: var(--radius-xs);
-    overflow: hidden;
     margin-bottom: 12px;
-}
-
-.progress-fill {
-    height: 100%;
-    background: linear-gradient(90deg, rgb(var(--accent-rgb)) 0%, rgb(var(--accent-light-rgb)) 100%);
-    width: 0%;
-    transition: width 0.3s ease;
 }
 
 .progress-text {
     text-align: center;
-    color: var(--white-a80);
-    font-size: 14px;
 }
 
 /* ======================================================= */
@@ -58829,17 +58756,11 @@ tr.tag-diff-same {
 #settings-page .settings-content {
     flex-direction: column;
     align-items: center;
-    max-width: 100% !important;
-    margin: 0 auto;
     padding-bottom: 10vh;
 }
 
 /* Tab bar + save action sit on one control row. */
 #settings-page .settings-nav-row {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 14px;
     width: 100%;
     /* Was 920px. That is what actually set the page width — the earlier
        .settings-content cap never applied, this override sets it to 100%
@@ -58847,18 +58768,12 @@ tr.tag-diff-same {
        wrap: the tabs fit fine, the row they sit in did not. */
     max-width: var(--settings-max-width);
     margin: 0 auto 28px;
-    padding: 0 2px;
 }
 
 #settings-page .stg-tabbar {
-    display: flex;
     flex: 0 1 auto;
-    margin: 0;
-    width: fit-content;
     max-width: 100%;
     min-width: 0;
-    background: rgba(0, 0, 0, 0.34);
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.045);
 }
 
 #settings-page .settings-nav-row .header-actions {
@@ -58867,8 +58782,6 @@ tr.tag-diff-same {
     justify-content: flex-end;
     align-items: center;
     flex-wrap: nowrap;
-    width: auto;
-    margin: 0 0 0 auto;
     margin-top: 0;
 }
 
@@ -58881,6 +58794,8 @@ tr.tag-diff-same {
 }
 
 /* Columns become single centered column */
+/* settings-premier.css overrides these with !important; they stay because
+   tests/test_settings_sources_tab.py pins the one page width here. */
 #settings-page .settings-columns {
     flex-direction: column;
     max-width: var(--settings-max-width);
@@ -58963,22 +58878,8 @@ tr.tag-diff-same {
     gap: 10px;
 }
 
-#settings-page .settings-left-column,
-#settings-page .settings-right-column,
-#settings-page .settings-third-column {
-    min-width: unset;
-    width: 100%;
-    gap: 0;
-}
-
 /* Kill glassmorphic cards — flat, no bg, no borders, no shadows */
 #settings-page .settings-group {
-    background: none !important;
-    border: none !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-    padding: 0 !important;
-    margin-bottom: 0;
     position: relative;
     overflow: visible;
 }
@@ -58996,16 +58897,12 @@ tr.tag-diff-same {
 #settings-page .settings-group > h3 {
     /* the sub-heading INSIDE a card. deliberately between the card title and a
        field label: it groups rows, it does not title the card. */
-    font-size: 0.72rem;
-    font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--white-a55);
     /* more air above than below, so the label belongs to what follows it */
     padding: 24px 0 8px 2px;
-    margin: 0;
     border: none;
-    border-bottom: 1px solid var(--white-a07);
     border-left: none;
     position: relative;
     transition: color 240ms cubic-bezier(0.2, 0, 0, 1);
@@ -59051,9 +58948,7 @@ tr.tag-diff-same {
 #settings-page .form-group[hidden] { display: none !important; }
 
 #settings-page .form-group > label {
-    font-size: var(--stg-t-label, 0.78rem);
     color: rgba(255, 255, 255, 0.74);
-    font-weight: 450;
     margin: 0;
     /* Grow to fill the left so the control aligns to a consistent right edge. */
     flex: 1 1 auto;
@@ -59149,7 +59044,6 @@ tr.tag-diff-same {
     border-color: rgba(var(--accent-rgb), 0.4);
     outline: none;
     background-color: var(--white-a06);
-    box-shadow: 0 0 0 2px rgba(var(--accent-rgb), 0.1);
 }
 #settings-page select option {
     background: #1a1a1e;
@@ -59440,9 +59334,6 @@ tr.tag-diff-same {
     flex-basis: 100%;
     display: block;
     padding: 2px 0 4px;
-    font-size: var(--stg-t-sub, 0.75rem);
-    color: rgba(255, 255, 255, 0.42);
-    line-height: 1.55;
     margin: 0;
     background: none;
     border-radius: 0;
@@ -60132,31 +60023,19 @@ tr.tag-diff-same {
 
 /* ── Responsive ── */
 @media (max-width: 768px) {
-    #settings-page .settings-nav-row {
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        gap: 10px;
-        padding: 0 8px;
-    }
     #settings-page .settings-nav-row .header-actions {
         margin-left: auto;
     }
     /* Tab bar scrolls horizontally; fade the right edge to signal more tabs */
     #settings-page .stg-tabbar {
-        width: 100%;
         flex: 1 1 100%;
-        border-radius: 0;
         justify-content: flex-start;
-        overflow-x: auto;
         -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
         -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 22px), transparent);
         mask-image: linear-gradient(to right, #000 calc(100% - 22px), transparent);
     }
     #settings-page .stg-tabbar::-webkit-scrollbar { display: none; }
     .stg-tab { padding: 8px 14px; font-size: var(--stg-t-sub, 0.75rem); }
-    /* Content fills screen */
-    #settings-page .settings-columns { max-width: 100% !important; padding: 0 8px; }
     /* Form rows stack vertically */
     #settings-page .form-group {
         flex-direction: column !important;
