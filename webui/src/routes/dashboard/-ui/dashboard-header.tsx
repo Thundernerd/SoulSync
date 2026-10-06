@@ -427,12 +427,16 @@ function Orb({
   hidden?: boolean;
   onClick?: () => void;
 }) {
+  // The shared enrich-worker* classes carry the look every orb has in common
+  // (style.css); the per-worker classes after them are the colour and the
+  // worker-orbs.js / test hooks. Shared first: CSS matches
+  // [class$="-button-container"].
   const buttonClass = pill.stateClass
-    ? `${chrome.buttonClass} ${pill.stateClass}`
-    : chrome.buttonClass;
+    ? `enrich-worker-btn ${chrome.buttonClass} ${pill.stateClass}`
+    : `enrich-worker-btn ${chrome.buttonClass}`;
   return (
     <div
-      className={chrome.containerClass}
+      className={`enrich-worker ${chrome.containerClass}`}
       id={chrome.containerId}
       style={hidden ? HIDDEN : undefined}
     >
@@ -443,13 +447,17 @@ function Orb({
         onClick={onClick}
       >
         {'src' in chrome.logo ? (
-          <img src={chrome.logo.src} alt={chrome.logo.alt} className={chrome.logo.className} />
+          <img
+            src={chrome.logo.src}
+            alt={chrome.logo.alt}
+            className={`enrich-worker-logo ${chrome.logo.className}`}
+          />
         ) : (
-          <span className={chrome.logo.className} aria-hidden="true">
+          <span className={`enrich-worker-logo ${chrome.logo.className}`} aria-hidden="true">
             {chrome.logo.emoji}
           </span>
         )}
-        <div className={chrome.spinnerClass}></div>
+        <div className={`enrich-worker-spinner ${chrome.spinnerClass}`}></div>
         {badge ? (
           <span
             className="repair-badge"
@@ -460,9 +468,11 @@ function Orb({
           </span>
         ) : null}
       </button>
-      <div className={chrome.tooltipClass} id={chrome.tooltipId}>
-        <div className={chrome.contentClass}>
-          <div className={chrome.headerClass}>{chrome.headerText}</div>
+      <div className={`enrich-worker-tooltip ${chrome.tooltipClass}`} id={chrome.tooltipId}>
+        <div className={`enrich-worker-tooltip-content ${chrome.contentClass}`}>
+          <div className={`enrich-worker-tooltip-header ${chrome.headerClass}`}>
+            {chrome.headerText}
+          </div>
           <div className={chrome.bodyClass} id={chrome.bodyId}>
             <div className="tooltip-status">
               Status:{' '}

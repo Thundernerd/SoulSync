@@ -41767,33 +41767,105 @@ div.artist-hero-badge {
 }
 
 /* ============================================================================
-   MUSICBRAINZ ENRICHMENT STATUS BUTTON - PHASE 5 WEB UI
-   ============================================================================ */
+   ENRICHMENT WORKER BUTTONS — shared by every worker orb
+   ============================================================================
+   Each worker's container sets --ew-rgb (its brand colour) and --ew-rgb-2
+   (the deeper gradient stop); the per-worker sections below keep only what
+   differs from these rules. */
 
-/* Container for button + tooltip positioning */
-.mb-button-container {
+.enrich-worker {
     position: relative;
     display: inline-block;
     margin-right: 12px;
 }
 
-/* MusicBrainz Button */
-.musicbrainz-button {
+.enrich-worker-btn {
     position: relative;
     width: 44px;
     height: 44px;
-    background: linear-gradient(135deg,
-            rgba(186, 85, 211, 0.12) 0%,
-            rgba(147, 51, 156, 0.18) 100%);
-    backdrop-filter: blur(20px) saturate(1.4);
-    -webkit-backdrop-filter: blur(20px) saturate(1.4);
-    border: 1.5px solid rgba(186, 85, 211, 0.25);
+    background: linear-gradient(135deg, rgba(var(--ew-rgb), 0.12) 0%, rgba(var(--ew-rgb-2), 0.18) 100%);
+    border: 1.5px solid rgba(var(--ew-rgb), 0.25);
     border-radius: var(--radius-circle);
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.enrich-worker-btn:hover {
+    border-color: rgba(var(--ew-rgb), 0.4);
+    transform: scale(1.05);
+}
+
+.enrich-worker-logo {
+    opacity: 0.85;
+}
+
+.enrich-worker-spinner {
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    border: 3px solid transparent;
+    border-top-color: rgba(var(--ew-rgb), 0.8);
+    border-right-color: rgba(var(--ew-rgb), 0.5);
+    border-radius: var(--radius-circle);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.enrich-worker-btn.active .enrich-worker-spinner {
+    opacity: 1;
+    animation: enrich-worker-spin 1.2s linear infinite;
+}
+
+.enrich-worker-tooltip {
+    position: absolute;
+    left: 50%;
+    top: calc(100% + 12px);
+    transform: translateX(-50%) translateY(-5px);
+    z-index: 5000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+}
+
+.enrich-worker-tooltip-content {
+    min-width: 260px;
+    background: linear-gradient(135deg, rgba(30, 30, 30, 0.98) 0%, rgba(20, 20, 20, 0.99) 100%);
+    border: 1px solid rgba(var(--ew-rgb), 0.3);
+    border-radius: var(--radius-xl);
+    padding: 16px 18px;
+}
+
+.enrich-worker-tooltip-header {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(var(--ew-rgb), 0.95);
+    margin-bottom: 12px;
+}
+
+@keyframes enrich-worker-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* ============================================================================
+   MUSICBRAINZ ENRICHMENT STATUS BUTTON - PHASE 5 WEB UI
+   ============================================================================ */
+
+/* Container for button + tooltip positioning */
+.mb-button-container {
+    --ew-rgb: 186, 85, 211;
+    --ew-rgb-2: 147, 51, 156;
+}
+
+/* MusicBrainz Button */
+.musicbrainz-button {
+    backdrop-filter: blur(20px) saturate(1.4);
+    -webkit-backdrop-filter: blur(20px) saturate(1.4);
     box-shadow:
         0 4px 16px rgba(186, 85, 211, 0.2),
         0 2px 8px rgba(0, 0, 0, 0.15),
@@ -41804,8 +41876,6 @@ div.artist-hero-badge {
     background: linear-gradient(135deg,
             rgba(186, 85, 211, 0.18) 0%,
             rgba(147, 51, 156, 0.25) 100%);
-    border-color: rgba(186, 85, 211, 0.4);
-    transform: scale(1.05);
     box-shadow:
         0 6px 20px rgba(186, 85, 211, 0.3),
         0 3px 12px rgba(0, 0, 0, 0.2),
@@ -41824,7 +41894,6 @@ div.artist-hero-badge {
     width: 24px;
     height: 24px;
     object-fit: contain;
-    opacity: 0.85;
     transition: opacity 0.3s ease;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
@@ -41833,25 +41902,7 @@ div.artist-hero-badge {
     opacity: 1;
 }
 
-/* Loading Spinner - Animated Ring */
-.mb-spinner {
-    position: absolute;
-    width: 44px;
-    height: 44px;
-    border: 3px solid transparent;
-    border-top-color: rgba(186, 85, 211, 0.8);
-    border-right-color: rgba(186, 85, 211, 0.5);
-    border-radius: var(--radius-circle);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-}
-
 /* Active State - Spinner visible and rotating */
-.musicbrainz-button.active .mb-spinner {
-    opacity: 1;
-    animation: mb-spin 1.2s linear infinite;
-}
 
 .musicbrainz-button.active {
     background: linear-gradient(135deg,
@@ -41909,33 +41960,9 @@ div.artist-hero-badge {
         0 3px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Spinner Rotation Animation */
-@keyframes mb-spin {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-
 /* ============================================================================
    MUSICBRAINZ HOVER TOOLTIP
    ============================================================================ */
-
-.musicbrainz-tooltip {
-    position: absolute;
-    left: 50%;
-    top: calc(100% + 12px);
-    /* 12px gap below button */
-    transform: translateX(-50%) translateY(-5px);
-    z-index: 5000;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    pointer-events: none;
-}
 
 .musicbrainz-button:hover+.musicbrainz-tooltip {
     opacity: 1;
@@ -42034,28 +42061,14 @@ div.artist-hero-badge {
 
 /* Container for button + tooltip positioning */
 .audiodb-button-container {
-    position: relative;
-    display: inline-block;
-    margin-right: 12px;
+    --ew-rgb: 0, 188, 212;
+    --ew-rgb-2: 0, 150, 170;
 }
 
 /* AudioDB Button */
 .audiodb-button {
-    position: relative;
-    width: 44px;
-    height: 44px;
-    background: linear-gradient(135deg,
-            rgba(0, 188, 212, 0.12) 0%,
-            rgba(0, 150, 170, 0.18) 100%);
     backdrop-filter: blur(20px) saturate(1.4);
     -webkit-backdrop-filter: blur(20px) saturate(1.4);
-    border: 1.5px solid rgba(0, 188, 212, 0.25);
-    border-radius: var(--radius-circle);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow:
         0 4px 16px rgba(0, 188, 212, 0.2),
         0 2px 8px rgba(0, 0, 0, 0.15),
@@ -42066,8 +42079,6 @@ div.artist-hero-badge {
     background: linear-gradient(135deg,
             rgba(0, 188, 212, 0.18) 0%,
             rgba(0, 150, 170, 0.25) 100%);
-    border-color: rgba(0, 188, 212, 0.4);
-    transform: scale(1.05);
     box-shadow:
         0 6px 20px rgba(0, 188, 212, 0.3),
         0 3px 12px rgba(0, 0, 0, 0.2),
@@ -42086,7 +42097,6 @@ div.artist-hero-badge {
     width: 24px;
     height: 24px;
     object-fit: contain;
-    opacity: 0.85;
     transition: opacity 0.3s ease;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
@@ -42095,25 +42105,7 @@ div.artist-hero-badge {
     opacity: 1;
 }
 
-/* Loading Spinner - Animated Ring */
-.audiodb-spinner {
-    position: absolute;
-    width: 44px;
-    height: 44px;
-    border: 3px solid transparent;
-    border-top-color: rgba(0, 188, 212, 0.8);
-    border-right-color: rgba(0, 188, 212, 0.5);
-    border-radius: var(--radius-circle);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-}
-
 /* Active State - Spinner visible and rotating */
-.audiodb-button.active .audiodb-spinner {
-    opacity: 1;
-    animation: audiodb-spin 1.2s linear infinite;
-}
 
 .audiodb-button.active {
     background: linear-gradient(135deg,
@@ -42171,32 +42163,9 @@ div.artist-hero-badge {
         0 3px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Spinner Rotation Animation */
-@keyframes audiodb-spin {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-
 /* ============================================================================
    AUDIODB HOVER TOOLTIP
    ============================================================================ */
-
-.audiodb-tooltip {
-    position: absolute;
-    left: 50%;
-    top: calc(100% + 12px);
-    transform: translateX(-50%) translateY(-5px);
-    z-index: 5000;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    pointer-events: none;
-}
 
 .audiodb-button:hover+.audiodb-tooltip {
     opacity: 1;
@@ -42205,15 +42174,8 @@ div.artist-hero-badge {
 }
 
 .audiodb-tooltip-content {
-    min-width: 260px;
-    background: linear-gradient(135deg,
-            rgba(30, 30, 30, 0.98) 0%,
-            rgba(20, 20, 20, 0.99) 100%);
     backdrop-filter: blur(40px) saturate(1.6);
     -webkit-backdrop-filter: blur(40px) saturate(1.6);
-    border: 1px solid rgba(0, 188, 212, 0.3);
-    border-radius: var(--radius-xl);
-    padding: 16px 18px;
     box-shadow:
         0 12px 40px rgba(0, 0, 0, 0.5),
         0 6px 20px rgba(0, 188, 212, 0.25),
@@ -42224,9 +42186,7 @@ div.artist-hero-badge {
     font-family: 'SF Pro Display', -apple-system, sans-serif;
     font-size: 13px;
     font-weight: 600;
-    color: rgba(0, 188, 212, 0.95);
     letter-spacing: -0.2px;
-    margin-bottom: 12px;
     padding-bottom: 10px;
     border-bottom: 1px solid var(--white-a08);
 }
@@ -42280,27 +42240,15 @@ div.artist-hero-badge {
 /* Container for button + tooltip positioning */
 /* Discogs Enrichment Button */
 .discogs-button-container {
-    position: relative;
-    display: inline-block;
-    margin-right: 12px;
+    --ew-rgb: 51, 51, 51;
+    --ew-rgb-2: 80, 80, 80;
 }
 
 .discogs-button {
-    position: relative;
-    width: 44px;
-    height: 44px;
-    background: linear-gradient(135deg,
-            rgba(51, 51, 51, 0.12) 0%,
-            rgba(80, 80, 80, 0.18) 100%);
     backdrop-filter: blur(20px) saturate(1.4);
     -webkit-backdrop-filter: blur(20px) saturate(1.4);
     border: 1.5px solid rgba(120, 120, 120, 0.25);
     border-radius: var(--radius-circle);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow:
         0 4px 16px rgba(80, 80, 80, 0.15),
         0 2px 8px rgba(0, 0, 0, 0.15),
@@ -42326,28 +42274,12 @@ div.artist-hero-badge {
 
 /* Spinner ring */
 .discogs-spinner {
-    position: absolute;
-    width: 44px;
-    height: 44px;
-    border: 3px solid transparent;
     border-top-color: rgba(180, 180, 180, 0.8);
     border-right-color: rgba(180, 180, 180, 0.5);
     border-radius: var(--radius-circle);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-}
-
-@keyframes discogs-spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
 }
 
 /* Active State */
-.discogs-button.active .discogs-spinner {
-    opacity: 1;
-    animation: discogs-spin 1.2s linear infinite;
-}
 
 .discogs-button.active {
     background: linear-gradient(135deg,
@@ -42408,17 +42340,6 @@ div.artist-hero-badge {
 }
 
 /* Tooltip */
-.discogs-tooltip {
-    position: absolute;
-    left: 50%;
-    top: calc(100% + 12px);
-    transform: translateX(-50%) translateY(-5px);
-    z-index: 5000;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    pointer-events: none;
-}
 
 .discogs-button:hover+.discogs-tooltip {
     opacity: 1;
@@ -42427,13 +42348,10 @@ div.artist-hero-badge {
 }
 
 .discogs-tooltip-content {
-    min-width: 260px;
-    background: linear-gradient(135deg, rgba(30, 30, 30, 0.98) 0%, rgba(20, 20, 20, 0.99) 100%);
     backdrop-filter: blur(40px) saturate(1.6);
     -webkit-backdrop-filter: blur(40px) saturate(1.6);
     border: 1px solid var(--white-a30);
     border-radius: var(--radius-xl);
-    padding: 16px 18px;
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 6px 20px rgba(0, 0, 0, 0.3), inset 0 1px 0 var(--white-a10);
 }
 
@@ -42443,7 +42361,6 @@ div.artist-hero-badge {
     font-weight: 600;
     color: rgba(255, 255, 255, 0.95);
     letter-spacing: -0.2px;
-    margin-bottom: 12px;
     padding-bottom: 10px;
     border-bottom: 1px solid var(--white-a08);
 }
@@ -42464,15 +42381,11 @@ div.artist-hero-badge {
    ============================================================ */
 
 .amazon-enrich-button-container {
-    position: relative;
-    display: inline-block;
-    margin-right: 12px;
+    --ew-rgb: 255, 153, 0;
+    --ew-rgb-2: 255, 120, 0;
 }
 
 .amazon-enrich-button {
-    position: relative;
-    width: 44px;
-    height: 44px;
     background: linear-gradient(135deg,
             rgba(255, 153, 0, 0.10) 0%,
             rgba(255, 120, 0, 0.16) 100%);
@@ -42480,11 +42393,6 @@ div.artist-hero-badge {
     -webkit-backdrop-filter: blur(20px) saturate(1.4);
     border: 1.5px solid rgba(255, 153, 0, 0.22);
     border-radius: var(--radius-circle);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow:
         0 4px 16px rgba(255, 153, 0, 0.12),
         0 2px 8px rgba(0, 0, 0, 0.15),
@@ -42509,26 +42417,9 @@ div.artist-hero-badge {
 }
 
 .amazon-enrich-spinner {
-    position: absolute;
-    width: 44px;
-    height: 44px;
-    border: 3px solid transparent;
     border-top-color: rgba(255, 153, 0, 0.85);
     border-right-color: rgba(255, 153, 0, 0.5);
     border-radius: var(--radius-circle);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-}
-
-@keyframes amazon-enrich-spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-.amazon-enrich-button.active .amazon-enrich-spinner {
-    opacity: 1;
-    animation: amazon-enrich-spin 1.2s linear infinite;
 }
 
 .amazon-enrich-button.active {
@@ -42587,18 +42478,6 @@ div.artist-hero-badge {
     opacity: 0;
 }
 
-.amazon-enrich-tooltip {
-    position: absolute;
-    left: 50%;
-    top: calc(100% + 12px);
-    transform: translateX(-50%) translateY(-5px);
-    z-index: 5000;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    pointer-events: none;
-}
-
 .amazon-enrich-button:hover + .amazon-enrich-tooltip {
     opacity: 1;
     visibility: visible;
@@ -42606,13 +42485,10 @@ div.artist-hero-badge {
 }
 
 .amazon-enrich-tooltip-content {
-    min-width: 260px;
-    background: linear-gradient(135deg, rgba(30, 30, 30, 0.98) 0%, rgba(20, 20, 20, 0.99) 100%);
     backdrop-filter: blur(40px) saturate(1.6);
     -webkit-backdrop-filter: blur(40px) saturate(1.6);
     border: 1px solid var(--white-a30);
     border-radius: var(--radius-xl);
-    padding: 16px 18px;
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 6px 20px rgba(0, 0, 0, 0.3), inset 0 1px 0 var(--white-a10);
 }
 
@@ -42622,7 +42498,6 @@ div.artist-hero-badge {
     font-weight: 600;
     color: rgba(255, 255, 255, 0.95);
     letter-spacing: -0.2px;
-    margin-bottom: 12px;
     padding-bottom: 10px;
     border-bottom: 1px solid var(--white-a08);
 }
@@ -42641,14 +42516,13 @@ div.artist-hero-badge {
 /* Similar Artists (MusicMap relationship worker) dashboard bubble — mirrors the
    per-source bubbles with a purple accent. The MusicMap logo is a wide branded
    image, so it's cover-cropped + rounded rather than icon-filtered. */
-.similar-artists-enrich-button-container { position: relative; display: inline-block; margin-right: 12px; }
+.similar-artists-enrich-button-container {
+    --ew-rgb: 168, 85, 247;
+    --ew-rgb-2: 124, 58, 237; }
 .similar-artists-enrich-button {
-    position: relative; width: 44px; height: 44px;
     background: linear-gradient(135deg, rgba(168,85,247,0.10) 0%, rgba(124,58,237,0.16) 100%);
     backdrop-filter: blur(20px) saturate(1.4); -webkit-backdrop-filter: blur(20px) saturate(1.4);
-    border: 1.5px solid rgba(168,85,247,0.22); border-radius: var(--radius-circle); cursor: pointer;
-    display: flex; align-items: center; justify-content: center;
-    transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+    border: 1.5px solid rgba(168,85,247,0.22); border-radius: var(--radius-circle);
     box-shadow: 0 4px 16px rgba(168,85,247,0.12), 0 2px 8px rgba(0,0,0,0.15), inset 0 1px 0 var(--white-a08);
 }
 .similar-artists-enrich-logo {
@@ -42660,75 +42534,57 @@ div.artist-hero-badge {
     box-shadow: 0 6px 24px rgba(168,85,247,0.28), 0 3px 12px rgba(0,0,0,0.2), inset 0 1px 0 var(--white-a12);
 }
 .similar-artists-enrich-spinner {
-    position: absolute; width: 44px; height: 44px; border: 3px solid transparent;
     border-top-color: rgba(168,85,247,0.85); border-right-color: rgba(168,85,247,0.5);
-    border-radius: var(--radius-circle); opacity: 0; transition: opacity 0.3s ease; pointer-events: none;
+    border-radius: var(--radius-circle);
 }
-@keyframes similar-artists-enrich-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-.similar-artists-enrich-button.active .similar-artists-enrich-spinner { opacity: 1; animation: similar-artists-enrich-spin 1.2s linear infinite; }
 .similar-artists-enrich-button.active {
     background: linear-gradient(135deg, rgba(168,85,247,0.20) 0%, rgba(124,58,237,0.26) 100%);
     border-color: rgba(168,85,247,0.55);
     box-shadow: 0 6px 24px rgba(168,85,247,0.35), 0 3px 12px rgba(0,0,0,0.2), inset 0 1px 0 var(--white-a15);
 }
-.similar-artists-enrich-button.active .similar-artists-enrich-logo { opacity: 1; }
+.similar-artists-enrich-button.active .similar-artists-enrich-logo {
+    opacity: 1; }
 .similar-artists-enrich-button.complete {
     background: linear-gradient(135deg, rgba(76,175,80,0.15) 0%, rgba(56,142,60,0.20) 100%);
     border-color: rgba(76,175,80,0.35);
     box-shadow: 0 4px 16px rgba(76,175,80,0.2), 0 2px 8px rgba(0,0,0,0.15), inset 0 1px 0 var(--white-a08);
 }
-.similar-artists-enrich-button.complete .similar-artists-enrich-spinner { opacity: 0; }
+.similar-artists-enrich-button.complete .similar-artists-enrich-spinner {
+    opacity: 0; }
 .similar-artists-enrich-button.paused {
     background: linear-gradient(135deg, rgba(255,193,7,0.12) 0%, rgba(255,152,0,0.18) 100%);
     border-color: rgba(255,193,7,0.35);
     box-shadow: 0 4px 16px rgba(255,193,7,0.2), 0 2px 8px rgba(0,0,0,0.15), inset 0 1px 0 var(--white-a08);
 }
-.similar-artists-enrich-button.paused .similar-artists-enrich-logo { opacity: 0.5; }
-.similar-artists-enrich-button.paused .similar-artists-enrich-spinner { opacity: 0; }
-.similar-artists-enrich-tooltip {
-    position: absolute; left: 50%; top: calc(100% + 12px);
-    transform: translateX(-50%) translateY(-5px); z-index: 5000;
-    opacity: 0; visibility: hidden; transition: all 0.3s cubic-bezier(0.4,0,0.2,1); pointer-events: none;
-}
-.similar-artists-enrich-button:hover + .similar-artists-enrich-tooltip { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+.similar-artists-enrich-button.paused .similar-artists-enrich-logo {
+    opacity: 0.5; }
+.similar-artists-enrich-button.paused .similar-artists-enrich-spinner {
+    opacity: 0; }
+.similar-artists-enrich-button:hover + .similar-artists-enrich-tooltip {
+    opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
 .similar-artists-enrich-tooltip-content {
-    min-width: 260px;
-    background: linear-gradient(135deg, rgba(30,30,30,0.98) 0%, rgba(20,20,20,0.99) 100%);
     backdrop-filter: blur(40px) saturate(1.6); -webkit-backdrop-filter: blur(40px) saturate(1.6);
-    border: 1px solid var(--white-a30); border-radius: var(--radius-xl); padding: 16px 18px;
+    border: 1px solid var(--white-a30); border-radius: var(--radius-xl);
     box-shadow: 0 12px 40px rgba(0,0,0,0.5), 0 6px 20px rgba(0,0,0,0.3), inset 0 1px 0 var(--white-a10);
 }
 .similar-artists-enrich-tooltip-header {
     font-family: 'SF Pro Display', -apple-system, sans-serif; font-size: 13px; font-weight: 600;
-    color: rgba(255,255,255,0.95); letter-spacing: -0.2px; margin-bottom: 12px;
+    color: rgba(255,255,255,0.95); letter-spacing: -0.2px;
     padding-bottom: 10px; border-bottom: 1px solid var(--white-a08);
 }
-.similar-artists-enrich-tooltip-body { display: flex; flex-direction: column; gap: 8px; }
+.similar-artists-enrich-tooltip-body {
+    display: flex; flex-direction: column; gap: 8px; }
 #similar-artists-enrich-tooltip-status { color: #c084fc; font-weight: 600; }
 
 .deezer-button-container {
-    position: relative;
-    display: inline-block;
-    margin-right: 12px;
+    --ew-rgb: 162, 56, 255;
+    --ew-rgb-2: 120, 30, 200;
 }
 
 /* Deezer Button */
 .deezer-button {
-    position: relative;
-    width: 44px;
-    height: 44px;
-    background: linear-gradient(135deg,
-            rgba(162, 56, 255, 0.12) 0%,
-            rgba(120, 30, 200, 0.18) 100%);
     backdrop-filter: blur(20px) saturate(1.4);
     -webkit-backdrop-filter: blur(20px) saturate(1.4);
-    border: 1.5px solid rgba(162, 56, 255, 0.25);
-    border-radius: var(--radius-circle);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow:
         0 4px 16px rgba(162, 56, 255, 0.2),
         0 2px 8px rgba(0, 0, 0, 0.15),
@@ -42739,8 +42595,6 @@ div.artist-hero-badge {
     background: linear-gradient(135deg,
             rgba(162, 56, 255, 0.18) 0%,
             rgba(120, 30, 200, 0.25) 100%);
-    border-color: rgba(162, 56, 255, 0.4);
-    transform: scale(1.05);
     box-shadow:
         0 6px 20px rgba(162, 56, 255, 0.3),
         0 3px 12px rgba(0, 0, 0, 0.2),
@@ -42759,7 +42613,6 @@ div.artist-hero-badge {
     width: 24px;
     height: 24px;
     object-fit: contain;
-    opacity: 0.85;
     transition: opacity 0.3s ease;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
@@ -42768,25 +42621,7 @@ div.artist-hero-badge {
     opacity: 1;
 }
 
-/* Loading Spinner - Animated Ring */
-.deezer-spinner {
-    position: absolute;
-    width: 44px;
-    height: 44px;
-    border: 3px solid transparent;
-    border-top-color: rgba(162, 56, 255, 0.8);
-    border-right-color: rgba(162, 56, 255, 0.5);
-    border-radius: var(--radius-circle);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-}
-
 /* Active State - Spinner visible and rotating */
-.deezer-button.active .deezer-spinner {
-    opacity: 1;
-    animation: deezer-spin 1.2s linear infinite;
-}
 
 .deezer-button.active {
     background: linear-gradient(135deg,
@@ -42844,32 +42679,9 @@ div.artist-hero-badge {
         0 3px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Spinner Rotation Animation */
-@keyframes deezer-spin {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-
 /* ============================================================================
    DEEZER HOVER TOOLTIP
    ============================================================================ */
-
-.deezer-tooltip {
-    position: absolute;
-    left: 50%;
-    top: calc(100% + 12px);
-    transform: translateX(-50%) translateY(-5px);
-    z-index: 5000;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    pointer-events: none;
-}
 
 .deezer-button:hover+.deezer-tooltip {
     opacity: 1;
@@ -42878,15 +42690,8 @@ div.artist-hero-badge {
 }
 
 .deezer-tooltip-content {
-    min-width: 260px;
-    background: linear-gradient(135deg,
-            rgba(30, 30, 30, 0.98) 0%,
-            rgba(20, 20, 20, 0.99) 100%);
     backdrop-filter: blur(40px) saturate(1.6);
     -webkit-backdrop-filter: blur(40px) saturate(1.6);
-    border: 1px solid rgba(162, 56, 255, 0.3);
-    border-radius: var(--radius-xl);
-    padding: 16px 18px;
     box-shadow:
         0 12px 40px rgba(0, 0, 0, 0.5),
         0 6px 20px rgba(162, 56, 255, 0.25),
@@ -42897,9 +42702,7 @@ div.artist-hero-badge {
     font-family: 'SF Pro Display', -apple-system, sans-serif;
     font-size: 13px;
     font-weight: 600;
-    color: rgba(162, 56, 255, 0.95);
     letter-spacing: -0.2px;
-    margin-bottom: 12px;
     padding-bottom: 10px;
     border-bottom: 1px solid var(--white-a08);
 }
@@ -42947,69 +42750,45 @@ div.artist-hero-badge {
 }
 
 /* JioSaavn enrichment bubble (teal #2bc5b4) */
-.jiosaavn-button-container { position: relative; display: inline-block; margin-right: 12px; }
+.jiosaavn-button-container {
+    --ew-rgb: 43, 197, 180;
+    --ew-rgb-2: 30, 160, 145; }
 .jiosaavn-button {
-    position: relative; width: 44px; height: 44px;
-    background: linear-gradient(135deg, rgba(43, 197, 180, 0.12) 0%, rgba(30, 160, 145, 0.18) 100%);
     backdrop-filter: blur(20px) saturate(1.4); -webkit-backdrop-filter: blur(20px) saturate(1.4);
-    border: 1.5px solid rgba(43, 197, 180, 0.25); border-radius: var(--radius-circle); cursor: pointer;
-    display: flex; align-items: center; justify-content: center;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 4px 16px rgba(43, 197, 180, 0.2), 0 2px 8px rgba(0, 0, 0, 0.15), inset 0 1px 0 var(--white-a08);
 }
-.jiosaavn-button:hover { border-color: rgba(43, 197, 180, 0.4); transform: scale(1.05); }
-.jiosaavn-logo { font-size: 20px; line-height: 1; opacity: 0.9; filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)); }
-.jiosaavn-spinner {
-    position: absolute; width: 44px; height: 44px; border: 3px solid transparent;
-    border-top-color: rgba(43, 197, 180, 0.8); border-right-color: rgba(43, 197, 180, 0.5);
-    border-radius: var(--radius-circle); opacity: 0; transition: opacity 0.3s ease; pointer-events: none;
-}
-.jiosaavn-button.active .jiosaavn-spinner { opacity: 1; animation: jiosaavn-spin 1.2s linear infinite; }
-.jiosaavn-button.active { border-color: rgba(43, 197, 180, 0.5); }
-.jiosaavn-button.complete { border-color: rgba(76, 175, 80, 0.35); }
-.jiosaavn-button.complete .jiosaavn-spinner { opacity: 0; }
-.jiosaavn-button.paused { border-color: rgba(255, 193, 7, 0.35); }
-@keyframes jiosaavn-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-.jiosaavn-tooltip {
-    position: absolute; left: 50%; top: calc(100% + 12px); transform: translateX(-50%) translateY(-5px);
-    z-index: 5000; opacity: 0; visibility: hidden; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); pointer-events: none;
-}
-.jiosaavn-button:hover + .jiosaavn-tooltip { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
-.jiosaavn-tooltip-content {
-    min-width: 260px; background: linear-gradient(135deg, rgba(30, 30, 30, 0.98) 0%, rgba(20, 20, 20, 0.99) 100%);
-    border: 1px solid rgba(43, 197, 180, 0.3); border-radius: var(--radius-xl); padding: 16px 18px;
-}
-.jiosaavn-tooltip-header { font-size: 13px; font-weight: 600; color: rgba(43, 197, 180, 0.95); margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid var(--white-a08); }
-.jiosaavn-tooltip-body { display: flex; flex-direction: column; gap: 8px; }
+.jiosaavn-logo {
+    font-size: 20px; line-height: 1; opacity: 0.9; filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)); }
+.jiosaavn-button.active {
+    border-color: rgba(43, 197, 180, 0.5); }
+.jiosaavn-button.complete {
+    border-color: rgba(76, 175, 80, 0.35); }
+.jiosaavn-button.complete .jiosaavn-spinner {
+    opacity: 0; }
+.jiosaavn-button.paused {
+    border-color: rgba(255, 193, 7, 0.35); }
+.jiosaavn-button:hover + .jiosaavn-tooltip {
+    opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+.jiosaavn-tooltip-header {
+    padding-bottom: 10px; border-bottom: 1px solid var(--white-a08); }
+.jiosaavn-tooltip-body {
+    display: flex; flex-direction: column; gap: 8px; }
 #jiosaavn-tooltip-status { color: rgb(var(--accent-light-rgb)); font-weight: 600; }
-.jiosaavn-button.paused + .jiosaavn-tooltip #jiosaavn-tooltip-status { color: #ffc107; }
+.jiosaavn-button.paused + .jiosaavn-tooltip #jiosaavn-tooltip-status {
+    color: #ffc107; }
 
 /* ============================================================================
    SPOTIFY ENRICHMENT STATUS BUTTON
    ============================================================================ */
 
 .spotify-enrich-button-container {
-    position: relative;
-    display: inline-block;
-    margin-right: 12px;
+    --ew-rgb: 30, 215, 96;
+    --ew-rgb-2: 21, 150, 67;
 }
 
 .spotify-enrich-button {
-    position: relative;
-    width: 44px;
-    height: 44px;
-    background: linear-gradient(135deg,
-            rgba(30, 215, 96, 0.12) 0%,
-            rgba(21, 150, 67, 0.18) 100%);
     backdrop-filter: blur(20px) saturate(1.4);
     -webkit-backdrop-filter: blur(20px) saturate(1.4);
-    border: 1.5px solid rgba(30, 215, 96, 0.25);
-    border-radius: var(--radius-circle);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow:
         0 4px 16px rgba(30, 215, 96, 0.2),
         0 2px 8px rgba(0, 0, 0, 0.15),
@@ -43020,8 +42799,6 @@ div.artist-hero-badge {
     background: linear-gradient(135deg,
             rgba(30, 215, 96, 0.18) 0%,
             rgba(21, 150, 67, 0.25) 100%);
-    border-color: rgba(30, 215, 96, 0.4);
-    transform: scale(1.05);
     box-shadow:
         0 6px 20px rgba(30, 215, 96, 0.3),
         0 3px 12px rgba(0, 0, 0, 0.2),
@@ -43039,31 +42816,12 @@ div.artist-hero-badge {
     width: 24px;
     height: 24px;
     object-fit: contain;
-    opacity: 0.85;
     transition: opacity 0.3s ease;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
 .spotify-enrich-button:hover .spotify-enrich-logo {
     opacity: 1;
-}
-
-.spotify-enrich-spinner {
-    position: absolute;
-    width: 44px;
-    height: 44px;
-    border: 3px solid transparent;
-    border-top-color: rgba(30, 215, 96, 0.8);
-    border-right-color: rgba(30, 215, 96, 0.5);
-    border-radius: var(--radius-circle);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-}
-
-.spotify-enrich-button.active .spotify-enrich-spinner {
-    opacity: 1;
-    animation: spotify-enrich-spin 1.2s linear infinite;
 }
 
 .spotify-enrich-button.active {
@@ -43153,26 +42911,9 @@ div.artist-hero-badge {
     color: rgba(120, 120, 120, 0.8);
 }
 
-@keyframes spotify-enrich-spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
 /* ============================================================================
    SPOTIFY ENRICHMENT HOVER TOOLTIP
    ============================================================================ */
-
-.spotify-enrich-tooltip {
-    position: absolute;
-    left: 50%;
-    top: calc(100% + 12px);
-    transform: translateX(-50%) translateY(-5px);
-    z-index: 5000;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    pointer-events: none;
-}
 
 .spotify-enrich-button:hover+.spotify-enrich-tooltip {
     opacity: 1;
@@ -43181,15 +42922,8 @@ div.artist-hero-badge {
 }
 
 .spotify-enrich-tooltip-content {
-    min-width: 260px;
-    background: linear-gradient(135deg,
-            rgba(30, 30, 30, 0.98) 0%,
-            rgba(20, 20, 20, 0.99) 100%);
     backdrop-filter: blur(40px) saturate(1.6);
     -webkit-backdrop-filter: blur(40px) saturate(1.6);
-    border: 1px solid rgba(30, 215, 96, 0.3);
-    border-radius: var(--radius-xl);
-    padding: 16px 18px;
     box-shadow:
         0 12px 40px rgba(0, 0, 0, 0.5),
         0 6px 20px rgba(30, 215, 96, 0.25),
@@ -43200,9 +42934,7 @@ div.artist-hero-badge {
     font-family: 'SF Pro Display', -apple-system, sans-serif;
     font-size: 13px;
     font-weight: 600;
-    color: rgba(30, 215, 96, 0.95);
     letter-spacing: -0.2px;
-    margin-bottom: 12px;
     padding-bottom: 10px;
     border-bottom: 1px solid var(--white-a08);
 }
@@ -43253,27 +42985,13 @@ div.artist-hero-badge {
    ============================================================================ */
 
 .itunes-enrich-button-container {
-    position: relative;
-    display: inline-block;
-    margin-right: 12px;
+    --ew-rgb: 251, 91, 137;
+    --ew-rgb-2: 164, 69, 178;
 }
 
 .itunes-enrich-button {
-    position: relative;
-    width: 44px;
-    height: 44px;
-    background: linear-gradient(135deg,
-            rgba(251, 91, 137, 0.12) 0%,
-            rgba(164, 69, 178, 0.18) 100%);
     backdrop-filter: blur(20px) saturate(1.4);
     -webkit-backdrop-filter: blur(20px) saturate(1.4);
-    border: 1.5px solid rgba(251, 91, 137, 0.25);
-    border-radius: var(--radius-circle);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow:
         0 4px 16px rgba(251, 91, 137, 0.2),
         0 2px 8px rgba(0, 0, 0, 0.15),
@@ -43284,8 +43002,6 @@ div.artist-hero-badge {
     background: linear-gradient(135deg,
             rgba(251, 91, 137, 0.18) 0%,
             rgba(164, 69, 178, 0.25) 100%);
-    border-color: rgba(251, 91, 137, 0.4);
-    transform: scale(1.05);
     box-shadow:
         0 6px 20px rgba(251, 91, 137, 0.3),
         0 3px 12px rgba(0, 0, 0, 0.2),
@@ -43303,7 +43019,6 @@ div.artist-hero-badge {
     width: 24px;
     height: 24px;
     object-fit: contain;
-    opacity: 0.85;
     transition: opacity 0.3s ease;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
@@ -43313,21 +43028,8 @@ div.artist-hero-badge {
 }
 
 .itunes-enrich-spinner {
-    position: absolute;
-    width: 44px;
-    height: 44px;
-    border: 3px solid transparent;
-    border-top-color: rgba(251, 91, 137, 0.8);
     border-right-color: rgba(164, 69, 178, 0.5);
     border-radius: var(--radius-circle);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-}
-
-.itunes-enrich-button.active .itunes-enrich-spinner {
-    opacity: 1;
-    animation: itunes-enrich-spin 1.2s linear infinite;
 }
 
 .itunes-enrich-button.active {
@@ -43384,26 +43086,9 @@ div.artist-hero-badge {
         0 3px 12px rgba(0, 0, 0, 0.2);
 }
 
-@keyframes itunes-enrich-spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
 /* ============================================================================
    ITUNES ENRICHMENT HOVER TOOLTIP
    ============================================================================ */
-
-.itunes-enrich-tooltip {
-    position: absolute;
-    left: 50%;
-    top: calc(100% + 12px);
-    transform: translateX(-50%) translateY(-5px);
-    z-index: 5000;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    pointer-events: none;
-}
 
 .itunes-enrich-button:hover+.itunes-enrich-tooltip {
     opacity: 1;
@@ -43412,15 +43097,8 @@ div.artist-hero-badge {
 }
 
 .itunes-enrich-tooltip-content {
-    min-width: 260px;
-    background: linear-gradient(135deg,
-            rgba(30, 30, 30, 0.98) 0%,
-            rgba(20, 20, 20, 0.99) 100%);
     backdrop-filter: blur(40px) saturate(1.6);
     -webkit-backdrop-filter: blur(40px) saturate(1.6);
-    border: 1px solid rgba(251, 91, 137, 0.3);
-    border-radius: var(--radius-xl);
-    padding: 16px 18px;
     box-shadow:
         0 12px 40px rgba(0, 0, 0, 0.5),
         0 6px 20px rgba(251, 91, 137, 0.25),
@@ -43431,9 +43109,7 @@ div.artist-hero-badge {
     font-family: 'SF Pro Display', -apple-system, sans-serif;
     font-size: 13px;
     font-weight: 600;
-    color: rgba(251, 91, 137, 0.95);
     letter-spacing: -0.2px;
-    margin-bottom: 12px;
     padding-bottom: 10px;
     border-bottom: 1px solid var(--white-a08);
 }
@@ -43484,32 +43160,18 @@ div.artist-hero-badge {
    ======================================== */
 
 .lastfm-enrich-button-container {
-    position: relative;
-    display: inline-block;
-    margin-right: 12px;
+    --ew-rgb: 213, 16, 7;
+    --ew-rgb-2: 180, 10, 5;
 }
 
 .lastfm-enrich-button {
-    position: relative;
-    width: 44px;
-    height: 44px;
-    background: linear-gradient(135deg, rgba(213, 16, 7, 0.12) 0%, rgba(180, 10, 5, 0.18) 100%);
     backdrop-filter: blur(20px) saturate(1.4);
     -webkit-backdrop-filter: blur(20px) saturate(1.4);
-    border: 1.5px solid rgba(213, 16, 7, 0.25);
-    border-radius: var(--radius-circle);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 4px 16px rgba(213, 16, 7, 0.2), 0 2px 8px rgba(0, 0, 0, 0.15), inset 0 1px 0 var(--white-a08);
 }
 
 .lastfm-enrich-button:hover {
     background: linear-gradient(135deg, rgba(213, 16, 7, 0.18) 0%, rgba(180, 10, 5, 0.25) 100%);
-    border-color: rgba(213, 16, 7, 0.4);
-    transform: scale(1.05);
     box-shadow: 0 6px 20px rgba(213, 16, 7, 0.3), 0 3px 12px rgba(0, 0, 0, 0.2), inset 0 1px 0 var(--white-a12);
 }
 
@@ -43521,7 +43183,6 @@ div.artist-hero-badge {
     width: 24px;
     height: 24px;
     object-fit: contain;
-    opacity: 0.85;
     transition: opacity 0.3s ease;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
     border-radius: var(--radius-circle);
@@ -43529,24 +43190,6 @@ div.artist-hero-badge {
 
 .lastfm-enrich-button:hover .lastfm-enrich-logo {
     opacity: 1;
-}
-
-.lastfm-enrich-spinner {
-    position: absolute;
-    width: 44px;
-    height: 44px;
-    border: 3px solid transparent;
-    border-top-color: rgba(213, 16, 7, 0.8);
-    border-right-color: rgba(213, 16, 7, 0.5);
-    border-radius: var(--radius-circle);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-}
-
-.lastfm-enrich-button.active .lastfm-enrich-spinner {
-    opacity: 1;
-    animation: lastfm-spin 1.2s linear infinite;
 }
 
 .lastfm-enrich-button.active {
@@ -43586,23 +43229,6 @@ div.artist-hero-badge {
     box-shadow: 0 6px 20px rgba(255, 193, 7, 0.3), 0 3px 12px rgba(0, 0, 0, 0.2);
 }
 
-@keyframes lastfm-spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-.lastfm-enrich-tooltip {
-    position: absolute;
-    left: 50%;
-    top: calc(100% + 12px);
-    transform: translateX(-50%) translateY(-5px);
-    z-index: 5000;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    pointer-events: none;
-}
-
 .lastfm-enrich-button:hover+.lastfm-enrich-tooltip {
     opacity: 1;
     visibility: visible;
@@ -43610,13 +43236,8 @@ div.artist-hero-badge {
 }
 
 .lastfm-enrich-tooltip-content {
-    min-width: 260px;
-    background: linear-gradient(135deg, rgba(30, 30, 30, 0.98) 0%, rgba(20, 20, 20, 0.99) 100%);
     backdrop-filter: blur(40px) saturate(1.6);
     -webkit-backdrop-filter: blur(40px) saturate(1.6);
-    border: 1px solid rgba(213, 16, 7, 0.3);
-    border-radius: var(--radius-xl);
-    padding: 16px 18px;
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 6px 20px rgba(213, 16, 7, 0.25), inset 0 1px 0 var(--white-a10);
 }
 
@@ -43624,9 +43245,7 @@ div.artist-hero-badge {
     font-family: 'SF Pro Display', -apple-system, sans-serif;
     font-size: 13px;
     font-weight: 600;
-    color: rgba(213, 16, 7, 0.95);
     letter-spacing: -0.2px;
-    margin-bottom: 12px;
     padding-bottom: 10px;
     border-bottom: 1px solid var(--white-a08);
 }
@@ -43710,32 +43329,19 @@ div.artist-hero-badge {
    ======================================== */
 
 .genius-enrich-button-container {
-    position: relative;
-    display: inline-block;
-    margin-right: 12px;
+    --ew-rgb: 255, 255, 100;
+    --ew-rgb-2: 200, 200, 50;
 }
 
 .genius-enrich-button {
-    position: relative;
-    width: 44px;
-    height: 44px;
     background: linear-gradient(135deg, rgba(255, 255, 100, 0.10) 0%, rgba(200, 200, 50, 0.16) 100%);
     backdrop-filter: blur(20px) saturate(1.4);
     -webkit-backdrop-filter: blur(20px) saturate(1.4);
-    border: 1.5px solid rgba(255, 255, 100, 0.25);
-    border-radius: var(--radius-circle);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 4px 16px rgba(255, 255, 100, 0.15), 0 2px 8px rgba(0, 0, 0, 0.15), inset 0 1px 0 var(--white-a08);
 }
 
 .genius-enrich-button:hover {
     background: linear-gradient(135deg, rgba(255, 255, 100, 0.16) 0%, rgba(200, 200, 50, 0.22) 100%);
-    border-color: rgba(255, 255, 100, 0.4);
-    transform: scale(1.05);
     box-shadow: 0 6px 20px rgba(255, 255, 100, 0.25), 0 3px 12px rgba(0, 0, 0, 0.2), inset 0 1px 0 var(--white-a12);
 }
 
@@ -43747,7 +43353,6 @@ div.artist-hero-badge {
     width: 24px;
     height: 24px;
     object-fit: contain;
-    opacity: 0.85;
     transition: opacity 0.3s ease;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
     border-radius: var(--radius-circle);
@@ -43755,24 +43360,6 @@ div.artist-hero-badge {
 
 .genius-enrich-button:hover .genius-enrich-logo {
     opacity: 1;
-}
-
-.genius-enrich-spinner {
-    position: absolute;
-    width: 44px;
-    height: 44px;
-    border: 3px solid transparent;
-    border-top-color: rgba(255, 255, 100, 0.8);
-    border-right-color: rgba(255, 255, 100, 0.5);
-    border-radius: var(--radius-circle);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-}
-
-.genius-enrich-button.active .genius-enrich-spinner {
-    opacity: 1;
-    animation: genius-spin 1.2s linear infinite;
 }
 
 .genius-enrich-button.active {
@@ -43812,23 +43399,6 @@ div.artist-hero-badge {
     box-shadow: 0 6px 20px rgba(255, 193, 7, 0.3), 0 3px 12px rgba(0, 0, 0, 0.2);
 }
 
-@keyframes genius-spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-.genius-enrich-tooltip {
-    position: absolute;
-    left: 50%;
-    top: calc(100% + 12px);
-    transform: translateX(-50%) translateY(-5px);
-    z-index: 5000;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    pointer-events: none;
-}
-
 .genius-enrich-button:hover+.genius-enrich-tooltip {
     opacity: 1;
     visibility: visible;
@@ -43836,13 +43406,8 @@ div.artist-hero-badge {
 }
 
 .genius-enrich-tooltip-content {
-    min-width: 260px;
-    background: linear-gradient(135deg, rgba(30, 30, 30, 0.98) 0%, rgba(20, 20, 20, 0.99) 100%);
     backdrop-filter: blur(40px) saturate(1.6);
     -webkit-backdrop-filter: blur(40px) saturate(1.6);
-    border: 1px solid rgba(255, 255, 100, 0.3);
-    border-radius: var(--radius-xl);
-    padding: 16px 18px;
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 6px 20px rgba(255, 255, 100, 0.2), inset 0 1px 0 var(--white-a10);
 }
 
@@ -43850,9 +43415,7 @@ div.artist-hero-badge {
     font-family: 'SF Pro Display', -apple-system, sans-serif;
     font-size: 13px;
     font-weight: 600;
-    color: rgba(255, 255, 100, 0.95);
     letter-spacing: -0.2px;
-    margin-bottom: 12px;
     padding-bottom: 10px;
     border-bottom: 1px solid var(--white-a08);
 }
@@ -43936,32 +43499,19 @@ div.artist-hero-badge {
    ======================================== */
 
 .bandcamp-enrich-button-container {
-    position: relative;
-    display: inline-block;
-    margin-right: 12px;
+    --ew-rgb: 29, 160, 195;
+    --ew-rgb-2: 20, 130, 165;
 }
 
 .bandcamp-enrich-button {
-    position: relative;
-    width: 44px;
-    height: 44px;
     background: linear-gradient(135deg, rgba(29, 160, 195, 0.10) 0%, rgba(20, 130, 165, 0.16) 100%);
     backdrop-filter: blur(20px) saturate(1.4);
     -webkit-backdrop-filter: blur(20px) saturate(1.4);
-    border: 1.5px solid rgba(29, 160, 195, 0.25);
-    border-radius: var(--radius-circle);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 4px 16px rgba(29, 160, 195, 0.15), 0 2px 8px rgba(0, 0, 0, 0.15), inset 0 1px 0 var(--white-a08);
 }
 
 .bandcamp-enrich-button:hover {
     background: linear-gradient(135deg, rgba(29, 160, 195, 0.16) 0%, rgba(20, 130, 165, 0.22) 100%);
-    border-color: rgba(29, 160, 195, 0.4);
-    transform: scale(1.05);
     box-shadow: 0 6px 20px rgba(29, 160, 195, 0.25), 0 3px 12px rgba(0, 0, 0, 0.2), inset 0 1px 0 var(--white-a12);
 }
 
@@ -43973,7 +43523,6 @@ div.artist-hero-badge {
     width: 24px;
     height: 24px;
     object-fit: contain;
-    opacity: 0.85;
     transition: opacity 0.3s ease;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
     border-radius: var(--radius-circle);
@@ -43981,24 +43530,6 @@ div.artist-hero-badge {
 
 .bandcamp-enrich-button:hover .bandcamp-enrich-logo {
     opacity: 1;
-}
-
-.bandcamp-enrich-spinner {
-    position: absolute;
-    width: 44px;
-    height: 44px;
-    border: 3px solid transparent;
-    border-top-color: rgba(29, 160, 195, 0.8);
-    border-right-color: rgba(29, 160, 195, 0.5);
-    border-radius: var(--radius-circle);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-}
-
-.bandcamp-enrich-button.active .bandcamp-enrich-spinner {
-    opacity: 1;
-    animation: bandcamp-spin 1.2s linear infinite;
 }
 
 .bandcamp-enrich-button.active {
@@ -44038,23 +43569,6 @@ div.artist-hero-badge {
     box-shadow: 0 6px 20px rgba(255, 193, 7, 0.3), 0 3px 12px rgba(0, 0, 0, 0.2);
 }
 
-@keyframes bandcamp-spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-.bandcamp-enrich-tooltip {
-    position: absolute;
-    left: 50%;
-    top: calc(100% + 12px);
-    transform: translateX(-50%) translateY(-5px);
-    z-index: 5000;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    pointer-events: none;
-}
-
 .bandcamp-enrich-button:hover+.bandcamp-enrich-tooltip {
     opacity: 1;
     visibility: visible;
@@ -44062,13 +43576,8 @@ div.artist-hero-badge {
 }
 
 .bandcamp-enrich-tooltip-content {
-    min-width: 260px;
-    background: linear-gradient(135deg, rgba(30, 30, 30, 0.98) 0%, rgba(20, 20, 20, 0.99) 100%);
     backdrop-filter: blur(40px) saturate(1.6);
     -webkit-backdrop-filter: blur(40px) saturate(1.6);
-    border: 1px solid rgba(29, 160, 195, 0.3);
-    border-radius: var(--radius-xl);
-    padding: 16px 18px;
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 6px 20px rgba(29, 160, 195, 0.2), inset 0 1px 0 var(--white-a10);
 }
 
@@ -44076,9 +43585,7 @@ div.artist-hero-badge {
     font-family: 'SF Pro Display', -apple-system, sans-serif;
     font-size: 13px;
     font-weight: 600;
-    color: rgba(29, 160, 195, 0.95);
     letter-spacing: -0.2px;
-    margin-bottom: 12px;
     padding-bottom: 10px;
     border-bottom: 1px solid var(--white-a08);
 }
@@ -44162,32 +43669,22 @@ div.artist-hero-badge {
    ======================================== */
 
 .tidal-enrich-button-container {
-    position: relative;
-    display: inline-block;
-    margin-right: 12px;
+    --ew-rgb: 0, 0, 0;
+    --ew-rgb-2: 30, 30, 30;
 }
 
 .tidal-enrich-button {
-    position: relative;
-    width: 44px;
-    height: 44px;
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.15) 0%, rgba(30, 30, 30, 0.22) 100%);
     backdrop-filter: blur(20px) saturate(1.4);
     -webkit-backdrop-filter: blur(20px) saturate(1.4);
     border: 1.5px solid var(--white-a20);
     border-radius: var(--radius-circle);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25), 0 2px 8px rgba(0, 0, 0, 0.15), inset 0 1px 0 var(--white-a08);
 }
 
 .tidal-enrich-button:hover {
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.22) 0%, rgba(30, 30, 30, 0.30) 100%);
     border-color: var(--white-a35);
-    transform: scale(1.05);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35), 0 3px 12px rgba(0, 0, 0, 0.2), inset 0 1px 0 var(--white-a12);
 }
 
@@ -44199,7 +43696,6 @@ div.artist-hero-badge {
     width: 24px;
     height: 24px;
     object-fit: contain;
-    opacity: 0.85;
     transition: opacity 0.3s ease;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)) invert(1) brightness(1.8);
     border-radius: var(--radius-circle);
@@ -44210,21 +43706,9 @@ div.artist-hero-badge {
 }
 
 .tidal-enrich-spinner {
-    position: absolute;
-    width: 44px;
-    height: 44px;
-    border: 3px solid transparent;
     border-top-color: var(--white-a80);
     border-right-color: var(--white-a50);
     border-radius: var(--radius-circle);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-}
-
-.tidal-enrich-button.active .tidal-enrich-spinner {
-    opacity: 1;
-    animation: tidal-spin 1.2s linear infinite;
 }
 
 .tidal-enrich-button.active {
@@ -44264,23 +43748,6 @@ div.artist-hero-badge {
     box-shadow: 0 6px 20px rgba(255, 193, 7, 0.3), 0 3px 12px rgba(0, 0, 0, 0.2);
 }
 
-@keyframes tidal-spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-.tidal-enrich-tooltip {
-    position: absolute;
-    left: 50%;
-    top: calc(100% + 12px);
-    transform: translateX(-50%) translateY(-5px);
-    z-index: 5000;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    pointer-events: none;
-}
-
 .tidal-enrich-button:hover+.tidal-enrich-tooltip {
     opacity: 1;
     visibility: visible;
@@ -44288,13 +43755,11 @@ div.artist-hero-badge {
 }
 
 .tidal-enrich-tooltip-content {
-    min-width: 260px;
     background: linear-gradient(135deg, rgba(30, 30, 30, 0.98) 0%, rgba(20, 20, 20, 0.99) 100%);
     backdrop-filter: blur(40px) saturate(1.6);
     -webkit-backdrop-filter: blur(40px) saturate(1.6);
     border: 1px solid var(--white-a30);
     border-radius: var(--radius-xl);
-    padding: 16px 18px;
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 6px 20px rgba(0, 0, 0, 0.3), inset 0 1px 0 var(--white-a10);
 }
 
@@ -44304,7 +43769,6 @@ div.artist-hero-badge {
     font-weight: 600;
     color: rgba(255, 255, 255, 0.95);
     letter-spacing: -0.2px;
-    margin-bottom: 12px;
     padding-bottom: 10px;
     border-bottom: 1px solid var(--white-a08);
 }
@@ -44388,32 +43852,19 @@ div.artist-hero-badge {
    ======================================== */
 
 .qobuz-enrich-button-container {
-    position: relative;
-    display: inline-block;
-    margin-right: 12px;
+    --ew-rgb: 1, 112, 239;
+    --ew-rgb-2: 1, 90, 200;
 }
 
 .qobuz-enrich-button {
-    position: relative;
-    width: 44px;
-    height: 44px;
     background: linear-gradient(135deg, rgba(1, 112, 239, 0.10) 0%, rgba(1, 90, 200, 0.16) 100%);
     backdrop-filter: blur(20px) saturate(1.4);
     -webkit-backdrop-filter: blur(20px) saturate(1.4);
-    border: 1.5px solid rgba(1, 112, 239, 0.25);
-    border-radius: var(--radius-circle);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 4px 16px rgba(1, 112, 239, 0.15), 0 2px 8px rgba(0, 0, 0, 0.15), inset 0 1px 0 var(--white-a08);
 }
 
 .qobuz-enrich-button:hover {
     background: linear-gradient(135deg, rgba(1, 112, 239, 0.16) 0%, rgba(1, 90, 200, 0.22) 100%);
-    border-color: rgba(1, 112, 239, 0.4);
-    transform: scale(1.05);
     box-shadow: 0 6px 20px rgba(1, 112, 239, 0.25), 0 3px 12px rgba(0, 0, 0, 0.2), inset 0 1px 0 var(--white-a12);
 }
 
@@ -44425,7 +43876,6 @@ div.artist-hero-badge {
     width: 24px;
     height: 24px;
     object-fit: contain;
-    opacity: 0.85;
     transition: opacity 0.3s ease;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)) invert(1);
     border-radius: var(--radius-circle);
@@ -44433,24 +43883,6 @@ div.artist-hero-badge {
 
 .qobuz-enrich-button:hover .qobuz-enrich-logo {
     opacity: 1;
-}
-
-.qobuz-enrich-spinner {
-    position: absolute;
-    width: 44px;
-    height: 44px;
-    border: 3px solid transparent;
-    border-top-color: rgba(1, 112, 239, 0.8);
-    border-right-color: rgba(1, 112, 239, 0.5);
-    border-radius: var(--radius-circle);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-}
-
-.qobuz-enrich-button.active .qobuz-enrich-spinner {
-    opacity: 1;
-    animation: qobuz-spin 1.2s linear infinite;
 }
 
 .qobuz-enrich-button.active {
@@ -44490,23 +43922,6 @@ div.artist-hero-badge {
     box-shadow: 0 6px 20px rgba(255, 193, 7, 0.3), 0 3px 12px rgba(0, 0, 0, 0.2);
 }
 
-@keyframes qobuz-spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-.qobuz-enrich-tooltip {
-    position: absolute;
-    left: 50%;
-    top: calc(100% + 12px);
-    transform: translateX(-50%) translateY(-5px);
-    z-index: 5000;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    pointer-events: none;
-}
-
 .qobuz-enrich-button:hover+.qobuz-enrich-tooltip {
     opacity: 1;
     visibility: visible;
@@ -44514,13 +43929,8 @@ div.artist-hero-badge {
 }
 
 .qobuz-enrich-tooltip-content {
-    min-width: 260px;
-    background: linear-gradient(135deg, rgba(30, 30, 30, 0.98) 0%, rgba(20, 20, 20, 0.99) 100%);
     backdrop-filter: blur(40px) saturate(1.6);
     -webkit-backdrop-filter: blur(40px) saturate(1.6);
-    border: 1px solid rgba(1, 112, 239, 0.3);
-    border-radius: var(--radius-xl);
-    padding: 16px 18px;
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 6px 20px rgba(1, 112, 239, 0.2), inset 0 1px 0 var(--white-a10);
 }
 
@@ -44528,9 +43938,7 @@ div.artist-hero-badge {
     font-family: 'SF Pro Display', -apple-system, sans-serif;
     font-size: 13px;
     font-weight: 600;
-    color: rgba(1, 112, 239, 0.95);
     letter-spacing: -0.2px;
-    margin-bottom: 12px;
     padding-bottom: 10px;
     border-bottom: 1px solid var(--white-a08);
 }
@@ -44613,30 +44021,15 @@ div.artist-hero-badge {
    HYDRABASE P2P MIRROR WORKER BUTTON
    ======================================== */
 
-.hydrabase-button-container {
-    position: relative;
-    display: inline-block;
-    margin-right: 12px;
-}
-
 .hydrabase-button {
-    position: relative;
-    width: 44px;
-    height: 44px;
-    border-radius: var(--radius-circle);
     border: 2px solid var(--white-a25);
     background: linear-gradient(135deg, var(--white-a08) 0%, var(--white-a04) 100%);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     transition: all 0.3s ease;
     overflow: visible;
     padding: 0;
 }
 
 .hydrabase-button:hover {
-    transform: scale(1.05);
     background: linear-gradient(135deg, var(--white-a15) 0%, var(--white-a08) 100%);
     border-color: var(--white-a40);
     box-shadow: 0 0 15px var(--white-a15);
@@ -44649,32 +44042,21 @@ div.artist-hero-badge {
 .hydrabase-worker-logo {
     width: 24px;
     height: 24px;
-    opacity: 0.85;
     filter: brightness(0) invert(1);
     transition: opacity 0.3s ease;
     z-index: 1;
 }
 
 .hydrabase-spinner {
-    position: absolute;
     top: -2px;
     left: -2px;
-    width: 44px;
-    height: 44px;
     border: 2px solid transparent;
     border-top-color: var(--white-a60);
     border-right-color: var(--white-a30);
     border-radius: var(--radius-circle);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
 }
 
 /* Active state — white spinning */
-.hydrabase-button.active .hydrabase-spinner {
-    opacity: 1;
-    animation: hydrabase-spin 1.2s linear infinite;
-}
 
 .hydrabase-button.active {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.22) 0%, var(--white-a10) 100%);
@@ -44702,27 +44084,12 @@ div.artist-hero-badge {
     opacity: 0;
 }
 
-@keyframes hydrabase-spin {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-
 /* Tooltip */
 .hydrabase-tooltip {
-    position: absolute;
     top: calc(100% + 8px);
     left: 50%;
     transform: translateX(-50%);
-    z-index: 5000;
-    opacity: 0;
-    visibility: hidden;
     transition: opacity 0.2s ease, visibility 0.2s ease;
-    pointer-events: none;
 }
 
 .hydrabase-button-container:hover .hydrabase-tooltip {
@@ -44741,7 +44108,6 @@ div.artist-hero-badge {
 }
 
 .hydrabase-tooltip-header {
-    font-weight: 600;
     font-size: 12px;
     color: var(--white-a90);
     margin-bottom: 6px;
@@ -44814,35 +44180,16 @@ div.artist-hero-badge {
     100% { border-top-color: rgba(255, 0, 0, 0.8); border-right-color: rgba(255, 136, 0, 0.5); }
 }
 
-@keyframes repair-spin {
-    from { transform: rotate(0deg); }
-    to   { transform: rotate(360deg); }
-}
-
 /* Container */
 .repair-button-container {
-    position: relative;
-    display: inline-block;
-    margin-right: 12px;
+    --ew-rgb: 180, 130, 255;
+    --ew-rgb-2: 130, 80, 220;
 }
 
 /* Base Button */
 .repair-button {
-    position: relative;
-    width: 44px;
-    height: 44px;
-    background: linear-gradient(135deg,
-            rgba(180, 130, 255, 0.12) 0%,
-            rgba(130, 80, 220, 0.18) 100%);
     backdrop-filter: blur(20px) saturate(1.4);
     -webkit-backdrop-filter: blur(20px) saturate(1.4);
-    border: 1.5px solid rgba(180, 130, 255, 0.25);
-    border-radius: var(--radius-circle);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow:
         0 4px 16px rgba(180, 130, 255, 0.2),
         0 2px 8px rgba(0, 0, 0, 0.15),
@@ -44853,8 +44200,6 @@ div.artist-hero-badge {
     background: linear-gradient(135deg,
             rgba(180, 130, 255, 0.18) 0%,
             rgba(130, 80, 220, 0.25) 100%);
-    border-color: rgba(180, 130, 255, 0.4);
-    transform: scale(1.05);
     box-shadow:
         0 6px 20px rgba(180, 130, 255, 0.3),
         0 3px 12px rgba(0, 0, 0, 0.2),
@@ -44874,7 +44219,6 @@ div.artist-hero-badge {
     height: 24px;
     object-fit: cover;
     border-radius: var(--radius-circle);
-    opacity: 0.85;
     transition: opacity 0.3s ease;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
@@ -44883,24 +44227,9 @@ div.artist-hero-badge {
     opacity: 1;
 }
 
-/* Spinner Ring */
-.repair-spinner {
-    position: absolute;
-    width: 44px;
-    height: 44px;
-    border: 3px solid transparent;
-    border-top-color: rgba(180, 130, 255, 0.8);
-    border-right-color: rgba(180, 130, 255, 0.5);
-    border-radius: var(--radius-circle);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-}
-
 /* Active State — Rainbow! */
 .repair-button.active .repair-spinner {
-    opacity: 1;
-    animation: repair-spin 1.2s linear infinite, rainbow-spinner 3s linear infinite;
+    animation: enrich-worker-spin 1.2s linear infinite, rainbow-spinner 3s linear infinite;
 }
 
 .repair-button.active {
@@ -44959,18 +44288,6 @@ div.artist-hero-badge {
    REPAIR WORKER HOVER TOOLTIP
    ============================================================================ */
 
-.repair-tooltip {
-    position: absolute;
-    left: 50%;
-    top: calc(100% + 12px);
-    transform: translateX(-50%) translateY(-5px);
-    z-index: 5000;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    pointer-events: none;
-}
-
 .repair-button:hover+.repair-tooltip {
     opacity: 1;
     visibility: visible;
@@ -44979,14 +44296,8 @@ div.artist-hero-badge {
 
 .repair-tooltip-content {
     min-width: 280px;
-    background: linear-gradient(135deg,
-            rgba(30, 30, 30, 0.98) 0%,
-            rgba(20, 20, 20, 0.99) 100%);
     backdrop-filter: blur(40px) saturate(1.6);
     -webkit-backdrop-filter: blur(40px) saturate(1.6);
-    border: 1px solid rgba(180, 130, 255, 0.3);
-    border-radius: var(--radius-xl);
-    padding: 16px 18px;
     box-shadow:
         0 12px 40px rgba(0, 0, 0, 0.5),
         0 6px 20px rgba(180, 130, 255, 0.25),
@@ -44997,9 +44308,7 @@ div.artist-hero-badge {
     font-family: 'SF Pro Display', -apple-system, sans-serif;
     font-size: 13px;
     font-weight: 600;
-    color: rgba(180, 130, 255, 0.95);
     letter-spacing: -0.2px;
-    margin-bottom: 12px;
     padding-bottom: 10px;
     border-bottom: 1px solid var(--white-a08);
 }
@@ -45052,28 +44361,15 @@ div.artist-hero-badge {
    ============================================================================ */
 
 .soulid-button-container {
-    position: relative;
     display: flex;
     align-items: center;
-    margin-right: 12px;
+    --ew-rgb: var(--accent-rgb);
+    --ew-rgb-2: 100, 80, 220;
 }
 
 .soulid-button {
-    position: relative;
-    width: 44px;
-    height: 44px;
-    background: linear-gradient(135deg,
-            rgba(var(--accent-rgb), 0.12) 0%,
-            rgba(100, 80, 220, 0.18) 100%);
     backdrop-filter: blur(20px) saturate(1.4);
     -webkit-backdrop-filter: blur(20px) saturate(1.4);
-    border: 1.5px solid rgba(var(--accent-rgb), 0.25);
-    border-radius: var(--radius-circle);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow:
         0 4px 16px rgba(var(--accent-rgb), 0.15),
         0 2px 8px rgba(0, 0, 0, 0.15),
@@ -45084,8 +44380,6 @@ div.artist-hero-badge {
     background: linear-gradient(135deg,
             rgba(var(--accent-rgb), 0.18) 0%,
             rgba(100, 80, 220, 0.25) 100%);
-    border-color: rgba(var(--accent-rgb), 0.4);
-    transform: scale(1.05);
     box-shadow:
         0 6px 20px rgba(var(--accent-rgb), 0.25),
         0 3px 12px rgba(0, 0, 0, 0.2),
@@ -45101,7 +44395,6 @@ div.artist-hero-badge {
     height: 24px;
     object-fit: cover;
     border-radius: var(--radius-circle);
-    opacity: 0.85;
     transition: opacity 0.3s ease;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
@@ -45111,22 +44404,13 @@ div.artist-hero-badge {
 }
 
 .soulid-spinner {
-    position: absolute;
-    width: 44px;
-    height: 44px;
-    border: 3px solid transparent;
-    border-top-color: rgba(var(--accent-rgb), 0.8);
     border-right-color: rgba(100, 80, 220, 0.5);
     border-radius: var(--radius-circle);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
 }
 
 /* Active State — Rainbow spinner */
 .soulid-button.active .soulid-spinner {
-    opacity: 1;
-    animation: repair-spin 1.2s linear infinite, rainbow-spinner 3s linear infinite;
+    animation: enrich-worker-spin 1.2s linear infinite, rainbow-spinner 3s linear infinite;
 }
 
 .soulid-button.active {
@@ -45163,17 +44447,6 @@ div.artist-hero-badge {
 }
 
 /* Tooltip */
-.soulid-tooltip {
-    position: absolute;
-    left: 50%;
-    top: calc(100% + 12px);
-    transform: translateX(-50%) translateY(-5px);
-    z-index: 5000;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    pointer-events: none;
-}
 
 .soulid-button:hover+.soulid-tooltip {
     opacity: 1;
@@ -45182,15 +44455,8 @@ div.artist-hero-badge {
 }
 
 .soulid-tooltip-content {
-    min-width: 260px;
-    background: linear-gradient(135deg,
-            rgba(30, 30, 30, 0.98) 0%,
-            rgba(20, 20, 20, 0.99) 100%);
     backdrop-filter: blur(40px) saturate(1.6);
     -webkit-backdrop-filter: blur(40px) saturate(1.6);
-    border: 1px solid rgba(var(--accent-rgb), 0.3);
-    border-radius: var(--radius-xl);
-    padding: 16px 18px;
     box-shadow:
         0 12px 40px rgba(0, 0, 0, 0.5),
         0 6px 20px rgba(var(--accent-rgb), 0.15),
@@ -45201,9 +44467,7 @@ div.artist-hero-badge {
     font-family: 'SF Pro Display', -apple-system, sans-serif;
     font-size: 13px;
     font-weight: 600;
-    color: rgba(var(--accent-rgb), 0.95);
     letter-spacing: -0.2px;
-    margin-bottom: 12px;
     padding-bottom: 10px;
     border-bottom: 1px solid var(--white-a08);
 }
