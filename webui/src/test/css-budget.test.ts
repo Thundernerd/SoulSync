@@ -108,8 +108,13 @@ function undefinedCustomProperties(): string[] {
     ...listFiles('src', (p) => /\.tsx?$/.test(p) && !/\.(test|spec)\.tsx?$/.test(p)),
     'index.html',
   ];
+  // They also read them in inline styles, so their var() uses count too (bar a
+  // name built in a template, like `--batch-color-${i}`).
   for (const file of code) {
-    for (const [name] of read(file).matchAll(/--[A-Za-z][\w-]*/g)) defined.add(name);
+    const text = read(file);
+    for (const [, name] of text.matchAll(/var\(\s*(--[\w-]+)(?![\w-]*\$\{)/g)) used.add(name);
+    const rest = text.replace(/var\(\s*--[\w-]+/g, '');
+    for (const [name] of rest.matchAll(/--[A-Za-z][\w-]*/g)) defined.add(name);
   }
   return [...used].filter((name) => !defined.has(name) && !OPTIONAL_HOOKS.has(name)).sort();
 }
