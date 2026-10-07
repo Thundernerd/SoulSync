@@ -15,7 +15,7 @@
   color: #ffffff;
   position: relative;
   font-family: inherit;
-  transition: padding-top 0.25s ease;
+  transition: padding-top var(--dur-moderate) ease;
 }
 
 .audiobooksContainerWithPlayer {
@@ -110,7 +110,7 @@
 .emptyState {
   padding: 56px 24px;
   text-align: center;
-  border-radius: 18px;
+  border-radius: var(--radius-sheet);
   background: var(--white-a03);
   border: 1px solid var(--white-a07);
   color: inherit;
@@ -148,13 +148,13 @@
   flex: 1 1 420px;
   padding: 0 8px 0 16px;
   height: 48px;
-  border-radius: 14px;
+  border-radius: var(--radius-card);
   background: var(--white-a05);
   border: 1px solid var(--white-a09);
   transition:
-    border-color 0.18s ease,
-    background 0.18s ease,
-    box-shadow 0.18s ease;
+    border-color var(--dur-quick) ease,
+    background var(--dur-quick) ease,
+    box-shadow var(--dur-quick) ease;
 }
 
 .searchBarFocused .searchInputWrap {
@@ -218,8 +218,8 @@
   font-family: inherit;
   cursor: pointer;
   transition:
-    opacity 0.15s ease,
-    transform 0.15s ease;
+    opacity var(--dur-fast) ease,
+    transform var(--dur-fast) ease;
 }
 
 .searchSubmit:hover:not(:disabled) {
@@ -250,8 +250,8 @@
   font-family: inherit;
   cursor: pointer;
   transition:
-    background 0.15s ease,
-    color 0.15s ease;
+    background var(--dur-fast) ease,
+    color var(--dur-fast) ease;
 }
 
 .searchMode:hover {
@@ -282,7 +282,7 @@
   gap: 9px;
   height: 48px;
   padding: 0 18px;
-  border-radius: 14px;
+  border-radius: var(--radius-card);
   border: 1px solid var(--white-a10);
   background: var(--white-a05);
   color: rgba(255, 255, 255, 0.82);
@@ -389,7 +389,7 @@
   backdrop-filter: blur(10px);
   color: var(--white-a85);
   cursor: pointer;
-  transition: background 0.15s ease;
+  transition: background var(--dur-fast) ease;
 }
 
 .genreArrow[hidden] {
@@ -422,9 +422,9 @@
   white-space: nowrap;
   cursor: pointer;
   transition:
-    background 0.15s ease,
-    color 0.15s ease,
-    border-color 0.15s ease;
+    background var(--dur-fast) ease,
+    color var(--dur-fast) ease,
+    border-color var(--dur-fast) ease;
 }
 
 .genrePill:hover {
@@ -493,12 +493,12 @@
 .heroCover {
   width: 250px;
   height: 250px;
-  border-radius: 18px;
+  border-radius: var(--radius-sheet);
   object-fit: cover;
   flex-shrink: 0;
   border: 1px solid var(--white-a12);
   box-shadow: 0 32px 68px rgba(0, 0, 0, 0.66);
-  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.3, 1);
+  transition: transform var(--dur-slower) cubic-bezier(0.2, 0.8, 0.3, 1);
 }
 
 .hero:hover .heroCover {
@@ -601,8 +601,8 @@
   cursor: pointer;
   text-decoration: none;
   transition:
-    transform 0.15s ease,
-    background 0.15s ease;
+    transform var(--dur-fast) ease,
+    background var(--dur-fast) ease;
 }
 
 .heroPrimary {
@@ -698,8 +698,8 @@
   color: var(--white-a75);
   cursor: pointer;
   transition:
-    background 0.15s ease,
-    opacity 0.15s ease;
+    background var(--dur-fast) ease,
+    opacity var(--dur-fast) ease;
 }
 
 .railArrow:hover:not(:disabled) {
@@ -758,21 +758,21 @@
   overflow: hidden;
   aspect-ratio: 1 / 1;
   background: var(--white-a05);
-  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 10px 26px var(--black-a40);
   transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+    transform var(--dur-base) ease,
+    box-shadow var(--dur-base) ease;
 }
 
 .card:hover .cardCoverLink {
   transform: translateY(-4px);
-  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.55);
+  box-shadow: 0 18px 38px var(--black-a55);
 }
 
 .cardActive .cardCoverLink {
   box-shadow:
     0 0 0 2px rgba(var(--accent-rgb), 0.9),
-    0 18px 38px rgba(0, 0, 0, 0.55);
+    0 18px 38px var(--black-a55);
 }
 
 .cardCover {
@@ -826,7 +826,7 @@
   height: 34px;
   border: none;
   border-radius: var(--radius-circle);
-  background: rgba(0, 0, 0, 0.65);
+  background: var(--black-a65);
   backdrop-filter: blur(8px);
   color: #fff;
   cursor: pointer;
@@ -964,9 +964,9 @@
   font-family: inherit;
   cursor: pointer;
   transition:
-    background 0.15s ease,
-    color 0.15s ease,
-    border-color 0.15s ease;
+    background var(--dur-fast) ease,
+    color var(--dur-fast) ease,
+    border-color var(--dur-fast) ease;
 }
 
 .worksJumpPill:hover {
@@ -1003,7 +1003,7 @@
   font-variant-numeric: tabular-nums;
   color: #ffffff;
   background: rgba(var(--accent-rgb), 0.95);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 4px 12px var(--black-a45);
 }
 
 /* ── Ratings ────────────────────────────────────────────────────────────── */
@@ -1070,7 +1070,7 @@
   align-items: center;
   margin-top: 26px;
   padding: 22px 26px;
-  border-radius: 18px;
+  border-radius: var(--radius-sheet);
   background: linear-gradient(135deg, var(--white-a07) 0%, rgba(255, 255, 255, 0.025) 100%);
   border: 1px solid var(--white-a08);
   border-top-color: var(--white-a14);
@@ -1182,9 +1182,9 @@
   text-decoration: none;
   cursor: pointer;
   transition:
-    background 0.18s ease,
-    color 0.18s ease,
-    transform 0.18s ease;
+    background var(--dur-quick) ease,
+    color var(--dur-quick) ease,
+    transform var(--dur-quick) ease;
 }
 
 .backBtn:hover {
@@ -1246,7 +1246,7 @@
   border-radius: 20px;
   object-fit: cover;
   border: 1px solid var(--white-a12);
-  box-shadow: 0 34px 76px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 34px 76px var(--black-a70);
 }
 
 .detailPlay {
@@ -1263,7 +1263,7 @@
   font-weight: 640;
   font-family: inherit;
   cursor: pointer;
-  transition: transform 0.15s ease;
+  transition: transform var(--dur-fast) ease;
 }
 
 .detailPlay:hover {
@@ -1470,7 +1470,7 @@
   align-items: flex-end;
   min-height: 132px;
   padding: 16px 18px;
-  border-radius: 18px;
+  border-radius: var(--radius-sheet);
   overflow: hidden;
   isolation: isolate;
   text-decoration: none;
@@ -1479,15 +1479,15 @@
   border-top-color: var(--white-a15);
   background: var(--white-a04);
   transition:
-    transform 0.25s cubic-bezier(0.2, 0.8, 0.3, 1),
-    border-color 0.25s ease,
-    box-shadow 0.25s ease;
+    transform var(--dur-moderate) cubic-bezier(0.2, 0.8, 0.3, 1),
+    border-color var(--dur-moderate) ease,
+    box-shadow var(--dur-moderate) ease;
 }
 
 .personTile:hover {
   transform: translateY(-4px);
   border-color: rgba(var(--accent-rgb), 0.5);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 20px 40px var(--black-a50);
 }
 
 .personTileWash {
@@ -1499,7 +1499,7 @@
   transform: scale(1.05);
   opacity: 0.85;
   z-index: -2;
-  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.3, 1);
+  transition: transform var(--dur-slowest) cubic-bezier(0.2, 0.8, 0.3, 1);
 }
 
 .personTile:hover .personTileWash {
@@ -1533,7 +1533,7 @@
   border-radius: 7px;
   object-fit: cover;
   border: 1px solid var(--white-a18);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 12px var(--black-a50);
   transform: rotate(calc(var(--spine) * 6deg));
   transition: transform 0.28s ease;
 }
@@ -1811,8 +1811,8 @@
   text-decoration: none;
   border-bottom: 1px solid transparent;
   transition:
-    color 0.15s ease,
-    border-color 0.15s ease;
+    color var(--dur-fast) ease,
+    border-color var(--dur-fast) ease;
 }
 
 .personLink:hover {
@@ -1849,8 +1849,8 @@
   color: inherit;
   border: 1px solid transparent;
   transition:
-    background 0.15s ease,
-    border-color 0.15s ease;
+    background var(--dur-fast) ease,
+    border-color var(--dur-fast) ease;
 }
 
 .seriesLink:hover {
@@ -2031,7 +2031,7 @@
   border: 1px solid var(--white-a10);
   border-top-color: var(--white-a18);
   background: rgba(20, 20, 25, 0.98);
-  box-shadow: 0 40px 90px rgba(0, 0, 0, 0.65);
+  box-shadow: 0 40px 90px var(--black-a65);
   overflow: hidden;
 }
 
@@ -2126,8 +2126,8 @@
   border: 1px solid var(--white-a07);
   background: var(--white-a04);
   transition:
-    border-color 0.15s ease,
-    background 0.15s ease;
+    border-color var(--dur-fast) ease,
+    background var(--dur-fast) ease;
 }
 
 .releaseRow:hover {
@@ -2464,8 +2464,8 @@
   font-family: inherit;
   cursor: pointer;
   transition:
-    background 0.15s ease,
-    color 0.15s ease;
+    background var(--dur-fast) ease,
+    color var(--dur-fast) ease;
 }
 
 .reviewPill:hover {
@@ -2498,8 +2498,8 @@
   font-family: inherit;
   cursor: pointer;
   transition:
-    transform 0.15s ease,
-    opacity 0.15s ease;
+    transform var(--dur-fast) ease,
+    opacity var(--dur-fast) ease;
 }
 
 .releaseGrab:hover:not(:disabled) {

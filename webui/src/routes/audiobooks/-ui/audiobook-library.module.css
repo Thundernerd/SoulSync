@@ -79,7 +79,7 @@
   padding: 16px 18px;
   background: linear-gradient(110deg, rgba(var(--accent-rgb), 0.08), #ffffff02);
   border: 1px solid rgba(var(--accent-rgb), 0.15);
-  border-radius: 14px;
+  border-radius: var(--radius-card);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -374,7 +374,7 @@
   .modal {
     width: calc(100vw - 48px);
     height: calc(100dvh - 48px);
-    border-radius: 18px;
+    border-radius: var(--radius-sheet);
   }
   .header {
     padding: 22px 18px 18px;

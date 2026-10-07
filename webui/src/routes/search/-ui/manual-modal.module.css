@@ -91,7 +91,7 @@
   max-width: 100%;
   aspect-ratio: 1;
   border: 1.5px dashed var(--line-strong);
-  border-radius: 14px;
+  border-radius: var(--radius-card);
   background: repeating-linear-gradient(
     135deg,
     rgba(255, 255, 255, 0.015) 0 10px,
