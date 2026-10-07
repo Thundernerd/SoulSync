@@ -798,7 +798,7 @@
   font-weight: 680;
   letter-spacing: 0.01em;
   color: #08130c;
-  background: rgba(74, 222, 128, 0.94);
+  background: rgba(var(--success-rgb), 0.94);
   backdrop-filter: blur(6px);
 }
 
@@ -1306,8 +1306,8 @@
   font-weight: 650;
   letter-spacing: 0.01em;
   color: rgb(134, 239, 172);
-  background: rgba(74, 222, 128, 0.14);
-  border: 1px solid rgba(74, 222, 128, 0.32);
+  background: rgba(var(--success-rgb), 0.14);
+  border: 1px solid rgba(var(--success-rgb), 0.32);
 }
 
 .detailTitle {
@@ -2286,8 +2286,8 @@
 
 .quality_standard,
 .quality_good {
-  background: rgba(74, 222, 128, 0.14);
-  border-color: rgba(74, 222, 128, 0.32);
+  background: rgba(var(--success-rgb), 0.14);
+  border-color: rgba(var(--success-rgb), 0.32);
   color: rgb(134, 239, 172);
 }
 
