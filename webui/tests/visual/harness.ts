@@ -84,8 +84,13 @@ export function renderIndex() {
  *   `http.*` handlers the vitest route tests use; unmatched ones get `{}`,
  *   which every page already treats as "nothing here yet"
  * - anything off-origin (cover art, fonts, CDNs) is aborted
+ *
+ * Returns the /static/ paths that weren't on disk. A missing bundle (say
+ * dist/shell.js after a bare `vite build`) still boots a page that looks
+ * nearly right, so the spec fails on any of these rather than on a pixel diff.
  */
-export async function installShell(page: Page, handlers: RequestHandler[] = []) {
+export async function installShell(page: Page, handlers: RequestHandler[] = []): Promise<string[]> {
+  const missing: string[] = [];
   const index = renderIndex();
   await page.route(/.*/, async (route) => {
     const request = route.request();
@@ -102,6 +107,7 @@ export async function installShell(page: Page, handlers: RequestHandler[] = []) 
         const contentType = MIME[extname(file)] ?? 'application/octet-stream';
         return route.fulfill({ body, contentType });
       } catch {
+        missing.push(path);
         return route.fulfill({ status: 404, body: '' });
       }
     }
@@ -126,4 +132,5 @@ export async function installShell(page: Page, handlers: RequestHandler[] = []) 
     if (request.resourceType() === 'image') return route.fulfill({ status: 404, body: '' });
     return route.fulfill({ json: {} });
   });
+  return missing;
 }

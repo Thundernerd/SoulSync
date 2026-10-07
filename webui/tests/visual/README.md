@@ -8,6 +8,13 @@ npm run test:visual          # build, then compare every route with its baseline
 npm run test:visual:update   # build, then rewrite the baselines
 ```
 
+Both run the full `npm run build`: the app bundle and the shell bundle
+(`static/dist/shell.js`). A bare `vite build` empties `static/dist` and drops
+`shell.js`, which leaves the page booting without the shell globals (the
+sidebar "Library / <artist>" breadcrumb, among others). A shot fails outright
+when any `/static/` file is missing, so run `npm run build` before calling
+`playwright test -c playwright.visual.config.ts` by hand.
+
 The first time on a machine, install the browser this Playwright version pins:
 `npx playwright install chromium-headless-shell`.
 

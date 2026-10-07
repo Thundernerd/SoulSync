@@ -68,7 +68,10 @@ async function settle(page: Page) {
     .not.toBe('');
   // helper.js badges the help button 2.5s after load; wait it out so the
   // badge is in every shot rather than in some.
-  await expect(page.locator('#helper-float-btn')).toHaveClass(/\bhas-badge\b/);
+  // The generous timeout covers a loaded machine running every shot at once.
+  await expect(page.locator('#helper-float-btn')).toHaveClass(/\bhas-badge\b/, {
+    timeout: 15_000,
+  });
   await page.waitForLoadState('networkidle');
   await page.evaluate(() => document.fonts.ready);
 }
@@ -80,9 +83,13 @@ for (const viewport of VIEWPORTS) {
     for (const route of viewport.routes) {
       test(route.name, async ({ page }) => {
         await stabilise(page);
-        await installShell(page, [...(routeHandlers[route.name] ?? []), ...shellHandlers]);
+        const missing = await installShell(page, [
+          ...(routeHandlers[route.name] ?? []),
+          ...shellHandlers,
+        ]);
         await page.goto(`${ORIGIN}${route.path}`);
         await settle(page);
+        expect(missing, 'static files missing; run `npm run build`').toEqual([]);
         await expect(page).toHaveScreenshot([viewport.name, `${route.name}.png`]);
       });
     }
