@@ -9,6 +9,7 @@ import type {
   AudiobookWishlistSummary,
 } from '@/routes/audiobooks/-audiobooks.types';
 
+import { Spinner } from '@/components/primitives';
 import {
   fetchWishlist,
   removeFromWishlist,
@@ -265,7 +266,7 @@ export function WishlistAudiobooks({
           >
             {searching ? (
               <>
-                <span className={styles.searchNowSpinner} />
+                <Spinner size={14} tone="light" />
                 Searching…
               </>
             ) : (

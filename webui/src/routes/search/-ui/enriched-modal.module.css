@@ -166,22 +166,6 @@
   outline: none;
 }
 
-.spinner {
-  width: 14px;
-  height: 14px;
-  flex-shrink: 0;
-  border-radius: var(--radius-circle);
-  border: 2px solid var(--white-a15);
-  border-top-color: rgb(var(--accent-rgb));
-  animation: spin 0.8s linear infinite;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .notice {
   margin: 24px 0;
   text-align: center;
@@ -417,11 +401,5 @@
 
   .note {
     flex-basis: 100%;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .spinner {
-    animation-duration: 2s;
   }
 }

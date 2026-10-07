@@ -1,6 +1,8 @@
 import { Link } from '@tanstack/react-router';
 import { useEffect, useMemo, useRef, useState } from 'react';
 
+import { Spinner } from '@/components/primitives';
+
 import type { AudiobookReleaseContents } from '../-audiobooks.api';
 import type { AudiobookDownload } from '../-audiobooks.types';
 import type { AudiobookReleaseCandidate } from '../-audiobooks.types';
@@ -321,7 +323,7 @@ export function AudiobookReleasesModal({ asin, title, onClose }: AudiobookReleas
               role="status"
               aria-live="polite"
             >
-              <span className={styles.spinner} aria-hidden="true" />
+              <Spinner size={18} />
               {stage || 'Searching your indexers…'}
             </div>
           )}
