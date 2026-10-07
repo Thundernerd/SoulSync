@@ -5,6 +5,9 @@ import { join, relative, resolve } from 'node:path';
 
 export const WEBUI = process.cwd();
 
+/** Build output (vite outDir) and installed packages: not source. */
+const SKIP_DIRS = new Set(['node_modules', 'static/dist']);
+
 /** Every file under `dir` (relative to webui/) whose path passes `keep`, as webui-relative paths. */
 export function listFiles(dir: string, keep: (path: string) => boolean): string[] {
   const root = resolve(WEBUI, dir);
@@ -13,7 +16,7 @@ export function listFiles(dir: string, keep: (path: string) => boolean): string[
     for (const entry of readdirSync(abs, { withFileTypes: true })) {
       const next = join(abs, entry.name);
       if (entry.isDirectory()) {
-        if (entry.name !== 'node_modules') walk(next);
+        if (!SKIP_DIRS.has(relative(WEBUI, next).replace(/\\/g, '/'))) walk(next);
       } else if (keep(next)) {
         out.push(relative(WEBUI, next).replace(/\\/g, '/'));
       }
