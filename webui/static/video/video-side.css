@@ -4784,7 +4784,7 @@ body:not(.video-admin) .vst-combo-panels { grid-template-columns: 1fr; }
 .vc-banner { position: absolute; top: 0; left: 0; right: 0; height: 260px; z-index: 0;
     background-size: cover; background-position: center; }
 .vc-banner::after { content: ''; position: absolute; inset: 0;
-    background: linear-gradient(180deg, rgba(10,10,14,0.35), rgba(10,10,14,0.85) 70%, var(--bg, #0b0b0f)); }
+    background: linear-gradient(180deg, rgba(10,10,14,0.35), rgba(10,10,14,0.85) 70%, var(--bg-primary)); }
 .vc-page[data-has-banner="0"] .vc-banner {
     background: radial-gradient(120% 150% at 20% 0%, rgba(255,59,59,0.22), transparent 60%); }
 .vc-page .vd-back { position: relative; z-index: 2; margin: 18px 0 0; }
