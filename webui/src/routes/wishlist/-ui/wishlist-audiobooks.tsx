@@ -9,6 +9,7 @@ import type {
   AudiobookWishlistSummary,
 } from '@/routes/audiobooks/-audiobooks.types';
 
+import { EmptyState, Skeleton, Spinner } from '@/components/primitives';
 import {
   fetchWishlist,
   removeFromWishlist,
@@ -265,7 +266,7 @@ export function WishlistAudiobooks({
           >
             {searching ? (
               <>
-                <span className={styles.searchNowSpinner} />
+                <Spinner size={14} tone="light" />
                 Searching…
               </>
             ) : (
@@ -349,24 +350,26 @@ export function WishlistAudiobooks({
 
       {/* ── Content Presentation ───────────────────────────────────────── */}
       {loading ? (
-        <div className={styles.skeleton} aria-hidden="true" />
+        <Skeleton className={styles.skeleton} />
       ) : shown.length === 0 ? (
-        <div className={styles.empty}>
-          <div className={styles.emptyIcon}>🎧</div>
-          <h3>
-            {items.length === 0
+        <EmptyState
+          className={styles.empty}
+          icon="🎧"
+          title={
+            items.length === 0
               ? 'No audiobooks wanted yet'
               : query
                 ? `No audiobooks matching "${query}"`
-                : 'Nothing in this state'}
-          </h3>
-          <p>
-            {items.length === 0
+                : 'Nothing in this state'
+          }
+          description={
+            items.length === 0
               ? 'Add an audiobook from the catalogue and SoulSync will continually look across your indexers.'
               : query
                 ? 'Try adjusting your search query or clear the filter.'
-                : 'Try selecting a different status filter above.'}
-          </p>
+                : 'Try selecting a different status filter above.'
+          }
+        >
           {items.length === 0 ? (
             <Link to="/audiobooks" className={styles.browseLink}>
               Browse audiobooks
@@ -376,7 +379,7 @@ export function WishlistAudiobooks({
               Clear filter
             </button>
           ) : null}
-        </div>
+        </EmptyState>
       ) : viewMode === 'shelf' ? (
         /* ── Bookshelf Detailed List View ─────────────────────────────── */
         <ul className={styles.shelfList}>

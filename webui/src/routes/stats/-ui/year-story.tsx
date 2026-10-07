@@ -2,6 +2,8 @@ import { useQuery } from '@tanstack/react-query';
 import { Link } from '@tanstack/react-router';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
+import { Spinner } from '@/components/primitives';
+
 import type { YearAlbum, YearInListening, YearSlideKind } from '../-year.types';
 
 import {
@@ -136,7 +138,7 @@ export function YearStory({ onClose }: YearStoryProps) {
       <div className={styles.stage}>
         {isPending ? (
           <div className={styles.loadingWrap}>
-            <div className={styles.storySpinner} />
+            <Spinner className={styles.storySpinner} size={36} tone="soft" />
             <p className={styles.quiet}>Reading your year…</p>
           </div>
         ) : isError ? (
