@@ -143,15 +143,17 @@
 #settings-page .stg-media-card .form-group > textarea {
     display: block; width: 100% !important; max-width: 100% !important;
 }
-#settings-page .settings-nav-row { flex-wrap: nowrap !important; }
+#settings-page .settings-nav-row {
+    flex-wrap: nowrap !important;
+    /* Keep saving within reach while scrolling a long category. */
+    position: sticky !important;
+    top: 0;
+    z-index: 20;
+    background: rgb(15, 15, 15) !important;
+    padding: 12px 0 !important;
+}
 #settings-page .settings-nav-row .header-actions { width: auto !important; margin: 0 !important; }
 
 /* Legacy media pages require 960px; forms should fit beside the app sidebar. */
 .main-container:has(#settings-page.active),
 .main-content:has(#settings-page.active) { min-width: 0 !important; }
-
-/* Keep saving within reach while scrolling a long category. */
-#settings-page .settings-nav-row {
-    position: sticky !important; top: 0; z-index: 20;
-    background: rgb(15, 15, 15) !important; padding: 12px 0 !important;
-}
