@@ -47870,15 +47870,6 @@ body.downloads-disabled .discog-download-btn[data-request-action] {
    chips, seven coloured buttons and an always-open form on top of the
    tracks; this puts the album first and the tooling one click away. */
 
-#enhanced-view-container,
-.enhanced-bulk-bar,
-.lib-menu {
-    --lib-surface: rgba(255, 255, 255, 0.035);
-    --lib-radius: 14px;
-    --lib-warn: #ffb84d;
-    --lib-danger: #ff6b6b;
-}
-
 /* View Toggle Buttons */
 .enhanced-view-toggle-btn {
     padding: 8px 18px;
@@ -48064,7 +48055,7 @@ body.downloads-disabled .discog-download-btn[data-request-action] {
     color: var(--white-a40);
 }
 .lib-menu-state.matched { background: rgba(var(--accent-rgb), 0.16); color: rgb(var(--accent-light-rgb)); }
-.lib-menu-state.not-found { background: rgba(255, 107, 107, 0.14); color: var(--lib-danger); }
+.lib-menu-state.not-found { background: rgba(255, 107, 107, 0.14); color: var(--danger-soft); }
 .lib-menu-sub {
     flex-basis: 100%;
     font-size: 11px;
@@ -48094,7 +48085,7 @@ body.downloads-disabled .discog-download-btn[data-request-action] {
     color: #fff;
 }
 .lib-menu-item:disabled { opacity: 0.45; cursor: wait; }
-.lib-menu-item.danger { color: var(--lib-danger); }
+.lib-menu-item.danger { color: var(--danger-soft); }
 .lib-menu-item.danger:hover { background: rgba(255, 107, 107, 0.12); }
 .lib-menu-icon {
     display: inline-flex;
@@ -48175,7 +48166,7 @@ body.downloads-disabled .discog-download-btn[data-request-action] {
     padding: 0;
     border-radius: 7px;
     border: 1px solid var(--white-a07);
-    background: var(--lib-surface);
+    background: var(--white-a04);
     color: var(--white-a40);
     font-family: inherit;
     cursor: default;
@@ -48235,7 +48226,7 @@ body.downloads-disabled .discog-download-btn[data-request-action] {
     padding: 0 8px 0 7px;
     border-radius: var(--radius-pill);
     border: 1px solid var(--white-a07);
-    background: var(--lib-surface);
+    background: var(--white-a04);
     color: var(--white-a60);
     font-family: inherit;
     font-size: 11px;
@@ -48262,14 +48253,14 @@ body.downloads-disabled .discog-download-btn[data-request-action] {
     background: var(--white-a45);
 }
 .lib-meter.good .lib-meter-fill { background: rgb(var(--accent-light-rgb)); }
-.lib-meter.partial .lib-meter-fill { background: var(--lib-warn); }
+.lib-meter.partial .lib-meter-fill { background: var(--gold); }
 .lib-meter.none { color: var(--white-a40); }
 
 /* ---------- artist card ---------- */
 .enhanced-artist-meta {
-    background: var(--lib-surface);
+    background: var(--white-a04);
     border: 1px solid var(--white-a07);
-    border-radius: var(--lib-radius);
+    border-radius: var(--radius-card);
     padding: 0;
     margin-bottom: 22px;
     position: relative;
@@ -48494,7 +48485,7 @@ textarea.enhanced-meta-field-input { min-height: 72px; resize: vertical; }
 .enhanced-album-row:hover { background: var(--white-a06); border-color: var(--line-strong); }
 .enhanced-album-row:focus-visible {
     outline: none;
-    background: var(--lib-surface);
+    background: var(--white-a04);
     box-shadow: 0 0 0 2px rgba(var(--accent-rgb), 0.45);
 }
 .enhanced-album-row.expanded {
@@ -48593,7 +48584,7 @@ textarea.enhanced-meta-field-input { min-height: 72px; resize: vertical; }
 }
 .lib-pill.warn {
     background: rgba(255, 184, 77, 0.12);
-    color: var(--lib-warn);
+    color: var(--gold);
 }
 .enhanced-album-expand-icon {
     display: inline-flex;
@@ -48732,7 +48723,7 @@ textarea.enhanced-meta-field-input { min-height: 72px; resize: vertical; }
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 12px 14px;
     padding: 16px 18px 18px;
-    background: var(--lib-surface);
+    background: var(--white-a04);
     border: 1px solid var(--white-a07);
     border-radius: var(--radius-lg);
     margin-bottom: 16px;
@@ -48851,7 +48842,7 @@ textarea.enhanced-meta-field-input { min-height: 72px; resize: vertical; }
     text-transform: uppercase;
     letter-spacing: 0.4px;
     vertical-align: middle;
-    color: var(--lib-warn);
+    color: var(--gold);
     background: rgba(255, 184, 77, 0.12);
 }
 .enhanced-missing-action-btn,
@@ -48970,7 +48961,7 @@ textarea.enhanced-meta-field-input { min-height: 72px; resize: vertical; }
     animation: libPulse 1s ease-in-out infinite;
 }
 @keyframes libPulse { 50% { opacity: 0.3; } }
-.enhanced-track-report-btn:hover { color: var(--lib-warn); background: rgba(255, 184, 77, 0.12); }
+.enhanced-track-report-btn:hover { color: var(--gold); background: rgba(255, 184, 77, 0.12); }
 
 /* Editable cells */
 .enhanced-track-table td.editable { cursor: text; position: relative; }
@@ -49043,8 +49034,8 @@ textarea.enhanced-meta-field-input { min-height: 72px; resize: vertical; }
 /* Bitrate display */
 .enhanced-bitrate { font-variant-numeric: tabular-nums; font-size: 12px; }
 .enhanced-bitrate.high { color: var(--white-a60); }
-.enhanced-bitrate.medium { color: var(--lib-warn); }
-.enhanced-bitrate.low { color: var(--lib-danger); }
+.enhanced-bitrate.medium { color: var(--gold); }
+.enhanced-bitrate.low { color: var(--danger-soft); }
 
 /* Empty album state */
 .enhanced-no-tracks {
@@ -49084,9 +49075,9 @@ textarea.enhanced-meta-field-input { min-height: 72px; resize: vertical; }
 .lib-skeleton-card {
     padding: 24px;
     margin-bottom: 20px;
-    background: var(--lib-surface);
+    background: var(--white-a04);
     border: 1px solid var(--white-a07);
-    border-radius: var(--lib-radius);
+    border-radius: var(--radius-card);
 }
 .lib-skeleton-avatar,
 .lib-skeleton-art,
@@ -80861,9 +80852,9 @@ a.chat-jbx-title:hover { color: rgb(var(--accent-light-rgb)); }
     border-radius: 13px;
     cursor: pointer;
     font-family: inherit;
-    transition: transform var(--stg-tok-fast) var(--stg-tok-ease),
-                background var(--stg-tok-fast) var(--stg-tok-ease),
-                box-shadow var(--stg-tok-fast) var(--stg-tok-ease);
+    transition: transform var(--dur-fast) var(--ease-decelerate),
+                background var(--dur-fast) var(--ease-decelerate),
+                box-shadow var(--dur-fast) var(--ease-decelerate);
 }
 .src-tile:hover {
     transform: translateY(-3px);
@@ -80904,7 +80895,7 @@ a.chat-jbx-title:hover { color: rgb(var(--accent-light-rgb)); }
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: opacity var(--stg-tok-fast) var(--stg-tok-ease);
+    transition: opacity var(--dur-fast) var(--ease-decelerate);
 }
 .src-tile-art img { width: 30px; height: 30px; object-fit: contain; border-radius: var(--radius-md); }
 /* Full opacity, and the idle dimming below must not touch these. Tidal, Qobuz
@@ -81094,21 +81085,6 @@ body.src-modal-open { overflow: hidden; }
 }
 .setting-warning[hidden] { display: none; }
 
-/* ── Settings design tokens ────────────────────────────────────────────────────
-   One ladder for the whole settings page so "raise this surface" is a token
-   rather than a guessed alpha. Depth comes from tone, the way Material 3 and
-   Apple's base/elevated dark pairing both do it, so the page reads as objects
-   instead of a grid of 1px boxes. Motion uses M3's emphasized curve, which is
-   asymmetric on purpose: quick to leave, slow to settle. */
-#settings-page {
-    /* One ladder, so "raise this" is a token rather than a guessed alpha. */
-    --stg-tok-surf-2: rgba(255, 255, 255, 0.055);
-    --stg-tok-ease: cubic-bezier(0.2, 0, 0, 1);
-    --stg-tok-fast: 140ms;
-    --stg-tok-base: 240ms;
-    --stg-tok-radius: 14px;
-}
-
 /* ── Download chains ───────────────────────────────────────────────────────────
    Built on the three ideas the platform design systems agree on, rather than a
    pile of one-off values:
@@ -81151,8 +81127,8 @@ body.src-modal-open { overflow: hidden; }
     letter-spacing: -0.005em;
     font-family: inherit;
     cursor: pointer;
-    transition: background var(--stg-tok-fast) var(--stg-tok-ease),
-                color var(--stg-tok-fast) var(--stg-tok-ease);
+    transition: background var(--dur-fast) var(--ease-decelerate),
+                color var(--dur-fast) var(--ease-decelerate);
 }
 .dlchain-tab:hover { color: var(--white-a90); }
 .dlchain-tab.active {
@@ -81202,8 +81178,8 @@ body.src-modal-open { overflow: hidden; }
     color: var(--white-a90);
     font-size: 0.78em;
     font-family: inherit;
-    transition: background var(--stg-tok-fast) var(--stg-tok-ease),
-                box-shadow var(--stg-tok-fast) var(--stg-tok-ease);
+    transition: background var(--dur-fast) var(--ease-decelerate),
+                box-shadow var(--dur-fast) var(--ease-decelerate);
 }
 .dlchain-filter::placeholder { color: var(--white-a35); }
 .dlchain-filter:focus {
@@ -81229,8 +81205,8 @@ body.src-modal-open { overflow: hidden; }
     border-radius: var(--radius-xl);
     background: var(--surface-1);
     min-height: 96px;
-    transition: background var(--stg-tok-base) var(--stg-tok-ease),
-                box-shadow var(--stg-tok-base) var(--stg-tok-ease);
+    transition: background var(--dur-moderate) var(--ease-decelerate),
+                box-shadow var(--dur-moderate) var(--ease-decelerate);
 }
 .dlchain-pool.drag-over {
     background: rgba(var(--accent-rgb), 0.07);
@@ -81275,12 +81251,12 @@ body.src-modal-open { overflow: hidden; }
     padding: 16px 10px 13px;
     border: none;
     border-radius: 11px;
-    background: var(--stg-tok-surf-2);
+    background: var(--surface-2);
     cursor: grab;
     font-family: inherit;
-    transition: transform var(--stg-tok-fast) var(--stg-tok-ease),
-                background var(--stg-tok-fast) var(--stg-tok-ease),
-                box-shadow var(--stg-tok-fast) var(--stg-tok-ease);
+    transition: transform var(--dur-fast) var(--ease-decelerate),
+                background var(--dur-fast) var(--ease-decelerate),
+                box-shadow var(--dur-fast) var(--ease-decelerate);
 }
 .dlchain-tile:hover {
     transform: translateY(-2px);
@@ -81302,7 +81278,7 @@ body.src-modal-open { overflow: hidden; }
     border-radius: 11px;
     background: rgba(0, 0, 0, 0.22);
     opacity: 0.85;
-    transition: opacity var(--stg-tok-fast) var(--stg-tok-ease);
+    transition: opacity var(--dur-fast) var(--ease-decelerate);
 }
 .dlchain-tile:hover .dlchain-tile-art { opacity: 1; }
 .dlchain-tile-art img { width: 30px; height: 30px; object-fit: contain; }
@@ -81324,8 +81300,8 @@ body.src-modal-open { overflow: hidden; }
     padding: 10px 9px;
     border-radius: var(--radius-xl);
     background: var(--surface-1);
-    transition: background var(--stg-tok-base) var(--stg-tok-ease),
-                box-shadow var(--stg-tok-base) var(--stg-tok-ease);
+    transition: background var(--dur-moderate) var(--ease-decelerate),
+                box-shadow var(--dur-moderate) var(--ease-decelerate);
 }
 .dlchain-list.drag-over {
     background: rgba(var(--accent-rgb), 0.06);
@@ -81338,13 +81314,13 @@ body.src-modal-open { overflow: hidden; }
     width: 100%;
     padding: 11px 12px;
     border: none;
-    border-radius: var(--stg-tok-radius);
-    background: var(--stg-tok-surf-2);
+    border-radius: var(--radius-card);
+    background: var(--surface-2);
     cursor: grab;
     user-select: none;
-    transition: background var(--stg-tok-fast) var(--stg-tok-ease),
-                box-shadow var(--stg-tok-fast) var(--stg-tok-ease),
-                transform var(--stg-tok-fast) var(--stg-tok-ease);
+    transition: background var(--dur-fast) var(--ease-decelerate),
+                box-shadow var(--dur-fast) var(--ease-decelerate),
+                transform var(--dur-fast) var(--ease-decelerate);
 }
 .dlchain-step:hover {
     background: var(--surface-3);
@@ -81386,8 +81362,8 @@ body.src-modal-open { overflow: hidden; }
     line-height: 1;
     cursor: pointer;
     font-family: inherit;
-    transition: background var(--stg-tok-fast) var(--stg-tok-ease),
-                color var(--stg-tok-fast) var(--stg-tok-ease);
+    transition: background var(--dur-fast) var(--ease-decelerate),
+                color var(--dur-fast) var(--ease-decelerate);
 }
 .dlchain-move:hover:not(:disabled) { background: var(--white-a10); color: var(--white-a90); }
 .dlchain-move:focus-visible { outline: 2px solid rgba(var(--accent-rgb), 0.7); outline-offset: 1px; }
@@ -81484,12 +81460,12 @@ body.src-modal-open { overflow: hidden; }
     gap: 6px;
     min-height: 74px;
     border: 1.5px dashed rgba(255, 255, 255, 0.13);
-    border-radius: var(--stg-tok-radius);
+    border-radius: var(--radius-card);
     padding: 11px 14px;
     text-align: center;
-    transition: border-color var(--stg-tok-base) var(--stg-tok-ease),
-                background var(--stg-tok-base) var(--stg-tok-ease),
-                box-shadow var(--stg-tok-base) var(--stg-tok-ease);
+    transition: border-color var(--dur-moderate) var(--ease-decelerate),
+                background var(--dur-moderate) var(--ease-decelerate),
+                box-shadow var(--dur-moderate) var(--ease-decelerate);
 }
 .dlchain-slot.first { min-height: 96px; }
 .dlchain-slot-title {
@@ -81526,8 +81502,8 @@ body.src-modal-open { overflow: hidden; }
     line-height: 1;
     cursor: pointer;
     font-family: inherit;
-    transition: background var(--stg-tok-fast) var(--stg-tok-ease),
-                color var(--stg-tok-fast) var(--stg-tok-ease);
+    transition: background var(--dur-fast) var(--ease-decelerate),
+                color var(--dur-fast) var(--ease-decelerate);
 }
 .dlchain-btn:hover { background: rgba(255, 95, 87, 0.2); color: #ff9b95; }
 .dlchain-btn:focus-visible { outline: 2px solid rgba(var(--accent-rgb), 0.7); outline-offset: 1px; }
@@ -81626,9 +81602,6 @@ body.src-modal-open { overflow: hidden; }
 
    Scoped to #settings-page on purpose: it is additive, it cannot touch any
    other page, and deleting this one block restores exactly what came before. */
-#settings-page {
-    --stg-lift: inset 0 1px 0 var(--white-a05);
-}
 
 /* A whisper of hue at the very top, not a dye bath. */
 #settings-page {
@@ -81639,11 +81612,11 @@ body.src-modal-open { overflow: hidden; }
 /* ── section headers: tinted bar with a lit edge ── */
 #settings-page .settings-section-header {
     background: linear-gradient(180deg, var(--white-a05), rgba(255, 255, 255, 0.022));
-    box-shadow: inset 0 0 0 1px var(--white-a06), var(--stg-lift);
+    box-shadow: inset 0 0 0 1px var(--white-a06), inset 0 1px 0 var(--white-a05);
 }
 #settings-page .settings-section-header:hover {
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.035));
-    box-shadow: inset 0 0 0 1px var(--white-a10), var(--stg-lift);
+    box-shadow: inset 0 0 0 1px var(--white-a10), inset 0 1px 0 var(--white-a05);
 }
 #settings-page .settings-section-header h3 { color: #fff; }
 
@@ -81668,14 +81641,14 @@ body.src-modal-open { overflow: hidden; }
 #settings-page .src-tile,
 #settings-page .dlchain-tile,
 #settings-page .dlchain-step {
-    box-shadow: var(--stg-lift), inset 0 0 0 1px var(--white-a05);
+    box-shadow: inset 0 1px 0 var(--white-a05), inset 0 0 0 1px var(--white-a05);
 }
 
 /* in the chain, and first in the chain, both mean something - so both glow */
 /* Two of the four places the accent is still allowed. */
 #settings-page .src-tile.is-active {
     background: linear-gradient(180deg, rgba(var(--accent-rgb), 0.14), rgba(var(--accent-rgb), 0.05));
-    box-shadow: inset 0 0 0 1px rgba(var(--accent-rgb), 0.26), var(--stg-lift);
+    box-shadow: inset 0 0 0 1px rgba(var(--accent-rgb), 0.26), inset 0 1px 0 var(--white-a05);
 }
 #settings-page .dlchain-step-rank {
     background: rgba(0, 0, 0, 0.34);
@@ -81692,7 +81665,7 @@ body.src-modal-open { overflow: hidden; }
     background: var(--white-a02);
     border-style: dashed;
     border-width: 1px;
-    border-radius: var(--stg-tok-radius);
+    border-radius: var(--radius-card);
 }
 #settings-page .dlchain-slot:hover,
 #settings-page .dlchain-slot.drag-over {
@@ -81918,7 +81891,7 @@ body.src-modal-open { overflow: hidden; }
     background:
         linear-gradient(180deg, var(--white-a09), rgba(255, 255, 255, 0.042)),
         linear-gradient(135deg, rgba(var(--brand), 0.2), transparent 66%);
-    box-shadow: var(--stg-lift), inset 0 0 0 1px rgba(var(--brand), 0.42),
+    box-shadow: inset 0 1px 0 var(--white-a05), inset 0 0 0 1px rgba(var(--brand), 0.42),
                 0 12px 28px -16px rgba(0, 0, 0, 1),
                 0 0 26px -10px rgba(var(--brand), 0.5);
 }
@@ -81934,7 +81907,7 @@ body.src-modal-open { overflow: hidden; }
     background:
         linear-gradient(180deg, rgba(var(--accent-rgb), 0.17), rgba(var(--accent-rgb), 0.06)),
         linear-gradient(135deg, rgba(var(--brand), 0.14), transparent 62%);
-    box-shadow: inset 0 0 0 1px rgba(var(--accent-rgb), 0.3), var(--stg-lift);
+    box-shadow: inset 0 0 0 1px rgba(var(--accent-rgb), 0.3), inset 0 1px 0 var(--white-a05);
 }
 
 /* A settings block that duplicates one elsewhere. It stays in the DOM because

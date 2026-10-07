@@ -286,7 +286,7 @@ describe('stays out of the other tabs', () => {
       'utf8',
     );
     const panel = css.match(/\n\.panel \{([^}]*)\}/)?.[1] ?? '';
-    expect(panel).toContain('--bs-surface');
+    expect(panel).toContain('--text-bright');
     expect(panel).not.toMatch(/^\s*display\s*:/m);
   });
 });

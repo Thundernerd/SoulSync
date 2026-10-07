@@ -2,16 +2,11 @@
    DialogFrame (focus trap, escape, scroll lock), this only shapes it. */
 
 .popup {
-  --dc-raised: #1a1c23;
-  --dc-raised-2: #22242d;
-  --dc-text: #f3f4f8;
-  --dc-faint: #6b6d7c;
-
   width: min(560px, 100%) !important;
   border-radius: 20px !important;
   background: #15161c !important;
   border-color: var(--line-strong) !important;
-  color: var(--dc-text);
+  color: var(--text-bright);
 }
 
 /* zero specificity, so each button's own size and weight still win */
@@ -78,7 +73,7 @@
 }
 
 .sep {
-  color: var(--dc-faint);
+  color: var(--text-faint);
   padding-inline: 5px;
 }
 
@@ -89,7 +84,7 @@
   height: 30px;
   border: none;
   border-radius: var(--radius-circle);
-  background: var(--dc-raised);
+  background: var(--bg-raised);
   color: var(--text-secondary) !important;
   font-size: 18px;
   line-height: 1;
@@ -97,7 +92,7 @@
 }
 
 .close:hover {
-  color: var(--dc-text) !important;
+  color: var(--text-bright) !important;
 }
 
 .body {
@@ -117,7 +112,7 @@
   padding: 14px;
   border: 1px solid var(--white-a07);
   border-radius: 14px;
-  background: var(--dc-raised);
+  background: var(--bg-raised);
   text-align: left;
   cursor: pointer;
   transition:
@@ -127,7 +122,7 @@
 
 .option:hover {
   border-color: var(--line-strong);
-  background: var(--dc-raised-2);
+  background: var(--bg-raised-2);
 }
 
 .option[aria-checked='true'] {
@@ -141,7 +136,7 @@
   width: 40px;
   height: 40px;
   border-radius: 11px;
-  background: var(--dc-raised-2);
+  background: var(--bg-raised-2);
   color: var(--text-secondary);
 }
 
@@ -211,7 +206,7 @@
 
 .note {
   margin-right: auto;
-  color: var(--dc-faint);
+  color: var(--text-faint);
   font-size: 12.5px;
   min-width: 0;
   overflow: hidden;
@@ -224,7 +219,7 @@
   padding: 9px 18px;
   border: 1px solid var(--line-strong);
   border-radius: var(--radius-pill);
-  background: var(--dc-raised);
+  background: var(--bg-raised);
   font-size: 13.5px;
   font-weight: 600;
   cursor: pointer;
@@ -232,7 +227,7 @@
 
 .primary {
   border-color: transparent;
-  background: var(--dc-text);
+  background: var(--text-bright);
   color: #0c0d11 !important;
 }
 

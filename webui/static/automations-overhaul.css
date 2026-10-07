@@ -15,12 +15,6 @@
    pass (--accent-rgb and friends).
    ═══════════════════════════════════════════════════════════════════════════ */
 
-.automx {
-  --automx-danger: 244, 63, 94;
-  --automx-warn: 245, 158, 11;
-  --automx-ok: 34, 197, 94;
-}
-
 /* ── App frame ──────────────────────────────────────────────────────────── */
 .page-shell.automx {
   display: flex;
@@ -192,10 +186,10 @@
   border-color: rgba(var(--accent-rgb), 0.3);
 }
 .automx-nav-count.alert {
-  background: rgba(var(--automx-danger), 0.16);
+  background: rgba(var(--danger-rgb), 0.16);
   color: rgb(253, 164, 175);
-  border-color: rgba(var(--automx-danger), 0.4);
-  box-shadow: 0 0 10px rgba(var(--automx-danger), 0.25);
+  border-color: rgba(var(--danger-rgb), 0.4);
+  box-shadow: 0 0 10px rgba(var(--danger-rgb), 0.25);
 }
 .automx-nav-attention .automx-nav-label { color: rgb(253, 164, 175); }
 .automx-nav-attention.active .automx-nav-label { color: #fff; }
@@ -206,11 +200,11 @@
   border-radius: var(--radius-circle);
   flex-shrink: 0;
 }
-.automx-health-dot.ok { background: rgb(var(--automx-ok)); box-shadow: 0 0 6px rgba(var(--automx-ok), 0.8); }
-.automx-health-dot.warn { background: rgb(var(--automx-warn)); box-shadow: 0 0 6px rgba(var(--automx-warn), 0.8); }
+.automx-health-dot.ok { background: rgb(var(--success-strong-rgb)); box-shadow: 0 0 6px rgba(var(--success-strong-rgb), 0.8); }
+.automx-health-dot.warn { background: rgb(var(--warning-strong-rgb)); box-shadow: 0 0 6px rgba(var(--warning-strong-rgb), 0.8); }
 .automx-health-dot.bad {
-  background: rgb(var(--automx-danger));
-  box-shadow: 0 0 8px rgba(var(--automx-danger), 0.9);
+  background: rgb(var(--danger-rgb));
+  box-shadow: 0 0 8px rgba(var(--danger-rgb), 0.9);
   animation: automx-blink 1.6s ease-in-out infinite;
 }
 .automx-health-dot.none { display: none; }
@@ -272,8 +266,8 @@
   transition: transform 0.22s var(--ease-emphasized);
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
-.automx-master.on { color: rgb(134, 239, 172); border-color: rgba(var(--automx-ok), 0.35); }
-.automx-master.on .automx-master-sw { background: rgba(var(--automx-ok), 0.55); }
+.automx-master.on { color: rgb(134, 239, 172); border-color: rgba(var(--success-strong-rgb), 0.35); }
+.automx-master.on .automx-master-sw { background: rgba(var(--success-strong-rgb), 0.55); }
 .automx-master.on .automx-master-sw::after { transform: translateX(14px); }
 .automx-master:disabled { opacity: 0.55; cursor: default; }
 
@@ -329,11 +323,11 @@
   transition: background 0.5s ease;
 }
 .automx-hero.ok .automx-hero-glow {
-  background: radial-gradient(circle, rgba(var(--automx-ok), 0.22), transparent 65%);
+  background: radial-gradient(circle, rgba(var(--success-strong-rgb), 0.22), transparent 65%);
   animation: automx-breathe 5s ease-in-out infinite;
 }
 .automx-hero.warn .automx-hero-glow {
-  background: radial-gradient(circle, rgba(var(--automx-warn), 0.26), transparent 65%);
+  background: radial-gradient(circle, rgba(var(--warning-strong-rgb), 0.26), transparent 65%);
   animation: automx-breathe 3.2s ease-in-out infinite;
 }
 .automx-hero.paused .automx-hero-glow {
@@ -359,13 +353,13 @@
 }
 .automx-hero.ok .automx-hero-mark {
   color: rgb(134, 239, 172);
-  border-color: rgba(var(--automx-ok), 0.45);
-  box-shadow: 0 0 26px rgba(var(--automx-ok), 0.28), inset 0 1px 0 var(--white-a12);
+  border-color: rgba(var(--success-strong-rgb), 0.45);
+  box-shadow: 0 0 26px rgba(var(--success-strong-rgb), 0.28), inset 0 1px 0 var(--white-a12);
 }
 .automx-hero.warn .automx-hero-mark {
   color: rgb(253, 224, 171);
-  border-color: rgba(var(--automx-warn), 0.5);
-  box-shadow: 0 0 26px rgba(var(--automx-warn), 0.3), inset 0 1px 0 var(--white-a12);
+  border-color: rgba(var(--warning-strong-rgb), 0.5);
+  box-shadow: 0 0 26px rgba(var(--warning-strong-rgb), 0.3), inset 0 1px 0 var(--white-a12);
 }
 .automx-hero-text { position: relative; flex: 1; min-width: 0; }
 .automx-hero-title {
@@ -565,10 +559,10 @@
   border-color: var(--white-a06);
 }
 .automx-attention-row.failed {
-  background: rgba(var(--automx-danger), 0.07);
-  border-color: rgba(var(--automx-danger), 0.22);
+  background: rgba(var(--danger-rgb), 0.07);
+  border-color: rgba(var(--danger-rgb), 0.22);
 }
-.automx-attention-row.failed:hover { background: rgba(var(--automx-danger), 0.11); }
+.automx-attention-row.failed:hover { background: rgba(var(--danger-rgb), 0.11); }
 .automx-attention-row.failed .automx-row-sub {
   color: rgb(253, 164, 175);
   white-space: normal;
@@ -685,8 +679,8 @@
   border-color: var(--white-a18);
 }
 .automx-chip-danger:hover {
-  background: rgba(var(--automx-danger), 0.12);
-  border-color: rgba(var(--automx-danger), 0.4);
+  background: rgba(var(--danger-rgb), 0.12);
+  border-color: rgba(var(--danger-rgb), 0.4);
   color: rgb(253, 164, 175);
 }
 .automx-rename-input {

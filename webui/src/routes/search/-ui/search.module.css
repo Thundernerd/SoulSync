@@ -7,20 +7,13 @@
    so nothing here can leak. */
 
 .page {
-  --sp-surface: #13141a;
-  --sp-raised: #1a1c23;
-  --sp-raised-2: #22242d;
-  --sp-text: #f3f4f8;
-  --sp-faint: #6b6d7c;
-  --sp-mono: 'SF Mono', ui-monospace, 'Cascadia Code', Consolas, monospace;
-
   display: flex;
   flex-direction: column;
   gap: 18px;
   min-width: 0;
   /* the last shelf ended flush with the bottom of the page */
   padding-bottom: 64px;
-  color: var(--sp-text);
+  color: var(--text-bright);
 }
 
 /* zero specificity, so each control's own size and weight still win */
@@ -74,7 +67,7 @@
   padding: 3px;
   border: 1px solid var(--white-a07);
   border-radius: 11px;
-  background: var(--sp-surface);
+  background: var(--bg-surface);
 }
 
 .modes button {
@@ -97,8 +90,8 @@
 }
 
 .modes button[aria-selected='true'] {
-  background: var(--sp-raised-2);
-  color: var(--sp-text);
+  background: var(--bg-raised-2);
+  color: var(--text-bright);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 }
 
@@ -110,7 +103,7 @@
   align-items: center;
   gap: 4px;
   padding: 6px;
-  background: var(--sp-surface);
+  background: var(--bg-surface);
   border: 1px solid var(--line-strong);
   border-radius: 14px;
   transition:
@@ -131,7 +124,7 @@
   padding: 7px 11px;
   border: none;
   border-radius: 10px;
-  background: var(--sp-raised);
+  background: var(--bg-raised);
   font-size: 13px;
   font-weight: 600;
   white-space: nowrap;
@@ -162,7 +155,7 @@
 .caret {
   width: 11px;
   height: 11px;
-  color: var(--sp-faint);
+  color: var(--text-faint);
 }
 
 .input {
@@ -176,7 +169,7 @@
 }
 
 .input::placeholder {
-  color: var(--sp-faint);
+  color: var(--text-faint);
 }
 
 .clear {
@@ -188,7 +181,7 @@
   margin-right: 4px;
   border: none;
   border-radius: var(--radius-circle);
-  background: var(--sp-raised);
+  background: var(--bg-raised);
   color: var(--text-secondary) !important;
   font-size: 15px;
   line-height: 1;
@@ -196,7 +189,7 @@
 }
 
 .clear:hover {
-  color: var(--sp-text) !important;
+  color: var(--text-bright) !important;
 }
 
 .spinner {
@@ -224,7 +217,7 @@
   font-size: 11px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--sp-faint);
+  color: var(--text-faint);
 }
 
 .menuItem {
@@ -243,7 +236,7 @@
 }
 
 .menuItem:hover {
-  background: var(--sp-raised-2);
+  background: var(--bg-raised-2);
 }
 
 .menuItem[aria-checked='true'] {
@@ -255,7 +248,7 @@
 }
 
 .menuNote {
-  color: var(--sp-faint);
+  color: var(--text-faint);
   font-size: 11.5px;
   white-space: nowrap;
 }
@@ -285,7 +278,7 @@
 
 .sectionCount {
   margin-left: 8px;
-  color: var(--sp-faint);
+  color: var(--text-faint);
   font-size: 13px;
   font-weight: 500;
 }
@@ -300,7 +293,7 @@
 }
 
 .textLink:hover {
-  color: var(--sp-text) !important;
+  color: var(--text-bright) !important;
 }
 
 .chips {
@@ -315,7 +308,7 @@
   gap: 2px;
   border: 1px solid var(--white-a07);
   border-radius: var(--radius-pill);
-  background: var(--sp-surface);
+  background: var(--bg-surface);
   font-size: 13px;
 }
 
@@ -332,7 +325,7 @@
 .chipLabel svg {
   width: 13px;
   height: 13px;
-  color: var(--sp-faint);
+  color: var(--text-faint);
 }
 
 .chipX {
@@ -342,14 +335,14 @@
   border: none;
   border-radius: var(--radius-circle);
   background: none;
-  color: var(--sp-faint) !important;
+  color: var(--text-faint) !important;
   line-height: 1;
   cursor: pointer;
 }
 
 .chipX:hover {
-  background: var(--sp-raised-2);
-  color: var(--sp-text) !important;
+  background: var(--bg-raised-2);
+  color: var(--text-bright) !important;
 }
 
 .explore {
@@ -418,7 +411,7 @@
   padding: 6px 13px;
   border: 1px solid var(--white-a07);
   border-radius: var(--radius-pill);
-  background: var(--sp-surface);
+  background: var(--bg-surface);
   font-size: 12.5px;
   color: var(--text-secondary) !important;
   cursor: pointer;
@@ -427,14 +420,14 @@
 
 .pill[aria-pressed='true'] {
   border-color: transparent;
-  background: var(--sp-text);
+  background: var(--text-bright);
   color: #0c0d11 !important;
   font-weight: 600;
 }
 
 .pillCount {
   margin-left: 5px;
-  color: var(--sp-faint);
+  color: var(--text-faint);
   font-variant-numeric: tabular-nums;
 }
 
@@ -444,7 +437,7 @@
 
 .servedBy {
   margin-left: auto;
-  color: var(--sp-faint);
+  color: var(--text-faint);
   font-size: 12.5px;
 }
 
@@ -501,7 +494,7 @@
   overflow: hidden;
   background:
     radial-gradient(120% 120% at 0% 0%, rgba(var(--accent-rgb), 0.14), transparent 55%),
-    var(--sp-surface);
+    var(--bg-surface);
 }
 
 /* the top result's own art, blurred across the card. the scrim on top keeps
@@ -605,11 +598,11 @@
   padding: 9px 18px;
   border: 1px solid var(--line-strong);
   border-radius: var(--radius-pill);
-  background: var(--sp-raised);
+  background: var(--bg-raised);
   font-size: 13.5px;
   font-weight: 600;
   text-decoration: none;
-  color: var(--sp-text) !important;
+  color: var(--text-bright) !important;
   cursor: pointer;
 }
 
@@ -620,14 +613,14 @@
 
 .primary {
   border-color: transparent;
-  background: var(--sp-text);
+  background: var(--text-bright);
   color: #0c0d11 !important;
 }
 
 .list {
   border: 1px solid var(--white-a07);
   border-radius: var(--radius-xl);
-  background: var(--sp-surface);
+  background: var(--bg-surface);
   overflow: hidden;
 }
 
@@ -656,9 +649,9 @@
 }
 
 .trackNum {
-  font-family: var(--sp-mono);
+  font-family: var(--font-mono);
   font-size: 11.5px;
-  color: var(--sp-faint);
+  color: var(--text-faint);
   text-align: right;
 }
 
@@ -706,7 +699,7 @@
 }
 
 .trackTitleExtra {
-  color: var(--sp-faint);
+  color: var(--text-faint);
   font-weight: 500;
 }
 
@@ -739,7 +732,7 @@
 }
 
 .duration {
-  color: var(--sp-faint);
+  color: var(--text-faint);
   font-size: 12.5px;
   font-variant-numeric: tabular-nums;
 }
@@ -752,7 +745,7 @@
   border: none;
   border-radius: var(--radius-circle);
   background: none;
-  color: var(--sp-faint) !important;
+  color: var(--text-faint) !important;
   cursor: pointer;
 }
 
@@ -763,8 +756,8 @@
 
 .trackRow:hover .rowDownload,
 .rowDownload:focus-visible {
-  background: var(--sp-raised-2);
-  color: var(--sp-text) !important;
+  background: var(--bg-raised-2);
+  color: var(--text-bright) !important;
 }
 
 /* ── artists ──────────────────────────────────────────────────────────── */
@@ -790,12 +783,12 @@
   border-radius: var(--radius-xl);
   text-decoration: none;
   text-align: center;
-  color: var(--sp-text) !important;
+  color: var(--text-bright) !important;
   transition: background 0.15s ease;
 }
 
 .face:hover {
-  background: var(--sp-surface);
+  background: var(--bg-surface);
 }
 
 .faceImg {
@@ -859,13 +852,13 @@
   border-radius: 14px;
   cursor: pointer;
   text-decoration: none;
-  color: var(--sp-text) !important;
+  color: var(--text-bright) !important;
   transition: background 0.15s ease;
 }
 
 .coverCard:hover,
 .coverCard:focus-within {
-  background: var(--sp-surface);
+  background: var(--bg-surface);
 }
 
 .cover {
@@ -930,7 +923,7 @@
   height: 38px;
   border: none;
   border-radius: var(--radius-circle);
-  background: var(--sp-text);
+  background: var(--text-bright);
   color: #0c0d11 !important;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
   opacity: 0;
@@ -985,9 +978,9 @@
   padding: 11px 14px 11px 11px;
   border: 1px solid var(--white-a07);
   border-radius: 14px;
-  background: var(--sp-surface);
+  background: var(--bg-surface);
   text-decoration: none;
-  color: var(--sp-text) !important;
+  color: var(--text-bright) !important;
   transition:
     background 0.15s ease,
     border-color 0.15s ease;
@@ -995,7 +988,7 @@
 
 .labelTile:hover {
   border-color: var(--line-strong);
-  background: var(--sp-raised);
+  background: var(--bg-raised);
 }
 
 .labelMark {
@@ -1039,7 +1032,7 @@
 .labelChevron {
   display: grid;
   place-items: center;
-  color: var(--sp-faint);
+  color: var(--text-faint);
   transition:
     color 0.15s ease,
     transform 0.15s ease;
@@ -1051,7 +1044,7 @@
 }
 
 .labelTile:hover .labelChevron {
-  color: var(--sp-text);
+  color: var(--text-bright);
   transform: translateX(2px);
 }
 
@@ -1134,7 +1127,7 @@
   padding: 2px 6px;
   border-radius: 5px;
   background: rgba(0, 0, 0, 0.72);
-  font-family: var(--sp-mono);
+  font-family: var(--font-mono);
   font-size: 11px;
 }
 

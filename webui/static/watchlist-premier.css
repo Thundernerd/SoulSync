@@ -4,24 +4,14 @@
    ========================================================================== */
 
 .watchlist-page-container {
-  --wl-bg-radial: radial-gradient(circle at 18% -10%, rgba(var(--accent-rgb), 0.12) 0%, transparent 45%),
-                  radial-gradient(circle at 85% 15%, rgba(64, 120, 255, 0.08) 0%, transparent 40%);
-  --wl-surface: rgba(20, 24, 33, 0.75);
-  --wl-surface-elevated: rgba(26, 32, 45, 0.92);
-  --wl-surface-hover: rgba(255, 255, 255, 0.075);
-  --wl-text-primary: #f8f9fc;
-  --wl-text-secondary: #9ea6b5;
-  --wl-text-muted: #6b7280;
-  --wl-shadow-card: 0 4px 20px -2px rgba(0, 0, 0, 0.4), 0 0 0 1px var(--line);
-  --wl-shadow-hover: 0 12px 32px -4px rgba(0, 0, 0, 0.55), 0 0 0 1px var(--white-a18), 0 0 24px -6px rgba(var(--accent-rgb), 0.22);
-  --wl-accent-glow: 0 0 18px rgba(var(--accent-rgb), 0.35);
 
   position: relative;
   max-width: 1540px;
   margin: 0 auto;
   padding: 16px 28px 64px;
-  color: var(--wl-text-primary);
-  background-image: var(--wl-bg-radial);
+  color: var(--text-bright);
+  background-image: radial-gradient(circle at 18% -10%, rgba(var(--accent-rgb), 0.12) 0%, transparent 45%),
+                    radial-gradient(circle at 85% 15%, rgba(64, 120, 255, 0.08) 0%, transparent 40%);
   background-attachment: fixed;
   box-sizing: border-box;
 }
@@ -54,7 +44,7 @@
   font-size: 28px;
   font-weight: 800;
   letter-spacing: -0.03em;
-  color: var(--wl-text-primary);
+  color: var(--text-bright);
 }
 
 .watchlist-page-container .watchlist-page-title svg {
@@ -77,7 +67,7 @@
   letter-spacing: 0.02em;
   background: var(--white-a04);
   border: 1px solid var(--line);
-  color: var(--wl-text-secondary);
+  color: var(--text-secondary);
   backdrop-filter: blur(8px);
 }
 
@@ -144,16 +134,16 @@
 
 /* Secondary Slate Glass Buttons */
 .watchlist-page-container .wl-chip--slate {
-  background: var(--wl-surface);
+  background: var(--bg-glass);
   border: 1px solid var(--line);
-  color: var(--wl-text-secondary);
+  color: var(--text-secondary);
   backdrop-filter: blur(12px);
 }
 
 .watchlist-page-container .wl-chip--slate:hover:not(:disabled) {
-  background: var(--wl-surface-hover);
+  background: var(--white-a08);
   border-color: var(--white-a18);
-  color: var(--wl-text-primary);
+  color: var(--text-bright);
   transform: translateY(-1px);
 }
 
@@ -212,7 +202,7 @@
   background: var(--white-a04);
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
-  color: var(--wl-text-secondary);
+  color: var(--text-secondary);
   font-size: 13px;
 }
 
@@ -276,7 +266,7 @@
   font-weight: 550 !important;
   text-transform: none !important;
   letter-spacing: 0.01em !important;
-  color: var(--wl-text-secondary) !important;
+  color: var(--text-secondary) !important;
   line-height: 1 !important;
 }
 
@@ -297,7 +287,7 @@
   font-weight: 750 !important;
   line-height: 1 !important;
   background: var(--white-a07) !important;
-  color: var(--wl-text-muted) !important;
+  color: var(--text-faint) !important;
 }
 
 .watchlist-page-container .watchlist-attention-card.is-active .watchlist-attention-value {
@@ -329,12 +319,12 @@
    Add Artist Provider Search Panel
    -------------------------------------------------------------------------- */
 .watchlist-page-container .watchlist-add-panel {
-  background: var(--wl-surface-elevated);
+  background: var(--bg-glass-raised);
   border: 1px solid var(--white-a18);
   border-radius: var(--radius-xl);
   padding: 18px 22px;
   margin-bottom: 22px;
-  box-shadow: var(--wl-shadow-card);
+  box-shadow: 0 4px 20px -2px var(--black-a40), 0 0 0 1px var(--line);
   backdrop-filter: blur(16px);
   animation: wlFadeIn 0.2s ease-out;
 }
@@ -356,7 +346,7 @@
 
 .watchlist-page-container .watchlist-add-copy span:last-child {
   font-size: 13px;
-  color: var(--wl-text-secondary);
+  color: var(--text-secondary);
 }
 
 .watchlist-page-container .watchlist-add-form {
@@ -371,10 +361,10 @@
   min-width: 170px;
   height: 42px;
   padding: 0 14px;
-  background: var(--wl-surface);
+  background: var(--bg-glass);
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
-  color: var(--wl-text-primary);
+  color: var(--text-bright);
   font-size: 13px;
   font-weight: 600;
 }
@@ -400,7 +390,7 @@
 .watchlist-page-container .watchlist-add-status {
   font-size: 12px;
   font-weight: 550;
-  color: var(--wl-text-muted);
+  color: var(--text-faint);
   white-space: nowrap;
 }
 
@@ -409,7 +399,7 @@
   right: 12px;
   background: transparent;
   border: none;
-  color: var(--wl-text-muted);
+  color: var(--text-faint);
   font-size: 18px;
   cursor: pointer;
   padding: 4px;
@@ -436,13 +426,13 @@
   gap: 14px;
   padding: 10px 14px;
   border-radius: var(--radius-lg);
-  background: var(--wl-surface);
+  background: var(--bg-glass);
   border: 1px solid var(--line);
   transition: background 0.15s, border-color 0.15s;
 }
 
 .watchlist-page-container .watchlist-add-result:hover {
-  background: var(--wl-surface-hover);
+  background: var(--white-a08);
   border-color: var(--white-a18);
 }
 
@@ -484,7 +474,7 @@
 
 .watchlist-page-container .watchlist-add-result-main small {
   font-size: 12px;
-  color: var(--wl-text-secondary);
+  color: var(--text-secondary);
 }
 
 .watchlist-page-container .watchlist-add-result-action {
@@ -492,7 +482,7 @@
   border-radius: var(--radius-pill);
   background: var(--white-a04);
   border: 1px solid var(--line);
-  color: var(--wl-text-primary);
+  color: var(--text-bright);
   font-size: 12px;
   font-weight: 700;
   cursor: pointer;
@@ -509,7 +499,7 @@
    Recent Releases Strip
    -------------------------------------------------------------------------- */
 .watchlist-page-container .watchlist-recent-panel {
-  background: var(--wl-surface);
+  background: var(--bg-glass);
   border: 1px solid var(--line);
   border-radius: var(--radius-xl);
   padding: 16px 20px;
@@ -529,7 +519,7 @@
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--wl-text-muted);
+  color: var(--text-faint);
 }
 
 .watchlist-page-container .watchlist-panel-head h3 {
@@ -559,7 +549,7 @@
 }
 
 .watchlist-page-container .watchlist-release-card:hover {
-  background: var(--wl-surface-hover);
+  background: var(--white-a08);
   border-color: var(--white-a18);
   transform: translateY(-1px);
 }
@@ -599,7 +589,7 @@
 
 .watchlist-page-container .watchlist-release-card small {
   font-size: 11px;
-  color: var(--wl-text-secondary);
+  color: var(--text-secondary);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -627,10 +617,10 @@
   width: 100%;
   height: 44px;
   padding: 0 16px 0 42px !important;
-  background: var(--wl-surface) !important;
+  background: var(--bg-glass) !important;
   border: 1px solid var(--line) !important;
   border-radius: var(--radius-lg) !important;
-  color: var(--wl-text-primary) !important;
+  color: var(--text-bright) !important;
   font-size: 14px !important;
   font-weight: 500 !important;
   transition: all 0.2s ease !important;
@@ -640,7 +630,7 @@
 .watchlist-page-container .watchlist-search-input:focus {
   border-color: rgba(var(--accent-rgb), 0.5) !important;
   box-shadow: 0 0 18px rgba(var(--accent-rgb), 0.15) !important;
-  background: var(--wl-surface-elevated) !important;
+  background: var(--bg-glass-raised) !important;
 }
 
 .watchlist-page-container .watchlist-search-icon {
@@ -652,10 +642,10 @@
 .watchlist-page-container .watchlist-sort-select {
   height: 44px;
   padding: 0 16px;
-  background: var(--wl-surface);
+  background: var(--bg-glass);
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
-  color: var(--wl-text-primary);
+  color: var(--text-bright);
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
@@ -677,7 +667,7 @@
   gap: 16px;
   padding: 10px 18px;
   margin-bottom: 16px;
-  background: var(--wl-surface);
+  background: var(--bg-glass);
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   backdrop-filter: blur(10px);
@@ -690,11 +680,11 @@
   cursor: pointer;
   font-size: 13px;
   font-weight: 650;
-  color: var(--wl-text-secondary);
+  color: var(--text-secondary);
 }
 
 .watchlist-page-container .watchlist-select-all-label:hover {
-  color: var(--wl-text-primary);
+  color: var(--text-bright);
 }
 
 .watchlist-page-container .watchlist-batch-count {
@@ -744,7 +734,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--wl-text-muted);
+  color: var(--text-faint);
 }
 
 .watchlist-page-container .watchlist-artists-grid--rows {
@@ -767,10 +757,10 @@
   align-items: start !important;
   gap: 6px 14px !important;
   padding: 14px 16px !important;
-  background: var(--wl-surface) !important;
+  background: var(--bg-glass) !important;
   border: 1px solid var(--line) !important;
   border-radius: var(--radius-lg) !important;
-  box-shadow: var(--wl-shadow-card) !important;
+  box-shadow: 0 4px 20px -2px var(--black-a40), 0 0 0 1px var(--line) !important;
   backdrop-filter: blur(14px) !important;
   transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
   cursor: pointer;
@@ -780,10 +770,10 @@
 }
 
 .watchlist-page-container .watchlist-artists-grid--rows .watchlist-artist-card:hover {
-  background: var(--wl-surface-elevated) !important;
+  background: var(--bg-glass-raised) !important;
   border-color: var(--white-a18) !important;
   transform: translateY(-2px) !important;
-  box-shadow: var(--wl-shadow-hover) !important;
+  box-shadow: 0 12px 32px -4px var(--black-a55), 0 0 0 1px var(--white-a18), 0 0 24px -6px rgba(var(--accent-rgb), 0.22) !important;
 }
 
 .watchlist-page-container .watchlist-artist-card--active {
@@ -873,7 +863,7 @@
 
 .watchlist-card-meta {
   font-size: 12px !important;
-  color: var(--wl-text-muted) !important;
+  color: var(--text-faint) !important;
   white-space: nowrap !important;
   overflow: hidden !important;
   text-overflow: ellipsis !important;
@@ -888,7 +878,7 @@
   border-radius: var(--radius-md) !important;
   background: var(--white-a04) !important;
   border: 1px solid var(--line) !important;
-  color: var(--wl-text-secondary) !important;
+  color: var(--text-secondary) !important;
   font-size: 13px !important;
   font-weight: 800 !important;
   cursor: pointer !important;
@@ -900,7 +890,7 @@
 
 .watchlist-row-menu-trigger:hover,
 .watchlist-row-menu-trigger[aria-expanded="true"] {
-  background: var(--wl-surface-hover) !important;
+  background: var(--white-a08) !important;
   border-color: var(--white-a18) !important;
   color: #ffffff !important;
 }
@@ -912,7 +902,7 @@
   align-items: center !important;
   gap: 8px !important;
   font-size: 12px !important;
-  color: var(--wl-text-secondary) !important;
+  color: var(--text-secondary) !important;
   white-space: nowrap !important;
   overflow: hidden !important;
   text-overflow: ellipsis !important;
@@ -925,7 +915,7 @@
 
 .watchlist-row-stats span:last-child {
   font-size: 11px !important;
-  color: var(--wl-text-muted) !important;
+  color: var(--text-faint) !important;
 }
 
 /* Tags & Provider Micro-Badges */
@@ -958,7 +948,7 @@
   letter-spacing: 0.02em !important;
   background: var(--white-a06) !important;
   border: 1px solid var(--white-a10) !important;
-  color: var(--wl-text-secondary) !important;
+  color: var(--text-secondary) !important;
 }
 
 .watchlist-source-spotify {
@@ -988,7 +978,7 @@
   font-weight: 650 !important;
   background: var(--white-a05) !important;
   border: 1px solid var(--line) !important;
-  color: var(--wl-text-secondary) !important;
+  color: var(--text-secondary) !important;
 }
 
 /* Health badges — clean and subtle at the end of tags */
@@ -1015,7 +1005,7 @@
   bottom: 0;
   width: 440px;
   max-width: 92vw;
-  background: var(--wl-surface-elevated);
+  background: var(--bg-glass-raised);
   border-left: 1px solid var(--white-a18);
   box-shadow: -12px 0 40px rgba(0, 0, 0, 0.7);
   z-index: 1001;
@@ -1053,14 +1043,14 @@
   border-radius: var(--radius-pill);
   background: var(--white-a04);
   border: 1px solid var(--line);
-  color: var(--wl-text-secondary);
+  color: var(--text-secondary);
   font-size: 16px;
   cursor: pointer;
   transition: all 0.15s ease;
 }
 
 .watchlist-inspector-close-btn:hover {
-  background: var(--wl-surface-hover);
+  background: var(--white-a08);
   border-color: var(--white-a18);
   color: #ffffff;
 }
@@ -1125,7 +1115,7 @@
 .watchlist-page-container .watchlist-page-empty {
   padding: 80px 24px;
   text-align: center;
-  background: var(--wl-surface);
+  background: var(--bg-glass);
   border: 1px solid var(--line);
   border-radius: var(--radius-xl);
   backdrop-filter: blur(12px);
@@ -1141,7 +1131,7 @@
 
 .watchlist-page-container .watchlist-page-empty p {
   font-size: 14px;
-  color: var(--wl-text-secondary);
+  color: var(--text-secondary);
   max-width: 440px;
   margin: 0 auto 24px;
   line-height: 1.6;
@@ -1287,7 +1277,7 @@
   border-radius: var(--radius-pill) !important;
   font-size: 11.5px !important;
   font-weight: 600 !important;
-  color: var(--wl-text-secondary) !important;
+  color: var(--text-secondary) !important;
 }
 
 .watchlist-artist-detail-overlay .watchlist-detail-actions {
@@ -1332,7 +1322,7 @@
 }
 
 .watchlist-artist-detail-overlay .watchlist-detail-section {
-  background: var(--wl-surface) !important;
+  background: var(--bg-glass) !important;
   border: 1px solid var(--line) !important;
   border-radius: var(--radius-xl) !important;
   padding: 16px !important;
@@ -1344,7 +1334,7 @@
   font-weight: 750 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.05em !important;
-  color: var(--wl-text-muted) !important;
+  color: var(--text-faint) !important;
   margin-bottom: 10px !important;
 }
 
