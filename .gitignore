@@ -43,3 +43,8 @@ Staging/
 Transfer/
 # Any hidden folders
 **/.*/
+# ...except the shared Claude Code project hooks; the rest of .claude/ stays local.
+!/.claude/
+/.claude/*
+!/.claude/settings.json
+!/.claude/hooks/
