@@ -65,7 +65,7 @@
   gap: 10px;
   margin-bottom: 12px;
   padding: 9px 14px;
-  border-radius: 10px;
+  border-radius: var(--radius-control);
   font-size: 12.5px;
   color: rgba(255, 255, 255, 0.66);
   background: var(--white-a05);
@@ -210,7 +210,7 @@
   height: 34px;
   padding: 0 18px;
   border: none;
-  border-radius: 10px;
+  border-radius: var(--radius-control);
   background: rgba(var(--accent-rgb), 0.95);
   color: #fff;
   font-size: 13px;
@@ -2212,7 +2212,7 @@
 .contents {
   margin-top: 8px;
   padding: 10px 12px;
-  border-radius: 10px;
+  border-radius: var(--radius-control);
   background: rgba(0, 0, 0, 0.28);
   border: 1px solid var(--white-a07);
 }
@@ -2410,7 +2410,7 @@
   margin-top: 16px;
   height: 36px;
   padding: 0 18px;
-  border-radius: 10px;
+  border-radius: var(--radius-control);
   border: 1px solid rgba(248, 113, 113, 0.32);
   background: rgba(248, 113, 113, 0.12);
   color: rgb(252, 165, 165);
@@ -2428,7 +2428,7 @@
   flex-shrink: 0;
   height: 34px;
   padding: 0 16px;
-  border-radius: 10px;
+  border-radius: var(--radius-control);
   border: 1px solid rgba(248, 113, 113, 0.3);
   background: rgba(248, 113, 113, 0.1);
   color: rgb(252, 165, 165);

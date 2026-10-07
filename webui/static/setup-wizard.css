@@ -133,7 +133,7 @@
     gap: 12px;
     padding: 10px 14px;
     background: var(--white-a03);
-    border-radius: 10px;
+    border-radius: var(--radius-control);
     border: 1px solid var(--white-a05);
 }
 
@@ -256,7 +256,7 @@
     padding: 10px 14px;
     background: var(--white-a06);
     border: 1px solid var(--white-a10);
-    border-radius: 10px;
+    border-radius: var(--radius-control);
     color: #fff;
     font-size: 0.9rem;
     outline: none;
@@ -384,7 +384,7 @@
     padding: 10px 14px;
     background: var(--white-a03);
     border: 1px solid var(--white-a06);
-    border-radius: 10px;
+    border-radius: var(--radius-control);
     cursor: pointer;
     transition: all var(--dur-base) ease;
 }
@@ -474,7 +474,7 @@
     padding: 10px 14px;
     background: var(--white-a03);
     border: 1px solid var(--white-a06);
-    border-radius: 10px;
+    border-radius: var(--radius-control);
     cursor: pointer;
     transition: all var(--dur-base) ease;
 }
@@ -584,7 +584,7 @@
 
 .setup-btn {
     padding: 10px 24px;
-    border-radius: 10px;
+    border-radius: var(--radius-control);
     font-size: 0.9rem;
     font-weight: 600;
     cursor: pointer;
@@ -695,7 +695,7 @@
     padding: 14px 16px;
     background: rgba(var(--accent-rgb), 0.06);
     border: 1px solid rgba(var(--accent-rgb), 0.15);
-    border-radius: 10px;
+    border-radius: var(--radius-control);
     margin-bottom: 16px;
     font-size: 0.82rem;
     color: var(--white-a60);
@@ -732,7 +732,7 @@
     padding: 14px;
     background: var(--white-a03);
     border: 1px solid var(--white-a06);
-    border-radius: 10px;
+    border-radius: var(--radius-control);
 }
 
 .setup-tip-title {

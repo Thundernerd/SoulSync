@@ -219,7 +219,7 @@
 .statsSyncButton {
   width: 32px;
   height: 32px;
-  border-radius: 10px;
+  border-radius: var(--radius-control);
   border: 1px solid var(--white-a10);
   background: var(--white-a05);
   color: var(--white-a70);

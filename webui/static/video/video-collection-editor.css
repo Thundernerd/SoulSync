@@ -215,7 +215,7 @@
 
 /* ── inputs ──────────────────────────────────────────────────────────────── */
 .vce-input {
-    width: 100%; font: inherit; font-size: 13.5px; padding: 9px 12px; border-radius: 10px;
+    width: 100%; font: inherit; font-size: 13.5px; padding: 9px 12px; border-radius: var(--radius-control);
     background: rgba(0, 0, 0, 0.28); border: 1px solid var(--white-a10); color: #fff;
     transition: border-color var(--dur-fast) ease, box-shadow var(--dur-fast) ease;
 }
@@ -510,7 +510,7 @@ textarea.vce-input { resize: vertical; min-height: 58px; }
 .vce-rule-x:hover { background: rgba(255,70,70,.16); color: #ff8a8a; }
 .vce-addrule {
     margin-top: 10px; display: inline-flex; align-items: center; gap: 7px; font: inherit;
-    font-size: 12.5px; font-weight: 700; padding: 8px 15px; border-radius: 10px; cursor: pointer;
+    font-size: 12.5px; font-weight: 700; padding: 8px 15px; border-radius: var(--radius-control); cursor: pointer;
     background: rgba(var(--a), 0.12); border: 1px solid rgba(var(--a), 0.3); color: rgb(var(--a));
     transition: background .13s ease;
 }

@@ -1414,7 +1414,7 @@
   .watchlist-page-container .watchlist-card-image .watchlist-card-image-fallback {
     width: 60px !important;
     height: 60px !important;
-    border-radius: 10px !important;
+    border-radius: var(--radius-control) !important;
   }
 
   .watchlist-page-container .watchlist-card-name {

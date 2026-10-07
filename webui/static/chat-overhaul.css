@@ -488,7 +488,7 @@
     display: flex;
     gap: 12px;
     padding: 6px 10px;
-    border-radius: 10px;
+    border-radius: var(--radius-control);
     transition: background var(--dur-fast) ease;
 }
 
@@ -726,7 +726,7 @@
 .chat-send-fab {
     width: 34px;
     height: 34px;
-    border-radius: 10px;
+    border-radius: var(--radius-control);
     background: linear-gradient(135deg, rgb(var(--accent-rgb)), rgb(var(--accent-light-rgb)));
     color: #051208;
     border: none;
@@ -820,7 +820,7 @@
     width: 100%;
     padding: 8px 12px;
     margin-bottom: 10px;
-    border-radius: 10px;
+    border-radius: var(--radius-control);
     border: 1px solid var(--white-a08);
     background: var(--black-a30);
     color: #fff;
@@ -1008,7 +1008,7 @@
 .chat-peer-stat-card {
     background: var(--black-a25);
     border: 1px solid var(--white-a06);
-    border-radius: 10px;
+    border-radius: var(--radius-control);
     padding: 8px 10px;
     display: flex;
     flex-direction: column;
@@ -1804,7 +1804,7 @@
 .chat-settings-modal .chat-input {
     background: var(--black-a35) !important;
     border: 1px solid var(--white-a12) !important;
-    border-radius: 10px !important;
+    border-radius: var(--radius-control) !important;
     padding: 10px 14px !important;
     color: #fff !important;
     font-size: 13.5px !important;
@@ -1824,7 +1824,7 @@
     align-items: center !important;
     gap: 12px !important;
     padding: 10px 14px !important;
-    border-radius: 10px !important;
+    border-radius: var(--radius-control) !important;
     background: var(--white-a03) !important;
     border: 1px solid var(--white-a05) !important;
     font-size: 13px !important;
@@ -1861,7 +1861,7 @@
 .chat-avpick {
     position: relative !important;
     height: 96px !important;
-    border-radius: 10px !important;
+    border-radius: var(--radius-control) !important;
     border: 2px solid transparent !important;
     background: var(--white-a05) !important;
     cursor: pointer !important;
@@ -2091,7 +2091,7 @@
     justify-content: space-between;
     gap: 16px;
     padding: 12px 14px;
-    border-radius: 10px;
+    border-radius: var(--radius-control);
     background: var(--white-a03);
     border: 1px solid var(--white-a05);
     cursor: pointer;
@@ -2176,7 +2176,7 @@
 }
 
 .chat-set-me-av .chat-av--xl {
-    border-radius: 10px;
+    border-radius: var(--radius-control);
     font-size: 20px;
 }
 
@@ -2274,7 +2274,7 @@
     align-items: center !important;
     gap: 12px !important;
     padding: 10px 14px !important;
-    border-radius: 10px !important;
+    border-radius: var(--radius-control) !important;
     background: var(--white-a03) !important;
     border: 1px solid var(--white-a06) !important;
     transition: all var(--dur-fast) ease !important;
@@ -2765,7 +2765,7 @@
     font-weight: 700;
     background: var(--black-a40);
     padding: 1px 7px;
-    border-radius: 10px;
+    border-radius: var(--radius-control);
     margin-left: 2px;
 }
 
@@ -2792,7 +2792,7 @@
     align-items: center;
     background: rgba(13, 17, 26, 0.9);
     border: 1px solid var(--white-a12);
-    border-radius: 10px;
+    border-radius: var(--radius-control);
     padding: 3px 4px 3px 12px;
     transition: all var(--dur-fast) ease;
 }
@@ -3758,7 +3758,7 @@
     align-items: center;
     gap: 12px;
     padding: 10px 12px;
-    border-radius: 10px;
+    border-radius: var(--radius-control);
     background: var(--white-a03);
     border: 1px solid var(--white-a06);
     transition: all var(--dur-fast) ease;
@@ -4494,7 +4494,7 @@
 /* ── 5. Inline Web Browser (Inside Unfurl Card) ──────────────────────────── */
 .chat-inline-web-frame {
     margin-top: 10px;
-    border-radius: 10px;
+    border-radius: var(--radius-control);
     border: 1px solid var(--white-a14);
     background: #0b0f17;
     overflow: hidden;
@@ -5065,7 +5065,7 @@
     gap: 2px;
     background: rgba(18, 24, 38, 0.94);
     border: 1px solid var(--white-a16);
-    border-radius: 10px;
+    border-radius: var(--radius-control);
     padding: 3px 6px;
     box-shadow: 0 6px 20px var(--black-a50);
     backdrop-filter: blur(12px);
@@ -5158,7 +5158,7 @@
     overflow-y: auto;
     background: rgba(18, 24, 38, 0.96);
     border: 1px solid var(--white-a16);
-    border-radius: 10px;
+    border-radius: var(--radius-control);
     padding: 6px;
     display: flex;
     flex-direction: column;
@@ -5602,7 +5602,7 @@
 .chat-share-thumb-wrap {
     width: 76px;
     height: 76px;
-    border-radius: 10px;
+    border-radius: var(--radius-control);
     background: #181d29;
     display: flex;
     align-items: center;

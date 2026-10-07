@@ -399,7 +399,7 @@
   align-items: center;
   gap: 2px;
   padding: 3px;
-  border-radius: 10px;
+  border-radius: var(--radius-control);
   background: var(--white-a04);
   border: 1px solid var(--white-a08);
 }
@@ -939,7 +939,7 @@
   position: relative;
   width: 52px;
   height: 52px;
-  border-radius: 10px;
+  border-radius: var(--radius-control);
   overflow: hidden;
   flex-shrink: 0;
   background: #15161e;

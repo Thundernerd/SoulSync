@@ -22,7 +22,7 @@ Rules for any CSS or `className` you write in `webui/`. `npm run check` (styleli
 | Text on solids | `--text-bright` (+ `--text-bright-rgb`), `--text-soft`, `--text-faint` | Off-white headline text, a lighter cool grey, faint hints |
 | Status | `--danger`, `--warning`, `--success`, `--info` (+ `-rgb` for alpha) | Errors, warnings, OK states. Not the accent. |
 | Status, second shades | `--danger-soft`, `--warning-strong`, `--success-strong`, `--gold` (+ `-rgb`) | Where a feature already uses the softer red, the deeper amber/green, or gold next to the main status colour |
-| Radius | `--radius-xs/sm/md/lg/xl` (4/6/8/12/16), `--radius-card` (14), `--radius-sheet` (18), `--radius-pill`, `--radius-circle` | Every `border-radius` |
+| Radius | `--radius-xs/sm/md/lg/xl` (4/6/8/12/16), `--radius-control` (10), `--radius-card` (14), `--radius-sheet` (18), `--radius-pill`, `--radius-circle` | Every `border-radius` |
 | Duration | `--dur-xfast/fast/quick/base/moderate/slow/slower/slowest` (.12/.15/.18/.2/.25/.3/.4/.5s) | Transitions |
 | Easing | `--ease-standard`, `--ease-emphasized`, `--ease-decelerate`, `--ease-out`, `--ease-spring` | Transitions and animations. Plain `ease`/`linear` stay keywords. |
 | Z-index | `--z-sticky` < `--z-dropdown` < `--z-overlay` < `--z-modal` < `--z-dialog-backdrop` < `--z-dialog` < `--z-menu` < `--z-toast` < `--z-tooltip` | Anything stacking against other components. `DialogFrame` uses the dialog pair, a menu opened from a dialog uses `--z-menu`. A single digit is fine for layering inside one component. |

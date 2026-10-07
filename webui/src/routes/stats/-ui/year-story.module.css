@@ -890,7 +890,7 @@
   gap: 6px;
   padding: 7px 13px;
   border: 1px solid var(--white-a10);
-  border-radius: 10px;
+  border-radius: var(--radius-control);
   background: var(--white-a04);
   color: var(--white-a80);
   font-family: inherit;
@@ -1027,7 +1027,7 @@
 .swatch {
   padding: 8px 14px;
   border: 1px solid var(--white-a16);
-  border-radius: 10px;
+  border-radius: var(--radius-control);
   font-family: inherit;
   font-size: 0.78rem;
   font-weight: 700;

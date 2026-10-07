@@ -170,7 +170,7 @@
 .error {
   margin: 0;
   padding: 10px 12px;
-  border-radius: 10px;
+  border-radius: var(--radius-control);
   background: rgba(248, 113, 113, 0.1);
   color: #fca5a5;
   font-size: 13px;

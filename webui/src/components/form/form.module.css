@@ -75,7 +75,7 @@
   min-width: 130px;
   box-sizing: border-box;
   border: 1px solid var(--white-a10);
-  border-radius: 10px;
+  border-radius: var(--radius-control);
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.035)),
     var(--white-a05);
@@ -447,7 +447,7 @@
   justify-content: center;
   gap: 8px;
   border: 1px solid var(--white-a10);
-  border-radius: 10px;
+  border-radius: var(--radius-control);
   background: var(--white-a05);
   color: #fff;
   cursor: pointer;

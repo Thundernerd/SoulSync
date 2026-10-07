@@ -212,12 +212,12 @@
 .card > a {
   display: block;
   text-decoration: none;
-  border-radius: 10px;
+  border-radius: var(--radius-control);
 }
 .art {
   position: relative;
   aspect-ratio: 1;
-  border-radius: 10px;
+  border-radius: var(--radius-control);
   overflow: hidden;
   background: #24242c;
   box-shadow: 0 8px 20px #0003;

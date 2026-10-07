@@ -235,7 +235,7 @@
   right: 0;
   background: #181d26;
   border: 1px solid var(--white-a15);
-  border-radius: 10px;
+  border-radius: var(--radius-control);
   box-shadow: 0 12px 32px var(--black-a60);
   min-width: 190px;
   padding: 6px;
@@ -494,7 +494,7 @@
   background: rgba(var(--danger-rgb), 0.06);
   border: 1px solid rgba(var(--danger-rgb), 0.2);
   padding: 14px 16px;
-  border-radius: 10px;
+  border-radius: var(--radius-control);
   margin-top: 10px;
 }
 

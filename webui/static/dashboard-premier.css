@@ -984,7 +984,7 @@ body.max-performance #dashboard-page .listen-hero-play::after {
 #dashboard-page .dash-sync-row .syncband-art {
     width: 44px;
     height: 44px;
-    border-radius: 10px;
+    border-radius: var(--radius-control);
     border: 1px solid var(--white-a10);
 }
 #dashboard-page .dash-sync-name {

@@ -763,7 +763,7 @@
     top: 14px; left: 14px;
     z-index: 25;
     width: 40px; height: 40px;
-    border-radius: 10px;
+    border-radius: var(--radius-control);
     border: 1px solid var(--white-a12);
     background: rgba(10, 12, 16, 0.85);
     backdrop-filter: blur(10px);

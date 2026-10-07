@@ -667,7 +667,7 @@ select.pf-input { appearance: auto; }
     width: 100%;
     min-height: 40px;
     padding: 8px 12px;
-    border-radius: 10px;
+    border-radius: var(--radius-control);
     font-size: 14px;
     color: var(--text-bright);
     cursor: pointer;
@@ -843,7 +843,7 @@ select.pf-input { appearance: auto; }
     min-width: 76px;
     height: 36px;
     padding: 0 10px;
-    border-radius: 10px;
+    border-radius: var(--radius-control);
     font-size: 14px;
 }
 

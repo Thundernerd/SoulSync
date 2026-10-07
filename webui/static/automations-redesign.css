@@ -24,7 +24,7 @@
 }
 .automations-stats .auto-stat {
     display: inline-flex; align-items: baseline; gap: 7px;
-    padding: 7px 14px; border-radius: 10px;
+    padding: 7px 14px; border-radius: var(--radius-control);
     background: var(--white-a04);
     border: 1px solid var(--white-a06);
     font-size: 12px; font-weight: 500; letter-spacing: .04em;
@@ -623,7 +623,7 @@
     border-radius: 16px 16px 0 0; border-bottom: none;
 }
 .automations-builder-view .builder-back-btn {
-    width: 34px; height: 34px; border-radius: 10px; cursor: pointer;
+    width: 34px; height: 34px; border-radius: var(--radius-control); cursor: pointer;
     background: var(--white-a05); border: 1px solid var(--white-a09);
     color: #fff; font-size: 15px;
     transition: all var(--dur-fast) ease;
@@ -642,7 +642,7 @@
 .automations-builder-view .builder-group-input {
     width: 170px;
     background: rgba(255,255,255,0.045); border: 1px solid var(--white-a08);
-    border-radius: 10px; color: var(--white-a80); font-size: 12.5px; font-family: inherit;
+    border-radius: var(--radius-control); color: var(--white-a80); font-size: 12.5px; font-family: inherit;
     padding: 8px 12px;
 }
 .automations-builder-view .builder-group-input:focus {
@@ -650,7 +650,7 @@
 }
 .automations-builder-view .btn-cancel {
     background: var(--white-a05); border: 1px solid var(--white-a10);
-    color: var(--white-a70); padding: 9px 16px; border-radius: 10px;
+    color: var(--white-a70); padding: 9px 16px; border-radius: var(--radius-control);
     font-size: 13px; font-weight: 600; font-family: inherit; cursor: pointer;
     transition: all var(--dur-fast) ease;
 }
@@ -658,7 +658,7 @@
 .automations-builder-view .btn-save {
     background: linear-gradient(135deg, rgba(var(--accent-rgb), 0.9), rgba(var(--accent-rgb), 0.65));
     border: 1px solid rgba(var(--accent-light-rgb), 0.4);
-    color: #fff; padding: 9px 20px; border-radius: 10px;
+    color: #fff; padding: 9px 20px; border-radius: var(--radius-control);
     font-size: 13px; font-weight: 650; font-family: inherit; cursor: pointer;
     box-shadow: 0 4px 16px -4px rgba(var(--accent-rgb), 0.5);
     transition: transform var(--dur-fast) ease, box-shadow var(--dur-fast) ease;
@@ -850,7 +850,7 @@
     color: rgb(var(--accent-light-rgb));
 }
 .automations-builder-view .condition-builder {
-    margin-top: 6px; padding: 10px; border-radius: 10px;
+    margin-top: 6px; padding: 10px; border-radius: var(--radius-control);
     background: rgba(0,0,0,0.16); border: 1px solid var(--white-a05);
 }
 .automations-builder-view .condition-row {

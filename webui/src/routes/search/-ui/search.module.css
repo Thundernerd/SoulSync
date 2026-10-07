@@ -123,7 +123,7 @@
   flex-shrink: 0;
   padding: 7px 11px;
   border: none;
-  border-radius: 10px;
+  border-radius: var(--radius-control);
   background: var(--bg-raised);
   font-size: 13px;
   font-weight: 600;
@@ -866,7 +866,7 @@
   width: 100%;
   max-width: 100%;
   aspect-ratio: 1;
-  border-radius: 10px;
+  border-radius: var(--radius-control);
   overflow: hidden;
   background: linear-gradient(145deg, rgba(var(--accent-rgb), 0.22), #111218);
   box-shadow: 0 8px 24px var(--black-a35);
@@ -996,7 +996,7 @@
   place-items: center;
   width: 40px;
   height: 40px;
-  border-radius: 10px;
+  border-radius: var(--radius-control);
   background: linear-gradient(145deg, rgba(var(--accent-rgb), 0.22), rgba(var(--accent-rgb), 0.06));
   color: rgba(255, 255, 255, 0.78);
 }

@@ -662,7 +662,7 @@
   align-items: center;
   background: var(--white-a04);
   border: 1px solid var(--white-a08);
-  border-radius: 10px;
+  border-radius: var(--radius-control);
   padding: 3px;
   gap: 2px;
 }
@@ -1421,7 +1421,7 @@
 .billboardStatItem {
   background: var(--white-a03);
   border: 1px solid var(--white-a06);
-  border-radius: 10px;
+  border-radius: var(--radius-control);
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -3029,7 +3029,7 @@
     height: 52px;
     min-width: 52px;
     min-height: 52px;
-    border-radius: 10px;
+    border-radius: var(--radius-control);
   }
 
   .episodeTitle {
@@ -3086,7 +3086,7 @@
     height: 56px;
     min-width: 56px;
     min-height: 56px;
-    border-radius: 10px;
+    border-radius: var(--radius-control);
   }
 
   .showNotesTitle {
@@ -3438,7 +3438,7 @@
   justify-content: center;
   width: 36px;
   height: 36px;
-  border-radius: 10px;
+  border-radius: var(--radius-control);
   background: rgba(99, 102, 241, 0.15);
   color: #818cf8;
   flex-shrink: 0;
@@ -3498,7 +3498,7 @@
 .modalInput {
   width: 100%;
   padding: 11px 14px;
-  border-radius: 10px;
+  border-radius: var(--radius-control);
   background: var(--black-a35);
   border: 1px solid var(--white-a14);
   color: #ffffff;
@@ -3844,7 +3844,7 @@
   justify-content: center;
   gap: 8px;
   padding: 11px 22px;
-  border-radius: 10px;
+  border-radius: var(--radius-control);
   font-size: 13px;
   font-weight: 600;
   color: #ffffff;
