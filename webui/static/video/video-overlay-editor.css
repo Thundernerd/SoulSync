@@ -74,7 +74,6 @@
 /* ── GALLERY ─────────────────────────────────────────────────────────────── */
 .voe-gallery { flex: 1; overflow-y: auto; }
 .voe-gallery-inner { max-width: 1120px; margin: 0 auto; padding: 56px 32px 64px; }
-.voe-gallery-head { margin-bottom: 40px; text-align: center; }
 .voe-gallery-kick {
     font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase;
     color: rgb(var(--a)); display: inline-flex; align-items: center; gap: 8px;
@@ -84,7 +83,7 @@
 .voe-gallery-title { font-size: 34px; font-weight: 900; letter-spacing: -.03em; margin: 12px 0 8px; }
 .voe-gallery-sub { font-size: 14.5px; color: var(--white-a50); max-width: 600px; line-height: 1.6; margin: 0 auto; }
 /* studio settings + maintenance panel — quick overlay config right on the gallery */
-.voe-gallery-head { margin-bottom: 26px; }
+.voe-gallery-head { text-align: center; margin-bottom: 26px; }
 .voe-studio-settings { display: flex; gap: 16px; flex-wrap: wrap; align-items: stretch; max-width: 980px; margin: 0 auto 36px; }
 .voe-studio-panel { flex: 1 1 300px; min-width: 0; padding: 18px 18px 16px; border-radius: 15px;
     background: var(--white-a03); border: 1px solid var(--white-a08); }
@@ -101,7 +100,7 @@
  * auto-fill 1fr, which stranded a couple of cards at the left with empty stretch
  * columns to the right). */
 .voe-grid {
-    display: grid; grid-template-columns: repeat(auto-fill, 236px); justify-content: center; gap: 24px;
+    grid-template-columns: repeat(auto-fill, 236px); justify-content: center; gap: 24px;
 }
 .voe-card {
     position: relative; border-radius: var(--radius-xl); overflow: hidden; cursor: pointer;
@@ -254,7 +253,7 @@
 }
 /* selection frame — corner resize handles + a rotate handle */
 .voe-selbox { position: absolute; z-index: 38; box-sizing: border-box; pointer-events: none;
-    border: 1.5px solid rgb(var(--a)); box-shadow: 0 0 0 1px var(--black-a35); }
+    border: 1.5px solid rgb(var(--a)); box-shadow: 0 0 0 1px var(--black-a35); animation: voe-sel-in .14s ease; }
 .voe-sel-h { position: absolute; width: 11px; height: 11px; border-radius: 3px; pointer-events: auto;
     background: #fff; border: 1.5px solid rgb(var(--a)); box-shadow: 0 1px 3px var(--black-a50); }
 .voe-sel-h--tl { left: -6px; top: -6px; cursor: nwse-resize; }
@@ -351,6 +350,7 @@
 .voe-layer-row:hover { background: var(--white-a04); }
 .voe-layer-row--sel { background: rgba(var(--a),.15); border-color: rgba(var(--a),.4); }
 .voe-lr-grip { color: var(--white-a30); cursor: grab; flex: 0 0 auto; display: grid; place-items: center; }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .voe-lr-grip svg { width: 13px; height: 13px; }
 .voe-lr-ic { flex: 0 0 auto; width: 24px; height: 24px; border-radius: 7px; display: grid; place-items: center;
     background: var(--white-a06); color: var(--white-a70); }
@@ -382,7 +382,6 @@
 .voe-insp-chev svg { width: 13px; height: 13px; stroke: currentColor; }
 .voe-sec-collapsed .voe-insp-sec-h { margin-bottom: 0; }
 .voe-sec-collapsed .voe-insp-chev { transform: rotate(-90deg); }
-.voe-sec-collapsed .voe-insp-body { display: none; }
 .voe-field { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
 .voe-field:last-child { margin-bottom: 0; }
 .voe-field-l { flex: 0 0 62px; font-size: 12px; color: var(--white-a55); }
@@ -590,7 +589,6 @@ select.voe-input option { background: #17171d; }
 .voe-fs-loading { grid-column: 1 / -1; text-align: center; color: var(--white-a50); padding: 46px 0; font-size: 13px; }
 
 /* ── micro-animation ─────────────────────────────────────────────────────── */
-.voe-selbox { animation: voe-sel-in .14s ease; }
 @keyframes voe-sel-in { from { opacity: 0; } to { opacity: 1; } }
 .voe-layer--pop { animation: voe-pop-in .22s cubic-bezier(.2,1.3,.4,1); }
 @keyframes voe-pop-in { from { transform: scale(.6); opacity: 0; } to { opacity: 1; } }
@@ -602,10 +600,6 @@ select.voe-input option { background: #17171d; }
 .voe-confirm-back--on .voe-apply-modal { transform: none; }
 .voe-apply-t { font-size: 19px; font-weight: 800; }
 .voe-apply-sub { font-size: 13px; color: var(--white-a55); line-height: 1.55; margin: 6px 0 18px; }
-.voe-apply-note { font-size: 12px; color: rgba(255,255,255,.42); line-height: 1.5; margin: 10px 2px 4px; }
-.voe-apply-row { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-top: 1px solid var(--white-a06); }
-.voe-apply-row-l { flex: 0 0 66px; font-size: 13.5px; font-weight: 700; }
-.voe-apply-row .voe-input { flex: 1; }
 .voe-apply-applied { font-size: 12.5px; color: var(--white-a45); margin: 14px 0 4px; }
 .voe-apply-prog { margin: 16px 0 6px; }
 .voe-apply-prog[hidden] { display: none; }
@@ -682,6 +676,7 @@ select.voe-input option { background: #17171d; }
 .voe-filter-count { font-size: 11px; color: var(--white-a45); font-variant-numeric: tabular-nums; }
 
 /* ── gallery grouped by template type; episode cards in true 16:9 ────────── */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .voe-grid { display: block; }
 .voe-grid-row {
     display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));

@@ -132,7 +132,13 @@ const DELETED_MARKUP_IDS = [
   'your-artists-carousel',
   'your-artists-section',
 ];
-const DELETED_MARKUP_CLASSES = ['artweb-size-btn', 'watch-all-text'];
+const DELETED_MARKUP_CLASSES = [
+  'artweb-size-btn',
+  // its only stylesheet rule styled a subsection class nothing renders, so
+  // the dead-rule pass removed it; the markup that declared it is gone too.
+  'listenbrainz-tab-content',
+  'watch-all-text',
+];
 
 /**
  * Classes the port introduces because the vanilla styled that element INLINE.
@@ -269,8 +275,8 @@ describe('the components emit the vanilla ARTEFACTS', () => {
     ]);
     // TOKENIZED, not substring: containing a known token must not make an
     // unknown one pass — the exact hole the first draft had.
-    expect(KNOWN_CLASSES.has('listenbrainz-tab-content')).toBe(true);
-    expect(KNOWN_CLASSES.has('listenbrainz-tab')).toBe(false);
+    expect(KNOWN_CLASSES.has('decade-tab')).toBe(true);
+    expect(KNOWN_CLASSES.has('decade')).toBe(false);
     // Interpolations are stripped before tokenizing: the vanilla's
     // `class="decade-tab lb-subtab${…}"` must yield `lb-subtab`, not
     // `lb-subtab${…}`.

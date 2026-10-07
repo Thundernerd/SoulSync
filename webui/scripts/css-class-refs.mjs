@@ -101,9 +101,33 @@ export function isLive(cls, refs) {
 
 const CLASS_RE = /\.(-?[_a-zA-Z][\w-]*)/g;
 
-function selectorClasses(selector) {
+// A class inside :not() is one the element must NOT have, and one inside
+// :is()/:where()/:matches()/:-*-any() is one alternative of several, so
+// neither is a class the selector needs.
+const OPTIONAL_PSEUDO = /:(?:not|is|where|matches|-webkit-any|-moz-any)\(/gi;
+
+function dropOptionalPseudos(selector) {
+  let out = '';
+  let last = 0;
+  for (const m of selector.matchAll(OPTIONAL_PSEUDO)) {
+    if (m.index < last) continue;
+    out += selector.slice(last, m.index);
+    let depth = 1;
+    let i = m.index + m[0].length;
+    for (; i < selector.length && depth; i++) {
+      if (selector[i] === '(') depth++;
+      else if (selector[i] === ')') depth--;
+    }
+    last = i;
+  }
+  return out + selector.slice(last);
+}
+
+export function selectorClasses(selector) {
   // Drop attribute selectors and strings so `[href$=".css"]` isn't a class.
-  const clean = selector.replace(/\[[^\]]*\]/g, '').replace(/(['"]).*?\1/g, '');
+  const clean = dropOptionalPseudos(
+    selector.replace(/\[[^\]]*\]/g, '').replace(/(['"]).*?\1/g, ''),
+  );
   return [...clean.matchAll(CLASS_RE)].map((m) => m[1]);
 }
 
