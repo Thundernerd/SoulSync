@@ -1,12 +1,12 @@
 {
   "legacy": {
-    "hex": 3935,
-    "rgbLiterals": 6456,
+    "hex": 3822,
+    "rgbLiterals": 4766,
     "important": 2116
   },
   "modules": {
-    "hex": 619,
-    "rgbLiterals": 462,
+    "hex": 553,
+    "rgbLiterals": 316,
     "important": 216
   },
   "distinctZIndexValues": 79,
