@@ -5,6 +5,18 @@ import { defineConfig } from '@playwright/test';
  * index.html itself, serves webui/static from disk and stubs every /api call.
  * See tests/visual/README.md.
  */
+
+// The baselines are rendered inside the official Playwright image (the image
+// sets PLAYWRIGHT_BROWSERS_PATH; nothing else does). Anywhere else the fonts
+// differ and every shot would fail, so point at the wrapper instead.
+// VISUAL_ON_HOST=1 skips the check, for poking at a page with a throwaway spec.
+if (process.env.PLAYWRIGHT_BROWSERS_PATH !== '/ms-playwright' && !process.env.VISUAL_ON_HOST) {
+  throw new Error(
+    'The visual baselines only reproduce inside the Playwright Docker image. ' +
+      'Run `npm run test:visual` (or `node scripts/visual.mjs <playwright args>`).',
+  );
+}
+
 export default defineConfig({
   testDir: './tests/visual',
   snapshotPathTemplate: '{testDir}/__screenshots__/{arg}{ext}',

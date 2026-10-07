@@ -11,8 +11,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:e2e": "playwright test",
-    "test:visual": "vite build && playwright test -c playwright.visual.config.ts",
-    "test:visual:update": "vite build && playwright test -c playwright.visual.config.ts --update-snapshots",
+    "test:visual": "npm run build && node scripts/visual.mjs",
+    "test:visual:update": "npm run build && node scripts/visual.mjs --update-snapshots",
     "lint:css": "stylelint \"src/**/*.css\" \"static/**/*.css\""
   },
   "dependencies": {
