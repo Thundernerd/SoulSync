@@ -85,11 +85,11 @@
         "declaration-property-value-disallowed-list": [
           {
             "/.*/": [
-              "/(?:rgb|hsl)a?\\(\\s*(?!0\\s*,\\s*0\\s*,\\s*0\\s*,)[\\d.]/"
+              "/(?:rgb|hsl)a?\\(\\s*[\\d.]/"
             ]
           },
           {
-            "message": "No literal rgb()/hsl() colours in modules: use a token, rgba(var(--x-rgb), a), or rgba(0, 0, 0, a) for shadows (see webui/STYLE.md)"
+            "message": "No literal rgb()/hsl() colours in modules: use a token (black shadows: --black-aNN) or rgba(var(--x-rgb), a) (see webui/STYLE.md)"
           }
         ],
         "declaration-property-value-allowed-list": [
@@ -97,11 +97,11 @@
             "z-index": [
               "auto",
               "/^-?\\d$/",
-              "/^var\\(--z-[a-z]+\\)$/"
+              "/^var\\(--z-[a-z-]+\\)$/"
             ],
             "border-radius": [
               "inherit",
-              "/^(?:(?:0|var\\(--radius-[a-z]+\\))\\s*)+$/"
+              "/^(?:(?:0|var\\(--radius-[a-z-]+\\))\\s*)+$/"
             ]
           },
           {
@@ -133,18 +133,14 @@
     },
     {
       "files": [
-        "src/components/dialog/dialog.module.css",
         "src/components/form/form.module.css",
         "src/components/media-player-bar/media-player-bar.module.css",
-        "src/components/page-header/page-header.module.css",
-        "src/components/primitives/primitives.module.css",
         "src/routes/audiobooks/-ui/audiobook-library.module.css",
         "src/routes/audiobooks/-ui/audiobooks-page.module.css",
         "src/routes/import/-ui/import-page.module.css",
         "src/routes/issues/-ui/issue-detail-modal.module.css",
         "src/routes/issues/-ui/issue-status.module.css",
         "src/routes/issues/-ui/issues-page.module.css",
-        "src/routes/issues/-ui/report-issue-button.module.css",
         "src/routes/podcasts/-ui/podcasts-page.module.css",
         "src/routes/requests/-ui/requests-page.module.css",
         "src/routes/sample-studio/-ui/sample-studio-page.module.css",
@@ -184,16 +180,13 @@
     {
       "files": [
         "src/components/dialog/dialog.module.css",
-        "src/components/form/form.module.css",
         "src/components/media-player-bar/media-player-bar.module.css",
         "src/routes/audiobooks/-ui/audiobook-library.module.css",
         "src/routes/audiobooks/-ui/audiobooks-page.module.css",
         "src/routes/import/-ui/import-page.module.css",
-        "src/routes/issues/-ui/issue-detail-modal.module.css",
         "src/routes/issues/-ui/issue-status.module.css",
         "src/routes/issues/-ui/issues-page.module.css",
         "src/routes/podcasts/-ui/podcasts-page.module.css",
-        "src/routes/requests/-ui/requests-page.module.css",
         "src/routes/sample-studio/-ui/sample-studio-page.module.css",
         "src/routes/search/-ui/basic.module.css",
         "src/routes/search/-ui/download-chooser.module.css",
