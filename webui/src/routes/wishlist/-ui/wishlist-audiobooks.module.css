@@ -449,9 +449,10 @@
   background: linear-gradient(135deg, var(--white-a03) 0%, rgba(255, 255, 255, 0.01) 100%);
   border: 1px solid var(--white-a07);
   box-shadow: 0 12px 36px rgba(0, 0, 0, 0.2);
+  color: inherit;
 }
 
-.emptyIcon {
+.empty > [data-slot='empty-state-icon'] {
   font-size: 44px;
   margin-bottom: 12px;
   opacity: 0.8;
