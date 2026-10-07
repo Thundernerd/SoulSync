@@ -9,7 +9,7 @@ import type {
   AudiobookWishlistSummary,
 } from '@/routes/audiobooks/-audiobooks.types';
 
-import { Spinner } from '@/components/primitives';
+import { Skeleton, Spinner } from '@/components/primitives';
 import {
   fetchWishlist,
   removeFromWishlist,
@@ -350,7 +350,7 @@ export function WishlistAudiobooks({
 
       {/* ── Content Presentation ───────────────────────────────────────── */}
       {loading ? (
-        <div className={styles.skeleton} aria-hidden="true" />
+        <Skeleton className={styles.skeleton} />
       ) : shown.length === 0 ? (
         <div className={styles.empty}>
           <div className={styles.emptyIcon}>🎧</div>
