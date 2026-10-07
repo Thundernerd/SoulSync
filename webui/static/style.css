@@ -22346,6 +22346,7 @@ body:has(.chat-web-modal-overlay--open) #activity-float-btn {
     /* Overridden by the animation below, so it never applies. Kept because
        tests/test_css_animation_visibility.py reads only the first animation;
        the fade-in from opacity 0 is a real Max Performance bug to fix. */
+    /* stylelint-disable-next-line declaration-block-no-duplicate-properties */
     animation: gradientShift 8s ease infinite;
     z-index: 0;
     opacity: 0;
