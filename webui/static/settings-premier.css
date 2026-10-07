@@ -143,6 +143,7 @@
 #settings-page .stg-media-card .form-group > textarea {
     display: block; width: 100% !important; max-width: 100% !important;
 }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 #settings-page .settings-nav-row {
     flex-wrap: nowrap !important;
     /* Keep saving within reach while scrolling a long category. */

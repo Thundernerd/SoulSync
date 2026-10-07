@@ -1681,6 +1681,7 @@
     }
 
     /* Spacing reductions */
+    /* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
     .page {
         padding: 70px 16px 72px 16px;
     }
@@ -2372,6 +2373,7 @@
     }
 
     /* Bulk bar */
+    /* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
     .enhanced-bulk-bar {
         flex-wrap: wrap;
         gap: 8px;

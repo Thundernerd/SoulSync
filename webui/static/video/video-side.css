@@ -1612,13 +1612,16 @@ a.vd-prov:hover img, a.vd-prov:hover .vd-prov-ph { border-color: rgba(var(--vd-a
 .vsr-basic-hit-analysis p { margin: 6px 0 0; color: rgba(255,189,122,0.76); line-height: 1.4; }
 
 /* Basic Search visual pass — SoulSync native release browser */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-basic {
     max-width: 980px; border-radius: var(--radius-xl);
     background: linear-gradient(180deg, rgba(var(--vd-accent-rgb), 0.1), rgba(255,255,255,0.025));
     border-color: var(--white-a09); box-shadow: 0 18px 48px rgba(0,0,0,0.42), inset 0 1px 0 var(--white-a06);
 }
 .vsr-basic-submit { border-color: rgba(var(--vd-accent-rgb), 0.74); }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-basic-results { max-width: 1120px; }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-basic-results-head { padding: 15px 18px; border-radius: var(--radius-xl); overflow: hidden; position: relative;
     background: linear-gradient(180deg, rgba(var(--vd-accent-rgb), 0.09), rgba(255,255,255,0.025));
     border: 1px solid var(--white-a08); box-shadow: inset 0 1px 0 var(--white-a05); }
@@ -1626,9 +1629,12 @@ a.vd-prov:hover img, a.vd-prov:hover .vd-prov-ph { border-color: rgba(var(--vd-a
     background: linear-gradient(90deg, transparent, rgba(var(--vd-accent-rgb), 0.08), transparent);
     transform: translateX(-100%); animation: pageHeaderSweep 12s ease-in-out infinite; }
 .vsr-basic-results-head > * { position: relative; z-index: 1; }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-basic-summary { margin: 12px 0 16px; }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-basic-source-tabs { gap: 6px; padding: 2px; margin-bottom: 10px; border-radius: var(--radius-lg);
     background: rgba(8,10,16,0.5); border: 1px solid rgba(255,255,255,0.075); }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-basic-source-tab { position: relative; min-width: 164px; min-height: 52px; grid-template-columns: minmax(0, 1fr) auto; align-items: center;
     border-radius: var(--radius-md); background: transparent; border-color: transparent; overflow: hidden; }
 .vsr-basic-source-tab.active { color: #fff; box-shadow: inset 0 1px 0 var(--white-a08); background: rgba(var(--vd-accent-rgb), 0.13); border-color: rgba(var(--vd-accent-rgb), 0.36); }
@@ -1638,18 +1644,23 @@ a.vd-prov:hover img, a.vd-prov:hover .vd-prov-ph { border-color: rgba(var(--vd-a
 .vsr-basic-tab-loader { display: none; position: absolute; right: 9px; top: 8px; width: 6px; height: 6px; border-radius: var(--radius-circle);
     background: rgb(var(--vd-accent-rgb)); box-shadow: 0 0 12px rgba(var(--vd-accent-rgb), 0.8); }
 .vsr-basic-source-tab.is-searching .vsr-basic-tab-loader { display: block; animation: vsrBasicPulse 0.95s ease-in-out infinite; }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-basic-source-row { padding: 0; border-radius: var(--radius-xl); background: rgba(255,255,255,0.035); border-color: var(--white-a08);
     box-shadow: inset 0 1px 0 var(--white-a04); overflow: hidden; }
 .vsr-basic-source-row.is-searching { border-color: rgba(var(--vd-accent-rgb), 0.22); }
 .vsr-basic-source-row.is-searching::before { content: ''; display: block; height: 2px; width: 38%; border-radius: 2px;
     background: linear-gradient(90deg, transparent, rgb(var(--vd-accent-rgb)), transparent);
     box-shadow: 0 0 14px rgba(var(--vd-accent-rgb), 0.65); animation: vsrBasicScan 1.05s ease-in-out infinite; }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-basic-source-top { padding: 14px 16px 12px; border-bottom: 1px solid var(--white-a07); }
 .vsr-basic-source-query, .vsr-basic-source-action { border-radius: var(--radius-md); }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-basic-source-action { display: inline-flex; align-items: center; gap: 7px; min-height: 30px;
     box-shadow: 0 6px 18px rgba(var(--vd-accent-rgb), 0.22); }
 .vsr-basic-loader-dot { width: 8px; height: 8px; border-radius: var(--radius-circle); background: #fff; box-shadow: 0 0 12px var(--white-a75); animation: vsrBasicPulse 0.95s ease-in-out infinite; }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-basic-hits { padding: 4px 0; }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-basic-source-note { display: flex; align-items: center; gap: 10px; margin: 10px 12px; min-height: 44px; border-radius: var(--radius-md);
     background: rgba(255,255,255,0.035); color: rgba(255,255,255,0.64); }
 .vsr-basic-source-note--loading { color: rgba(255,255,255,0.78); border-color: rgba(var(--vd-accent-rgb), 0.16); }
@@ -1657,6 +1668,7 @@ a.vd-prov:hover img, a.vd-prov:hover .vd-prov-ph { border-color: rgba(var(--vd-a
 .vsr-basic-loader i { width: 6px; height: 6px; border-radius: var(--radius-circle); background: rgba(var(--vd-accent-rgb), 0.95); animation: vsrBasicDots 0.9s ease-in-out infinite; }
 .vsr-basic-loader i:nth-child(2) { animation-delay: 0.12s; }
 .vsr-basic-loader i:nth-child(3) { animation-delay: 0.24s; }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-basic-hit { margin: 0;
     border-bottom: 1px solid var(--white-a07); }
 .vsr-basic-hit:last-child { border-bottom: 0; }
@@ -1688,6 +1700,7 @@ a.vd-prov:hover img, a.vd-prov:hover .vd-prov-ph { border-color: rgba(var(--vd-a
 }
 .vsr-body { padding: 6px 24px 70px; }
 .vsr-results { display: flex; flex-direction: column; gap: 40px; }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-group { animation: vsr-fade 0.4s ease both; }
 @keyframes vsr-fade { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 .vsr-group-title {
@@ -3409,6 +3422,7 @@ body:not(.video-admin) .vst-combo-panels { grid-template-columns: 1fr; }
 .vgm-ep-badge--soon { background: var(--white-a08); color: var(--white-a50); }
 
 /* footer */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vgm-sel-count { margin-right: auto; font-size: 13px; font-weight: 700; color: var(--white-a55); }
 
 /* "Add to watchlist" offer in the show get-modal (airing + not-yet-followed) */
@@ -3429,7 +3443,9 @@ body:not(.video-admin) .vst-combo-panels { grid-template-columns: 1fr; }
 /* ══════════════════════════════════════════════════════════════════════════
    Get-modal — premium vibe pass: per-title hue glows + motion (--vgm-h set by JS)
    ══════════════════════════════════════════════════════════════════════════ */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vgm-overlay { background: rgba(4, 4, 7, 0.78); }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vgm-modal {
     box-shadow: 0 60px 140px var(--black-a75),
         0 0 90px hsla(var(--vgm-h, 230), 75%, 55%, 0.20),
@@ -3444,6 +3460,7 @@ body:not(.video-admin) .vst-combo-panels { grid-template-columns: 1fr; }
 
 /* hero — slow Ken Burns drift, hue-tinted scrim, and a drifting light sweep */
 @keyframes vgmKen { from { background-position: center 18%; } to { background-position: center 34%; } }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vgm-hero-scrim {
     background: linear-gradient(0deg, #101015 3%, rgba(16, 16, 21, 0.55) 50%, rgba(16, 16, 21, 0.05)),
         radial-gradient(140% 120% at 0% 100%, hsla(var(--vgm-h, 230), 78%, 48%, 0.42), transparent 60%),
@@ -3465,15 +3482,19 @@ body:not(.video-admin) .vst-combo-panels { grid-template-columns: 1fr; }
 @keyframes vgmRise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
 
 /* poster — hue-aware halo + its own rise (it sits outside hero-content) */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vgm-poster { box-shadow: 0 14px 34px var(--black-a60), 0 0 0 1px var(--black-a40),
     0 0 28px -6px hsla(var(--vgm-h, 230), 80%, 58%, 0.5); }
 .vgm-overlay.vgm-open .vgm-poster { animation: vgmRise 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) 0.12s both; }
 
 /* close button spins on hover */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vgm-close { transition: transform var(--dur-moderate) ease, background var(--dur-base) ease, border-color var(--dur-base) ease; }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vgm-close:hover { transform: rotate(90deg); }
 
 /* episode rows — accent edge slides in on hover */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vgm-ep { position: relative; transition: background 0.14s ease, padding-left 0.14s ease; }
 .vgm-ep::before { content: ''; position: absolute; left: 0; top: 8px; bottom: 8px; width: 2px; border-radius: 2px;
     background: hsl(var(--vgm-h, 230), 82%, 62%); opacity: 0; transition: opacity 0.14s ease; }
@@ -3836,13 +3857,17 @@ body:not(.video-admin) .vst-combo-panels { grid-template-columns: 1fr; }
     box-shadow: 0 16px 36px var(--black-a55);
 }
 /* the shared .vsr-card lifts the poster; on Discover the whole card lifts */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vdsc-page .vsr-card:hover .vsr-poster { transform: none; }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vdsc-page .vsr-poster { border-radius: var(--radius-lg); }
 .vdsc-page .vsr-card:hover .vsr-poster img { transform: scale(1.05); }
 .vdsc-page .vsr-info { padding: 12px 2px 0; }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vdsc-page .vsr-name { font-size: 0.92rem; }
 .vdsc-page .vsr-sub { font-size: 0.78rem; color: rgba(255, 255, 255, 0.62); }
 /* Every Discover card is a preview by definition — the "Preview" ribbon is noise */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vdsc-page .vsr-ribbon--preview { display: none; }
 /* hide-owned: owned titles vanish from rails (ranked keeps its chart shape) */
 .vdsc-hide-owned .vsr-card--owned { display: none; }
@@ -4948,6 +4973,7 @@ body:not(.video-admin) .vst-combo-panels { grid-template-columns: 1fr; }
 .vdl-src:nth-child(1) { animation-delay: 0.14s; }
 .vdl-src:nth-child(2) { animation-delay: 0.22s; }
 .vdl-src:nth-child(3) { animation-delay: 0.30s; }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vdl-reason { animation: vdlRise 0.4s ease both; }
 
 @keyframes vdlRise { from { opacity: 0; transform: translateY(11px); } to { opacity: 1; transform: none; } }
@@ -5349,6 +5375,7 @@ body:not(.video-admin) .vst-combo-panels { grid-template-columns: 1fr; }
 .vdpg-card .vdpg-qchip { background: rgba(var(--vt), 0.16); border-color: rgba(var(--vt), 0.36); }
 
 /* ── click-to-expand detail drawer (wraps full-width below the row) ── */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vdpg-card { flex-wrap: wrap; cursor: pointer; }
 .vdpg-drawer { flex: 0 0 100%; width: 100%; margin-top: 12px; position: relative; cursor: default;
     border-top: 1px solid var(--white-a08); border-radius: var(--radius-control); overflow: hidden; background: var(--black-a20); }
@@ -6235,6 +6262,7 @@ body[data-side="video"] #gsearch-aura {
 .vi-st--dismissed { background: var(--white-a07); color: var(--white-a50); }
 
 /* refine row: search, item type, mine/everyone */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vi-toolbar { flex-wrap: wrap; align-items: center; }
 .vi-search {
     flex: 1 1 240px; min-width: 0; padding: 9px 12px; border-radius: var(--radius-control); font: inherit; font-size: 13px;
@@ -6547,6 +6575,7 @@ body[data-side="video"] #gsearch-aura {
 .vsub-chip--bad { background: rgba(239, 68, 68, 0.16); color: #f3a1a1; }
 
 /* Fresh Releases — EXT.to homepage board in SoulSync's release-browser language */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-tabs { grid-template-columns: repeat(3, minmax(116px, 1fr)); }
 .vsr-fresh-intro { display: none; }
 .vsr-fresh-results { width: 100%; max-width: 100%; margin: 0; padding: 0; box-sizing: border-box; animation: vsr-fade 0.25s ease both; }
@@ -6603,6 +6632,7 @@ body[data-side="video"] #gsearch-aura {
 }
 
 /* Fresh Releases identify + grab flow */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-fresh-table-head, .vsr-fresh-row { grid-template-columns: minmax(0, 1fr) 96px 72px 82px 82px 96px; }
 .vsr-fresh-pick { border: 1px solid rgba(var(--vd-accent-rgb), 0.48); cursor: pointer;
     color: #fff; }
@@ -6681,7 +6711,9 @@ body[data-side="video"] #gsearch-aura {
 }
 
 /* — The form: one pill search field, glass selects, accent submit. */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-basic { padding: 14px; }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-basic-main {
     min-height: 52px; padding: 0 20px; border-radius: var(--radius-pill);
     background: rgba(6, 8, 13, 0.72);
@@ -6694,8 +6726,11 @@ body[data-side="video"] #gsearch-aura {
     background: rgba(10, 13, 20, 0.85);
     box-shadow: 0 6px 28px var(--black-a40), 0 0 0 3px rgba(var(--vd-accent-rgb), 0.14);
 }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-basic-input { height: 50px; font-size: 14.5px; font-weight: 600; }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-basic-row { gap: 10px; margin-top: 12px; }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-basic-field {
     min-height: 42px; border-radius: var(--radius-pill); padding: 0 16px;
     background: rgba(255,255,255,0.045);
@@ -6706,9 +6741,11 @@ body[data-side="video"] #gsearch-aura {
     border-color: rgba(var(--vd-accent-rgb), 0.5);
     background: var(--white-a06);
 }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-basic-field span {
     color: var(--white-a50); font-size: 10px; letter-spacing: 0.07em;
 }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-basic-submit, .vsr-basic-ghost {
     min-height: 42px; padding: 0 26px; border-radius: var(--radius-pill);
     color: #fff; border: 1px solid rgba(var(--vd-accent-rgb), 0.55);
@@ -6734,6 +6771,7 @@ body[data-side="video"] #gsearch-aura {
 
 /* — Source toggles as chips, the shape the rest of the app uses for a
  *   multi-select. The native checkbox stays for a11y, just accent-tinted. */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-basic-sources { gap: 7px; margin-top: 12px; }
 .vsr-basic-sources label:hover {
     color: #fff; transform: translateY(-1px);
@@ -6748,16 +6786,20 @@ body[data-side="video"] #gsearch-aura {
 .vsr-basic-sources input { accent-color: rgb(var(--vd-accent-rgb)); }
 
 /* — Results header + summary chips. */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-basic-results-head h2 { font-size: 26px; font-weight: 800; letter-spacing: -0.02em; }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-basic-summary span {
     border-radius: var(--radius-pill); padding: 5px 12px; font-size: 11.5px; font-weight: 700;
     color: var(--white-a60);
     background: var(--white-a04); border-color: var(--white-a07);
 }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-basic-empty {
     background: linear-gradient(135deg, rgba(var(--vd-accent-rgb), 0.12), var(--white-a03));
     border-color: rgba(var(--vd-accent-rgb), 0.16);
 }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-basic-empty-mark {
     color: #fff;
     background: linear-gradient(135deg,
@@ -6765,6 +6807,7 @@ body[data-side="video"] #gsearch-aura {
     box-shadow: 0 8px 20px rgba(var(--vd-accent-rgb), 0.25);
 }
 .vsr-basic-source-tab.active em { color: rgba(var(--vd-accent-rgb), 0.95); }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-basic-source-action {
     padding: 6px 12px; color: #fff;
     background: rgba(var(--vd-accent-rgb), 0.18);
@@ -6800,7 +6843,9 @@ body[data-side="video"] #gsearch-aura {
 /* — The release card. A glass panel with an accent edge and ONE primary
  *   action, replacing a 2x2 grid of boxed pills that read as form fields.
  *   The edge is the signal: accent = a candidate, amber = needs review. */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-basic-hits { gap: 10px; }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-basic-hit {
     position: relative; overflow: hidden;
     grid-template-columns: minmax(0, 1fr) 200px;
@@ -6827,9 +6872,13 @@ body[data-side="video"] #gsearch-aura {
     box-shadow: 0 0 12px rgba(251,205,122,0.35);
 }
 .vsr-basic-hit--review:hover { border-color: rgba(251,205,122,0.32); }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-basic-hit-main { gap: 9px; }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-basic-hit strong { font-size: 14.5px; font-weight: 700; letter-spacing: 0; }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-basic-hit-kicker { flex-wrap: wrap; gap: 5px; }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-basic-hit-kicker span {
     flex: 0 1 auto; max-width: 180px; padding: 2px 7px; border-radius: var(--radius-pill);
     background: rgba(255,255,255,0.045); border: 1px solid var(--white-a06);
@@ -6846,6 +6895,7 @@ body[data-side="video"] #gsearch-aura {
 .vsr-basic-hit-note span {
     flex: 0 0 auto; color: #fbcd7a; font-size: 10px; font-weight: 900; letter-spacing: 0.06em; text-transform: uppercase;
 }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-basic-hit-tags span {
     padding: 3px 9px; border-radius: var(--radius-pill); font-size: 10px; font-weight: 700;
     letter-spacing: 0.05em; color: var(--white-a55);
@@ -6854,11 +6904,13 @@ body[data-side="video"] #gsearch-aura {
 
 /* — Stat rail: typography, not boxes. Size leads, swarm supports, the
  *   verdict is a quiet caption, and the only framed thing is the action. */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-basic-hit-side {
     display: flex; flex-wrap: wrap; align-items: baseline;
     justify-content: flex-end; align-content: start; gap: 1px 9px;
 }
 .vsr-basic-hit-size, .vsr-basic-hit-health { flex: 1 1 100%; }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-basic-hit-side span {
     min-height: 0; padding: 0; border: 0; background: none; text-align: right;
     justify-content: flex-end;
@@ -6867,6 +6919,7 @@ body[data-side="video"] #gsearch-aura {
     background: none !important; color: #fff !important;
     font-size: 16px !important; font-weight: 800; letter-spacing: -0.01em;
 }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-basic-hit-health {
     color: rgba(var(--vd-accent-rgb), 0.92) !important;
     border: 0 !important; font-size: 11.5px; font-weight: 700;
@@ -6875,6 +6928,7 @@ body[data-side="video"] #gsearch-aura {
     color: var(--white-a40) !important; border: 0 !important;
     font-size: 10px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase;
 }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-basic-hit-grab {
     width: 100%; margin-top: 10px; min-height: 34px; border-radius: var(--radius-pill);
     border: 1px solid rgba(var(--vd-accent-rgb), 0.5); color: #fff;
@@ -6883,6 +6937,7 @@ body[data-side="video"] #gsearch-aura {
     font-size: 11px; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase;
     box-shadow: 0 4px 14px rgba(var(--vd-accent-rgb), 0.24), inset 0 1px 0 var(--white-a18);
 }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-basic-hit-grab:hover:not(:disabled) {
     transform: translateY(-1px);
     box-shadow: 0 6px 18px rgba(var(--vd-accent-rgb), 0.36), inset 0 1px 0 rgba(255,255,255,0.22);
@@ -6899,13 +6954,19 @@ body[data-side="video"] #gsearch-aura {
         rgba(var(--vd-accent-rgb), 0.95), rgba(var(--vd-accent-rgb), 0.66));
     box-shadow: 0 6px 18px rgba(var(--vd-accent-rgb), 0.28), inset 0 1px 0 var(--white-a16);
 }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-fresh-head h2 { font-size: 26px; font-weight: 800; letter-spacing: -0.02em; }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-fresh-board { background: none; border: 0; box-shadow: none; overflow: visible; }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-fresh-board-head {
     padding: 0 2px 12px; border-bottom: 0; background: none; align-items: flex-end;
 }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-fresh-board-head h2 { font-size: 20px; font-weight: 800; letter-spacing: -0.015em; }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-fresh-table-head { display: none; }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-fresh-table { gap: 10px; }
 .vsr-fresh-row {
     position: relative; overflow: hidden;
@@ -6933,20 +6994,27 @@ body[data-side="video"] #gsearch-aura {
 }
 /* grow, but do NOT claim a whole line: every row carries a poster tile now, and
  * a 100% basis pushed that tile onto its own line and doubled the row height. */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-fresh-release { flex: 1 1 280px; gap: 5px; min-width: 0; }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-fresh-release strong { font-size: 14.5px; font-weight: 700; letter-spacing: -0.005em; }
 .vsr-fresh-release span { color: rgba(255,255,255,0.42); font-size: 11.5px; font-weight: 700; }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-fresh-stat {
     flex: 0 0 auto; min-height: 0; display: inline-flex; align-items: baseline; gap: 5px;
     padding: 0; border: 0; background: none; color: rgba(255,255,255,0.62);
 }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-fresh-stat em {
     display: block; color: rgba(255,255,255,0.32); font-size: 9.5px; font-weight: 800;
     letter-spacing: 0.07em; text-transform: uppercase;
 }
 .vsr-fresh-stat strong { color: inherit; font-size: 12.5px; font-weight: 800; }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-fresh-seed { color: rgba(var(--vd-accent-rgb), 0.92) !important; border: 0 !important; }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-fresh-leech { color: rgba(255,255,255,0.42) !important; border: 0 !important; }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-fresh-pick {
     margin-left: auto; min-height: 34px; padding: 0 20px; border-radius: var(--radius-pill);
     font-size: 11px; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase;
@@ -6963,6 +7031,7 @@ body[data-side="video"] #gsearch-aura {
  *   focused search box drew a WHITE border (border-color falling back to
  *   currentColor) and the primary button lost its fill. Same fix the other
  *   detached overlays already use (.vd-lightbox, .vd-cast-modal). */
+/* stylelint-disable-next-line no-duplicate-selectors -- kept apart: test_video_search_recents.py pins this rule's text */
 .vsr-fi-backdrop { --vd-accent-rgb: var(--accent-rgb); }
 
 .vsr-fi-modes button.active {
@@ -7085,6 +7154,7 @@ body[data-side="video"] #gsearch-aura {
  *   from the board's own match cache); a Prowlarr indexer contributes an age and
  *   a grab count; Soulseek contributes peers, free slots and queue depth. The
  *   card is one component — what differs is what the source can actually say. */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vsr-basic-hit { cursor: pointer; }
 .vsr-basic-hit:focus-visible { outline: 2px solid rgba(var(--vd-accent-rgb), 0.7); outline-offset: 2px; }
 /* the third column exists only when there is artwork to put in it — keying this
@@ -7524,7 +7594,9 @@ body[data-side="video"] #gsearch-aura {
     background: #ff4545; box-shadow: 0 0 8px rgba(255, 69, 69, 0.68);
 }
 .vwsh-nebula .vwsh-epc-hunt--yt:hover { background: #ff3434; color: #fff; }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vwsh-nebula .vwsh-epc-meta { overflow-wrap: anywhere; }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vwsh-state {
     border: 1px solid var(--white-a07); border-radius: var(--radius-sheet);
     background: linear-gradient(135deg, rgba(255,255,255,0.035), rgba(0,0,0,0.16));
@@ -7912,6 +7984,7 @@ body[data-side="video"] #gsearch-aura {
 }
 
 /* ── Detail polish: compact premium hero and channel facets ─────────────── */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vd-bb-content {
     display: grid;
     grid-template-columns: clamp(98px, 8vw, 132px) minmax(0, 690px);
@@ -8002,6 +8075,7 @@ body[data-side="video"] #gsearch-aura {
     letter-spacing: 0.09em;
     color: rgba(255, 255, 255, 0.48);
 }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vd-version { display: inline-flex; align-items: center; gap: 8px; }
 .vd-version-rank {
     display: inline-grid;
@@ -8065,16 +8139,21 @@ body[data-side="video"] #gsearch-aura {
     clip-path: inset(50%);
     white-space: nowrap;
 }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vd-acq-chips {
     gap: 8px;
     margin-bottom: 8px;
 }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vd-acq-chip {
     padding: 5px 10px;
     border-radius: var(--radius-pill);
 }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vd-acq-n { font-size: 14px; }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vd-acq-k { font-size: 10px; }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vd-detail-grid {
     max-width: 960px;
     grid-template-columns: repeat(auto-fit, minmax(128px, 1fr));
@@ -8083,6 +8162,7 @@ body[data-side="video"] #gsearch-aura {
 .vd-details {
     margin-bottom: 26px;
 }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vd-ep-get {
     transition: opacity 0.16s ease, transform 0.16s ease;
 }
@@ -8102,12 +8182,14 @@ body[data-side="video"] #gsearch-aura {
     opacity: 1;
     transform: none;
 }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vd-ep-vid {
     font-family: inherit;
     font-weight: 800;
     letter-spacing: 0;
     color: rgba(255,255,255,0.58);
 }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .vd-section-h {
     margin-top: 0;
 }

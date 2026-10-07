@@ -7553,6 +7553,7 @@ body:has(.chat-web-modal-overlay--open) #activity-float-btn {
     min-width: 0;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .track-title {
     font-size: 14px;
     font-weight: bold;
@@ -7713,6 +7714,7 @@ body:has(.chat-web-modal-overlay--open) #activity-float-btn {
 }
 
 /* Individual Track Items (TrackItem) - Subtle glassmorphism */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .track-item {
     background: linear-gradient(135deg,
             var(--white-a03) 0%,
@@ -7775,6 +7777,7 @@ body:has(.chat-web-modal-overlay--open) #activity-float-btn {
 /* Sophisticated Download Tracking Styles */
 
 /* Download Queue Items */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .download-item {
     background: linear-gradient(to bottom,
             rgba(45, 45, 50, 0.95),
@@ -7875,6 +7878,7 @@ body:has(.chat-web-modal-overlay--open) #activity-float-btn {
     font-weight: 500;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .download-item__uploader {
     font-size: 10px;
     padding-left: 15px;
@@ -7891,16 +7895,19 @@ body:has(.chat-web-modal-overlay--open) #activity-float-btn {
 }
 
 /* Progress Bar Styles */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .download-item__progress-container {
     display: flex;
     flex-direction: column;
     gap: 4px;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .progress-bar {
     width: 100%;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .progress-text {
     font-size: 10px;
     color: #b3b3b3;
@@ -7956,6 +7963,7 @@ body:has(.chat-web-modal-overlay--open) #activity-float-btn {
     border-color: rgba(255, 69, 58, 0.6);
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .download-item__status-container {
     display: flex;
     align-items: center;
@@ -7969,6 +7977,7 @@ body:has(.chat-web-modal-overlay--open) #activity-float-btn {
     border-radius: var(--radius-xs);
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .download-item__open-btn {
     background: rgba(var(--accent-rgb), 0.1);
     color: rgba(var(--accent-rgb), 0.6);
@@ -9921,6 +9930,7 @@ body:has(.chat-web-modal-overlay--open) #activity-float-btn {
     color: #b3b3b3;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .activity-time {
     font-size: 11px;
     color: #b3b3b3;
@@ -16557,6 +16567,7 @@ body:has(.chat-web-modal-overlay--open) #activity-float-btn {
         inset 0 1px 0 var(--white-a10);
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .section-title {
     font-size: 20px;
     font-weight: 600;
@@ -16650,6 +16661,7 @@ body:has(.chat-web-modal-overlay--open) #activity-float-btn {
     margin: 0 0 8px 0;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .track-count {
     font-size: 12px;
     color: rgba(1, 255, 149, 0.8);
@@ -17418,6 +17430,7 @@ body:has(.chat-web-modal-overlay--open) #activity-float-btn {
 }
 
 /* Right Sidebar */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .sync-sidebar {
     gap: 20px;
 }
@@ -17950,6 +17963,7 @@ body:has(.chat-web-modal-overlay--open) #activity-float-btn {
 
 .pl-menu-item--on { color: rgb(var(--accent-light-rgb)); }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .pl-menu-item { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; }
 
 .pl-menu-tick { font-size: 11px; }
@@ -21314,6 +21328,7 @@ body:has(.chat-web-modal-overlay--open) #activity-float-btn {
 }
 
 /* Album header delete button */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .wishlist-album-header {
     position: relative;
 }
@@ -22091,6 +22106,7 @@ body:has(.chat-web-modal-overlay--open) #activity-float-btn {
 
 /* Add these styles to the end of style.css */
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .sync-progress-indicator {
     margin-top: 10px;
     display: none;
@@ -22887,6 +22903,7 @@ body:has(.chat-web-modal-overlay--open) #activity-float-btn {
     text-shadow: 0 1px 2px var(--black-a30);
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .progress-bar {
     background: rgba(64, 64, 64, 0.8);
     border-radius: var(--radius-md);
@@ -22897,6 +22914,7 @@ body:has(.chat-web-modal-overlay--open) #activity-float-btn {
         0 1px 2px var(--black-a20);
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .progress-fill {
     background: linear-gradient(90deg, rgb(var(--accent-rgb)), rgb(var(--accent-light-rgb)));
     height: 100%;
@@ -23040,6 +23058,7 @@ body:has(.chat-web-modal-overlay--open) #activity-float-btn {
     cursor: default;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .track-artist {
     color: #cccccc;
     width: 20%;
@@ -23142,6 +23161,7 @@ body:has(.chat-web-modal-overlay--open) #activity-float-btn {
     display: none;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .track-actions {
     text-align: center;
     width: 7%;
@@ -23609,6 +23629,7 @@ body:has(.chat-web-modal-overlay--open) #activity-float-btn {
     justify-content: center;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .playlist-card-actions button:hover {
     background: rgb(var(--accent-rgb));
     color: #000000;
@@ -24617,6 +24638,7 @@ body:has(.chat-web-modal-overlay--open) #activity-float-btn {
     margin-bottom: 40px;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .tab-icon {
     font-size: 16px;
 }
@@ -26724,6 +26746,7 @@ body:has(.chat-web-modal-overlay--open) #activity-float-btn {
    Artist Detail Page Styles
    ======================================== */
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .artist-detail-header {
     display: flex;
     align-items: center;
@@ -26780,6 +26803,7 @@ body:has(.chat-web-modal-overlay--open) #activity-float-btn {
 }
 
 /* Artist Detail Content */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .artist-detail-content {
     flex: 1;
     display: flex;
@@ -26872,6 +26896,7 @@ body:has(.chat-web-modal-overlay--open) #activity-float-btn {
     max-width: 100%;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .artist-detail-image {
     width: 200px;
     height: 200px;
@@ -26906,6 +26931,7 @@ body:has(.chat-web-modal-overlay--open) #activity-float-btn {
     text-transform: capitalize;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .stat-number {
     font-size: 32px;
     font-weight: 800;
@@ -26914,6 +26940,7 @@ body:has(.chat-web-modal-overlay--open) #activity-float-btn {
     margin-bottom: 6px;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .stat-label {
     font-size: 14px;
     color: #b3b3b3;
@@ -26931,6 +26958,7 @@ body:has(.chat-web-modal-overlay--open) #activity-float-btn {
     flex-wrap: wrap;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .filter-group {
     display: flex;
     align-items: center;
@@ -27248,6 +27276,7 @@ body:has(.chat-web-modal-overlay--open) #activity-float-btn {
     flex-direction: column;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .artist-image-container {
     position: relative;
     flex-shrink: 0;
@@ -27507,6 +27536,7 @@ div.artist-hero-badge {
     font-variant-numeric: tabular-nums;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .completion-bar {
     flex: 1;
     height: 4px;
@@ -28084,6 +28114,7 @@ div.artist-hero-badge {
     border-radius: 3px;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .wishlist-track-item {
     display: flex;
     align-items: center;
@@ -30879,6 +30910,7 @@ div.artist-hero-badge {
 }
 
 /* Icons for navigation buttons */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .genre-icon {
     background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ffffff"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>');
 }
@@ -32868,6 +32900,7 @@ div.artist-hero-badge {
     gap: 10px;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .genre-tag {
     padding: 6px 14px;
     background: var(--white-a15);
@@ -34213,6 +34246,7 @@ div.artist-hero-badge {
    This keeps the same data and section components, but removes the "shelves
    inside boxes" feeling. The top behaves like a cockpit; the zones are quiet
    page bands with strong headers and compact rails. */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .discover-container {
     position: relative;
     isolation: isolate;
@@ -34361,6 +34395,7 @@ div.artist-hero-badge {
 
 
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .discover-hub-row {
     margin-bottom: 22px;
     padding: 0 20px;
@@ -35911,16 +35946,19 @@ div.artist-hero-badge {
     color: #999;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .playlist-track-number {
     font-size: 14px;
     color: #999;
     text-align: center;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .playlist-track-info {
     min-width: 0;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .playlist-track-name {
     font-size: 14px;
     font-weight: 500;
@@ -35931,6 +35969,7 @@ div.artist-hero-badge {
     white-space: nowrap;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .playlist-track-duration {
     font-size: 12px;
     color: #999;
@@ -38816,11 +38855,13 @@ div.artist-hero-badge {
 .enh-item-play-btn:active { transform: translateY(-50%) scale(0.95); }
 
 /* ── Makeover finishing layer ── */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .enhanced-loading,
 .enhanced-empty {
     padding: 56px 20px;
     text-align: center;
 }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .enhanced-loading .spinner {
     border-top-color: rgb(var(--accent-rgb));
     width: 36px;
@@ -44590,6 +44631,7 @@ body.downloads-disabled .discog-download-btn[data-request-action] {
     border-right: 1px solid var(--white-a06);
     padding: 16px; background: rgba(14,14,14,0.5);
 }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .sidebar-section { margin-bottom: 20px; }
 .sidebar-section-title {
     font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px;
@@ -47434,6 +47476,7 @@ textarea.enhanced-meta-field-input { min-height: 72px; resize: vertical; }
    control reachable — the close button (absolute) and the panel headers stay
    pinned, the body scrolls. Tall viewports fit as before: no scrollbar, no
    visual change. Mobile already does this (np-body scrolls at ≤768px). */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .np-modal {
     display: flex;
     flex-direction: column;
@@ -48164,9 +48207,11 @@ textarea.enhanced-meta-field-input { min-height: 72px; resize: vertical; }
     border-radius: var(--radius-pill) !important;
 }
 .np-progress-bar-container:hover .np-progress-fill { box-shadow: 0 0 12px rgba(var(--accent-rgb),0.6) !important; }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .np-time-display { font-variant-numeric: tabular-nums !important; }
 
 /* Seek hover tooltip — timestamp under the cursor on the progress bar. */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .np-progress-bar-container { position: relative; }
 .np-seek-tip {
     position: absolute; bottom: 150%; transform: translateX(-50%);
@@ -48177,11 +48222,13 @@ textarea.enhanced-meta-field-input { min-height: 72px; resize: vertical; }
 .np-seek-tip.visible { opacity: 1; }
 
 /* ── Transport: dominant gradient play button ── */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .np-btn {
     width: 46px !important; height: 46px !important; border-radius: var(--radius-circle) !important;
     color: rgba(255,255,255,0.62) !important; transition: all 0.16s ease !important;
 }
 .np-btn:hover { color: #fff !important; background: var(--white-a07) !important; transform: scale(1.08) !important; }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .np-btn-play {
     width: 70px !important; height: 70px !important; border-radius: var(--radius-circle) !important;
     background: linear-gradient(180deg, rgb(var(--accent-light-rgb)), rgb(var(--accent-rgb))) !important;
@@ -48213,6 +48260,7 @@ textarea.enhanced-meta-field-input { min-height: 72px; resize: vertical; }
 }
 
 /* ── Visualizer bars: accent gradient ── */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .np-viz-bar {
     background: linear-gradient(180deg, rgb(var(--accent-light-rgb)), rgba(var(--accent-rgb),0.35)) !important;
     border-radius: 3px !important;
@@ -48234,6 +48282,7 @@ textarea.enhanced-meta-field-input { min-height: 72px; resize: vertical; }
     color: rgb(var(--accent-light-rgb)) !important;
     font-weight: 700 !important;
 }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .np-lyrics-line { cursor: pointer; border-radius: var(--radius-sm); transition: background var(--dur-xfast), color var(--dur-xfast); }
 .np-lyrics-line:hover { background: rgba(var(--accent-rgb),0.10); color: rgb(var(--accent-light-rgb)); }
 
@@ -48250,6 +48299,7 @@ textarea.enhanced-meta-field-input { min-height: 72px; resize: vertical; }
 @keyframes npRiseIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
 
 /* ── Click-art → music-synced visualizer takeover (Plexamp-style) ── */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .np-album-art-container { cursor: pointer; }
 .np-art-hint {
     position: absolute; bottom: 12px; right: 12px; z-index: 4;
@@ -48302,6 +48352,7 @@ textarea.enhanced-meta-field-input { min-height: 72px; resize: vertical; }
 .np-upnext-artist { font-size: 11.5px; color: var(--white-a40); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
 /* ── Rich queue rows: thumbnail + meta + duration/eq + remove ── */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .np-queue-item {
     border-radius: var(--radius-lg) !important;
     transition: background 0.14s !important;
@@ -48312,7 +48363,9 @@ textarea.enhanced-meta-field-input { min-height: 72px; resize: vertical; }
     grid-template-columns: 44px minmax(0, 1fr) auto auto !important;
 }
 .np-queue-item-art { width: 44px; height: 44px; border-radius: var(--radius-md); object-fit: cover; background: var(--white-a05); }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .np-queue-item-info { min-width: 0; }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .np-queue-item-title { font-size: 14px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .np-queue-item-artist { font-size: 12px; color: var(--white-a40); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .np-queue-item-duration { font-size: 12px; font-variant-numeric: tabular-nums; color: rgba(255,255,255,0.38); }
@@ -48330,6 +48383,7 @@ textarea.enhanced-meta-field-input { min-height: 72px; resize: vertical; }
 .np-queue-item-eq i:nth-child(2) { animation-delay: 0.2s; }
 .np-queue-item-eq i:nth-child(3) { animation-delay: 0.4s; }
 @keyframes npQueueEq { 0%,100% { height: 30%; } 50% { height: 100%; } }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .np-queue-item-remove { opacity: 0; transition: opacity 0.14s, color 0.14s; }
 .np-queue-item:hover .np-queue-item-remove { opacity: 1; }
 
@@ -48685,6 +48739,7 @@ tr.tag-diff-same {
     padding: 12px 24px 16px;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .tag-preview-modal {
     max-height: 85vh;
     display: flex;
@@ -51039,6 +51094,7 @@ tr.tag-diff-same {
     display: inline-block;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .repair-album-error-badge {
     position: absolute;
     top: 8px;
@@ -51055,6 +51111,7 @@ tr.tag-diff-same {
     letter-spacing: 0.02em;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .repair-album-tags {
     display: flex;
     flex-wrap: wrap;
@@ -51507,6 +51564,7 @@ tr.tag-diff-same {
     flex-shrink: 0;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .album-action-btn {
     border-radius: var(--radius-sm);
     font-weight: 500;
@@ -52462,6 +52520,7 @@ tr.tag-diff-same {
     50% { box-shadow: 0 0 16px rgba(var(--accent-rgb), 0.2); }
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .repair-job-card.running {
     animation: repair-card-glow 2s ease-in-out infinite;
 }
@@ -55471,6 +55530,7 @@ tr.tag-diff-same {
 .sync-history-cards::-webkit-scrollbar { height: 4px; }
 .sync-history-cards::-webkit-scrollbar-thumb { background: var(--white-a10); border-radius: var(--radius-xs); }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .sync-history-empty {
     font-size: 13px;
     color: var(--white-a25);
@@ -59150,6 +59210,7 @@ body.max-performance #page-particles-canvas {
     50% { opacity: 1; transform: scale(1.1); }
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .library-status-header {
     display: flex;
     align-items: center;
@@ -59201,6 +59262,7 @@ body.max-performance #page-particles-canvas {
     font-weight: 500;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .library-status-actions {
     display: flex;
     gap: 8px;
@@ -59597,6 +59659,7 @@ body.max-performance #page-particles-canvas {
    two scrollbars doing different jobs. The tool cards are their own tab now, so
    nothing needs capping: this scrolls with the page, and the section nav sticks
    to the viewport instead of to a box. */
+/* stylelint-disable-next-line no-duplicate-selectors -- kept apart: tools-page-tabs.test.tsx reads this copy by position */
 .tools-maintenance-hero {
     overflow: visible;
     scroll-behavior: smooth;
@@ -59604,6 +59667,7 @@ body.max-performance #page-particles-canvas {
 
 /* The 3px accent line was clipped by the hero's own overflow:hidden; with that
    gone it has to round its own top corners or it juts past them. */
+/* stylelint-disable-next-line no-duplicate-selectors -- kept apart: tools-page-tabs.test.tsx reads this copy by position */
 .tools-maintenance-hero::before {
     border-radius: 16px 16px 0 0;
 }
@@ -62194,6 +62258,7 @@ body.max-performance #page-particles-canvas {
 }
 
 /* Enhancement 7: staggered entry animation */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .wl-orb-group { animation: orbEntrance 0.5s ease backwards; }
 @keyframes orbEntrance { from { opacity: 0; transform: translateY(20px) scale(0.9); } to { opacity: 1; transform: translateY(0) scale(1); } }
 
@@ -65289,6 +65354,7 @@ body.max-performance .dash-card::after {
  * same data-tab routing. CSS-only swap.
  * ===================================================================== */
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .sync-tabs {
     flex-wrap: wrap;
     gap: 6px;
@@ -65302,6 +65368,7 @@ body.max-performance .dash-card::after {
     align-items: center;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .sync-tab-button {
     /* Reset: drop flex:1 stretch + heavy padding, become a chip. */
     flex: 0 0 auto;
@@ -65354,6 +65421,7 @@ body.max-performance .dash-card::after {
         inset 0 1px 0 var(--white-a20);
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .sync-tab-server.active {
     /* The Server Playlists tab kept its bespoke gradient — preserve it. */
     background: linear-gradient(135deg,
@@ -65545,6 +65613,7 @@ body.max-performance .dash-card::after {
 
 /* — Backdrop: deeper blur + subtle accent radial wash so the modal
  *   feels like it's emerging from the dim app underneath. */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .auto-sync-overlay {
     background:
         radial-gradient(ellipse at top,
@@ -65559,6 +65628,7 @@ body.max-performance .dash-card::after {
 /* — Modal shell: glassy gradient card with thin accent border +
  *   inner top-edge highlight. Same architecture as the dashboard
  *   .dash-card so this modal reads as part of the same UI. */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .auto-sync-modal {
     background:
         radial-gradient(ellipse at 0% 0%,
@@ -65580,6 +65650,7 @@ body.max-performance .dash-card::after {
 /* — Header: tighter typography, accent-tinted eyebrow, bigger
  *   title. Adds a hairline accent line below for separation
  *   instead of the flat border. */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .auto-sync-header {
     padding: 26px 32px 22px;
     border-bottom: none;
@@ -65603,6 +65674,7 @@ body.max-performance .dash-card::after {
     opacity: 0.6;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .auto-sync-header h3 {
     font-size: 24px;
     font-weight: 800;
@@ -65614,6 +65686,7 @@ body.max-performance .dash-card::after {
     -webkit-text-fill-color: transparent;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .auto-sync-eyebrow {
     color: rgb(var(--accent-light-rgb));
     font-weight: 800;
@@ -65621,6 +65694,7 @@ body.max-performance .dash-card::after {
     opacity: 0.95;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .auto-sync-close {
     width: 36px;
     height: 36px;
@@ -65639,6 +65713,7 @@ body.max-performance .dash-card::after {
 
 /* — KPI summary tiles: match dashboard .dash-card aesthetic.
  *   Inset gradient + accent-tinted top-edge highlight on hover. */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .auto-sync-summary {
     padding: 18px 28px 16px;
     border-bottom: none;
@@ -65678,6 +65753,7 @@ body.max-performance .dash-card::after {
     opacity: 1;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .auto-sync-summary span {
     font-size: 22px;
     font-weight: 800;
@@ -65689,6 +65765,7 @@ body.max-performance .dash-card::after {
     -webkit-text-fill-color: transparent;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .auto-sync-summary small {
     margin-top: 6px;
     font-size: 9px;
@@ -65698,6 +65775,7 @@ body.max-performance .dash-card::after {
 
 
 /* — Live monitor strip: distinct glass panel with accent kicker. */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .auto-sync-monitor {
     padding: 14px 28px 16px;
     border-bottom: none;
@@ -65707,12 +65785,14 @@ body.max-performance .dash-card::after {
             transparent 100%);
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .auto-sync-monitor-kicker {
     color: rgb(var(--accent-light-rgb));
     letter-spacing: 0.14em;
     font-weight: 800;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .auto-sync-monitor-card {
     background:
         linear-gradient(160deg,
@@ -65722,6 +65802,7 @@ body.max-performance .dash-card::after {
     border-radius: var(--radius-lg);
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .auto-sync-monitor-card.running {
     border-color: rgba(74, 222, 128, 0.3);
     box-shadow:
@@ -65729,6 +65810,7 @@ body.max-performance .dash-card::after {
         0 0 24px rgba(74, 222, 128, 0.08);
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .auto-sync-monitor-card.error {
     border-color: rgba(239, 68, 68, 0.3);
     box-shadow:
@@ -65760,6 +65842,7 @@ body.max-performance .dash-card::after {
         transparent);
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .auto-sync-monitor-head button,
 .auto-sync-board-intro button,
 .auto-sync-history-intro button {
@@ -65795,6 +65878,7 @@ body.max-performance .dash-card::after {
 
 /* — Tabs: underline-style with accent fill + soft glow on active.
  *   Matches the underline-tabs pattern used elsewhere in the app. */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .auto-sync-tabs {
     padding: 0 28px;
     gap: 4px;
@@ -65802,6 +65886,7 @@ body.max-performance .dash-card::after {
     background: transparent;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .auto-sync-tabs button {
     padding: 12px 18px;
     border-radius: 0;
@@ -65847,6 +65932,7 @@ body.max-performance .dash-card::after {
 
 /* — Sidebar: dense glass panel, source groups as collapsible-feel
  *   cards, filter input pill. */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .auto-sync-sidebar {
     background:
         linear-gradient(180deg,
@@ -65855,6 +65941,7 @@ body.max-performance .dash-card::after {
     border-right: 1px solid var(--white-a05);
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .auto-sync-sidebar-title {
     font-size: 10px;
     font-weight: 800;
@@ -65864,6 +65951,7 @@ body.max-performance .dash-card::after {
     opacity: 0.9;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .auto-sync-sidebar-search {
     background: var(--white-a04);
     border: 1px solid var(--white-a08);
@@ -65878,6 +65966,7 @@ body.max-performance .dash-card::after {
     box-shadow: 0 0 0 3px rgba(var(--accent-rgb), 0.1);
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .auto-sync-source-group {
     background:
         linear-gradient(160deg,
@@ -65947,6 +66036,7 @@ body.max-performance .dash-card::after {
 
 /* — Sidebar playlist tile: dense glass row with accent border on
  *   the unscheduled state, accent fill on the scheduled state. */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .auto-sync-playlist {
     background:
         linear-gradient(160deg,
@@ -65957,6 +66047,7 @@ body.max-performance .dash-card::after {
     transition: all var(--dur-base) var(--ease-standard);
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .auto-sync-playlist::before {
     background: linear-gradient(180deg,
         rgb(var(--accent-light-rgb)) 0%,
@@ -65985,6 +66076,7 @@ body.max-performance .dash-card::after {
 
 /* — Board: dark canvas with subtle radial spotlight + columns
  *   as glass cards with accent-tinted headers. */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .auto-sync-board {
     background:
         radial-gradient(ellipse at 50% -20%,
@@ -65994,6 +66086,7 @@ body.max-performance .dash-card::after {
     gap: 14px;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .auto-sync-column {
     background:
         linear-gradient(180deg,
@@ -66018,6 +66111,7 @@ body.max-performance .dash-card::after {
         transparent);
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .auto-sync-column-head {
     background:
         linear-gradient(180deg,
@@ -66041,6 +66135,7 @@ body.max-performance .dash-card::after {
     letter-spacing: 0.06em;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .auto-sync-column.drag-over {
     border-color: rgba(var(--accent-rgb), 0.6);
     box-shadow:
@@ -66081,6 +66176,7 @@ body.max-performance .dash-card::after {
     margin-bottom: 4px;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .auto-sync-drop-hint span {
     display: block;
     color: rgba(255, 255, 255, 0.38);
@@ -66106,6 +66202,7 @@ body.max-performance .dash-card::after {
 
 /* — Scheduled cards: refined glass + accent left-edge stripe.
  *   Hourly + weekly variants both inherit. */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .auto-sync-scheduled-card {
     background:
         linear-gradient(160deg,
@@ -66160,6 +66257,7 @@ body.max-performance .dash-card::after {
     box-shadow: 0 0 12px rgba(251, 191, 36, 0.5);
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .auto-sync-scheduled-name {
     color: rgba(255, 255, 255, 0.95);
     font-weight: 700;
@@ -66167,6 +66265,7 @@ body.max-performance .dash-card::after {
     margin-bottom: 4px;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .auto-sync-scheduled-meta {
     color: var(--white-a45);
     font-size: 10px;
@@ -66276,6 +66375,7 @@ body.max-performance .dash-card::after {
     color: var(--white-a45);
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .auto-sync-history-row {
     background:
         linear-gradient(160deg,
@@ -66295,6 +66395,7 @@ body.max-performance .dash-card::after {
     transform: translateY(-1px);
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .auto-sync-history-status {
     border-radius: 99px;
     padding: 3px 10px;
@@ -66327,6 +66428,7 @@ body.max-performance .dash-card::after {
 
 
 /* — Bulk schedule popover: glass card with accent border. */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .auto-sync-bulk-menu {
     background:
         linear-gradient(160deg,
@@ -66341,6 +66443,7 @@ body.max-performance .dash-card::after {
     -webkit-backdrop-filter: blur(16px);
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .auto-sync-bulk-menu-title {
     color: rgb(var(--accent-light-rgb));
     font-weight: 800;
@@ -66349,6 +66452,7 @@ body.max-performance .dash-card::after {
     font-size: 10px;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .auto-sync-bulk-menu button {
     border: 1px solid var(--white-a08);
     background: var(--white-a03);
@@ -66383,6 +66487,7 @@ body.max-performance .dash-card::after {
 
 /* — Weekly editor popover: full-screen glass overlay matching
  *   the version modal / tag-preview modal vibe. */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .auto-sync-weekly-editor {
     background:
         radial-gradient(ellipse at 0% 0%,
@@ -66398,6 +66503,7 @@ body.max-performance .dash-card::after {
         inset 0 1px 0 var(--white-a05);
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .auto-sync-weekly-editor-head h4 {
     background: linear-gradient(135deg, #fff 0%, color-mix(in srgb, rgb(var(--accent-light-rgb)) 60%, white 40%) 140%);
     -webkit-background-clip: text;
@@ -66407,6 +66513,7 @@ body.max-performance .dash-card::after {
     font-weight: 800;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .auto-sync-weekly-day-toggle {
     border: 1px solid var(--white-a08);
     background: var(--white-a03);
@@ -66431,6 +66538,7 @@ body.max-performance .dash-card::after {
         inset 0 1px 0 var(--white-a20);
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .auto-sync-weekly-editor-save {
     background:
         linear-gradient(135deg,
@@ -66470,6 +66578,7 @@ body.max-performance .dash-card::after {
     font-size: 12px;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .auto-sync-source-group-disabled {
     opacity: 0.55;
 }
@@ -67504,6 +67613,7 @@ body.em-scroll-lock { overflow: hidden; }
 .em-search-ico { position: absolute; left: 11px; color: var(--white-a40); font-size: 15px; pointer-events: none; }
 .em-search-wrap .em-search { padding-left: 30px; }
 .em-search:focus, .em-select:focus { outline: none; border-color: rgba(var(--em-accent-rgb, 99,102,241), 0.6); }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .em-row:hover { background: rgba(var(--em-accent-rgb, 255,255,255), 0.07); border-color: rgba(var(--em-accent-rgb, 255,255,255), 0.14); }
 
 /* Disabled / rate-limit banner */
@@ -67669,12 +67779,14 @@ body.em-scroll-lock { overflow: hidden; }
 
 /* ════════════ Download modal specifics ════════════ */
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .download-missing-modal-header {
     background: transparent;
     border-bottom: 1px solid var(--white-a05);
 }
 
 /* Progress strip: the two stacked bars become side-by-side glass cards */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .download-progress-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -67709,11 +67821,13 @@ body.em-scroll-lock { overflow: hidden; }
 }
 
 /* Tracks section toolbar */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .download-tracks-header {
     padding: 14px 24px 10px;
     border-bottom: none;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .download-tracks-title {
     font-size: 12px;
     font-weight: 700;
@@ -67722,6 +67836,7 @@ body.em-scroll-lock { overflow: hidden; }
     color: var(--white-a55);
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .track-selection-count {
     font-size: 11px;
     font-weight: 600;
@@ -67732,6 +67847,7 @@ body.em-scroll-lock { overflow: hidden; }
     padding: 3px 12px;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .download-tracks-table {
     border-collapse: collapse;
 }
@@ -67743,12 +67859,14 @@ body.em-scroll-lock { overflow: hidden; }
 }
 
 /* Footer: glass action bar + pill buttons */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .download-missing-modal-footer {
     background: rgba(12, 12, 17, 0.85);
     border-top: 1px solid var(--white-a05);
     backdrop-filter: blur(10px);
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .download-control-btn {
     border-radius: var(--radius-pill);
     font-weight: 600;
@@ -67789,31 +67907,37 @@ body.em-scroll-lock { overflow: hidden; }
 /* ════════════ Discovery modal specifics ════════════ */
 
 /* Kill the legacy red border treatment entirely */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .youtube-discovery-modal {
     border-top: 1px solid var(--white-a07);
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .youtube-discovery-modal .modal-header {
     padding: 22px 28px 18px;
     border-bottom: 1px solid var(--white-a05);
     overflow: hidden;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .youtube-discovery-modal .modal-header h2 {
     font-size: 20px;
     letter-spacing: -0.01em;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .youtube-discovery-modal .modal-subtitle {
     font-size: 13.5px;
     color: var(--white-a60);
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .youtube-discovery-modal .modal-description {
     font-size: 12px;
     color: rgba(255, 255, 255, 0.38);
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .youtube-discovery-modal .modal-close-btn {
     width: 32px;
     height: 32px;
@@ -67824,6 +67948,7 @@ body.em-scroll-lock { overflow: hidden; }
     transition: background var(--dur-base), transform var(--dur-base), color var(--dur-base);
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .youtube-discovery-modal .modal-close-btn:hover {
     background: rgba(239, 68, 68, 0.18);
     color: #fff;
@@ -67839,12 +67964,14 @@ body.em-scroll-lock { overflow: hidden; }
     border: 1px solid var(--white-a05);
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .youtube-discovery-modal .progress-text {
     font-size: 11.5px;
     color: var(--white-a50);
     margin-top: 8px;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .youtube-discovery-modal .discovery-table-container {
     margin: 0 24px 12px;
     border-radius: var(--radius-card);
@@ -67852,12 +67979,14 @@ body.em-scroll-lock { overflow: hidden; }
 }
 
 /* Footer + pill buttons */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .youtube-discovery-modal .modal-footer {
     background: rgba(12, 12, 17, 0.85);
     border-top: 1px solid var(--white-a05);
     backdrop-filter: blur(10px);
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .youtube-discovery-modal .modal-btn {
     border-radius: var(--radius-pill);
     font-weight: 600;
@@ -67872,6 +68001,7 @@ body.em-scroll-lock { overflow: hidden; }
     background: var(--white-a08);
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .youtube-discovery-modal .modal-btn-primary {
     background: linear-gradient(135deg, rgb(var(--accent-rgb)), rgba(var(--accent-rgb), 0.75));
     border-color: rgba(var(--accent-light-rgb), 0.4);
@@ -67879,6 +68009,7 @@ body.em-scroll-lock { overflow: hidden; }
     box-shadow: 0 4px 18px rgba(var(--accent-rgb), 0.35);
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .youtube-discovery-modal .modal-btn-primary:hover {
     box-shadow: 0 6px 26px rgba(var(--accent-rgb), 0.5);
 }
@@ -67917,6 +68048,7 @@ body.em-scroll-lock { overflow: hidden; }
 /* Progress sheen — a light band scanning the FILL. It lives inside the
    fill (overflow hidden), so 0% progress shows nothing and a finished bar
    keeps a gentle pulse of life: the motion is gated by real progress. */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .download-missing-modal-content .progress-fill,
 .youtube-discovery-modal .progress-bar-fill {
     position: relative;
@@ -67946,10 +68078,12 @@ body.em-scroll-lock { overflow: hidden; }
 }
 
 /* Hero stat chips — glass cards with per-state color identity */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .download-dashboard-stats {
     gap: 10px;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .dashboard-stat {
     padding: 10px 18px;
     border-radius: var(--radius-card);
@@ -67970,6 +68104,7 @@ body.em-scroll-lock { overflow: hidden; }
     background: linear-gradient(90deg, transparent, var(--stat-edge, rgba(var(--accent-rgb), 0.7)), transparent);
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .dashboard-stat-number {
     font-variant-numeric: tabular-nums;
     font-weight: 800;
@@ -67992,6 +68127,7 @@ body.em-scroll-lock { overflow: hidden; }
 .dashboard-stat.stat-downloaded .dashboard-stat-number { color: rgb(var(--accent-light-rgb)); }
 
 /* Download modal close ✕ matches the discovery one: circular ghost, rotates */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .download-missing-modal-close {
     display: flex;
     align-items: center;
@@ -68006,6 +68142,7 @@ body.em-scroll-lock { overflow: hidden; }
     transition: background var(--dur-base), transform var(--dur-base), color var(--dur-base);
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .download-missing-modal-close:hover {
     background: rgba(239, 68, 68, 0.18);
     color: #fff;
@@ -68658,6 +68795,7 @@ body.em-scroll-lock { overflow: hidden; }
 }
 
 /* live status on the hero pill: online / offline / checking */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .ss-hero-pill { display: inline-flex; align-items: center; gap: 6px; }
 .ss-hero-pill--ok { background: #34d399; }
 .ss-hero-pill--bad { background: #f87171; }
@@ -69305,6 +69443,7 @@ select.ma-input { appearance: auto; }
 /* 2) the result rows are <button>s now (the vanilla used divs) and there is
    no global button reset - native ButtonFace chrome painted white text on
    light grey. */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .lastfm-radio-result {
     width: 100%;
     background: transparent;
@@ -69319,6 +69458,7 @@ select.ma-input { appearance: auto; }
 }
 
 /* 3) eight ~56px rows with no scroll made a 450px wall. */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .lastfm-radio-dropdown {
     max-height: 300px;
     overflow-y: auto;
@@ -69601,6 +69741,7 @@ select.ma-input { appearance: auto; }
     color: #fff;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .verif-quar-alt-slot {
     min-width: 0;
     margin-left: 4px;
@@ -69622,6 +69763,7 @@ select.ma-input { appearance: auto; }
     color: #fca5a5;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .verif-quar-alt-members {
     margin: -4px 0 10px 28px;
     padding: 8px 0 2px 16px;
@@ -70330,6 +70472,7 @@ body.app-locked > *:not(#launch-pin-overlay):not(#login-overlay):not(script):not
 }
 
 /* ===== Album cover-art picker ===== */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .enhanced-expanded-art-wrap {
     position: relative;
     display: inline-block;
@@ -70583,6 +70726,7 @@ html[data-sidebar] .nav-section-label {
         opacity var(--dur-xfast) ease;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .nav-section-chevron {
     transition:
         width var(--sidebar-collapse-transition),
@@ -70905,15 +71049,20 @@ body.max-performance {
 .sact-list.sact-enter > .sact-card:nth-child(4) { animation-delay: 0.18s; }
 .sact-list.sact-enter > .sact-card:nth-child(n+5) { animation-delay: 0.24s; }
 @keyframes sactCardIn { from { opacity: 0; transform: translateY(12px) scale(0.98); } to { opacity: 1; transform: none; } }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .sact-card { transition: transform var(--dur-base) ease, box-shadow var(--dur-base) ease, border-color var(--dur-base) ease; }
 .sact-card:hover { transform: translateY(-2px); border-color: var(--white-a12);
     box-shadow: 0 10px 30px var(--black-a50); }
 /* richer art backdrop */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .sact-art { opacity: 0.58; filter: blur(1.5px) saturate(1.15); }
 .sact-card:hover .sact-art { opacity: 0.72; transform: scale(1.12); transition: opacity var(--dur-slow) ease, transform 0.6s ease; }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .sact-scrim { background: linear-gradient(105deg, rgba(11,11,17,0.95) 40%, rgba(11,11,17,0.55) 78%, rgba(11,11,17,0.35) 100%); }
 /* progress bar: taller, gradient, glowing playhead */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .sact-prog { height: 5px; background: var(--white-a09); }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .sact-prog-fill { position: relative; background: linear-gradient(90deg, #16a34a, #4ade80);
     box-shadow: 0 0 10px rgba(74,222,128,0.5); transition: width 0.45s linear; }
 .sact-head-dot { position: absolute; right: -1px; top: 50%; width: 8px; height: 8px; border-radius: var(--radius-circle);
@@ -70921,6 +71070,7 @@ body.max-performance {
 .sact-st-paused .sact-head-dot, .sact-card:not(.sact-st-playing):not(.sact-st-buffering) .sact-head-dot { opacity: 0.6; }
 .sact-st-paused .sact-prog-fill { background: rgba(255,255,255,0.42); box-shadow: none; transition: width var(--dur-slow) ease; }
 .sact-st-paused .sact-head-dot { background: var(--white-a60); box-shadow: none; }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .sact-st-buffering .sact-prog-fill { background: linear-gradient(90deg, #d97706, #fbbf24); }
 .sact-elapsed, .sact-remain { font-variant-numeric: tabular-nums; }
 .sact-remain { color: var(--white-a40); }
@@ -70935,16 +71085,20 @@ body.max-performance {
 @keyframes sactEq { 0%, 100% { height: 30%; } 50% { height: 100%; } }
 .sact-st-paused .sact-eq i { animation-play-state: paused; background: var(--white-a40); }
 /* summary chips → a touch more presence */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .sact-chip--hero { box-shadow: inset 0 0 0 1px rgba(74,222,128,0.2); }
 /* graph elevation */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .sact-graph { height: 82px; }
 .sact-bar { fill: url(#sactBar); transition: fill var(--dur-fast) ease, opacity var(--dur-fast) ease; }
 .sact-bar--empty { fill: var(--white-a06); }
 .sact-bar--peak { fill: #4ade80; }
 .sact-bar:hover { fill: #86efac; }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .sact-graph-x { justify-content: space-between; }
 .sact-graph-x span:nth-child(2) { color: rgba(74,222,128,0.6); font-weight: 700; }
 /* section headers get a hairline */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .sact-sec-h { display: flex; align-items: center; gap: 8px; }
 .sact-sec-h::after { content: ''; flex: 1; height: 1px; background: var(--white-a06); }
 @media (prefers-reduced-motion: reduce) {
@@ -70967,6 +71121,7 @@ body.max-performance {
 /* ── Artist photo picker (hover overlay on the artist-detail hero image) ─── */
 /* Mirrors .enhanced-art-edit-overlay: invisible until hover, click opens the
    per-source photo picker (openArtistArtPicker). Container already clips. */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .artist-image-container { cursor: pointer; }
 .artist-image-edit-overlay {
     position: absolute;
@@ -72126,6 +72281,7 @@ button.chat-hidden-note:hover { color: var(--white-a65); }
     padding: 6px 8px; border-radius: var(--radius-md); margin: 2px 0;
 }
 .chat-group:hover { background: var(--white-a03); }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .chat-avatar {
     width: 38px; height: 38px; border-radius: var(--radius-circle); margin-top: 2px;
     display: flex; align-items: center; justify-content: center;
@@ -72286,6 +72442,7 @@ button.chat-hidden-note:hover { color: var(--white-a65); }
     box-shadow: inset 3px 0 0 rgba(250,166,26,0.7);
     padding-left: 8px; margin-left: -8px;
 }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .chat-line { position: relative; }
 .chat-line-reply {
     position: absolute; right: 4px; top: 0; display: none;
@@ -72413,6 +72570,7 @@ button.chat-hidden-note:hover { color: var(--white-a65); }
 }
 
 /* ── composer redesign: one fused panel, ghost icon toolbar, circular send ── */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .chat-composer {
     display: block; position: relative;
     padding: 10px 14px 14px; border-top: 1px solid var(--white-a06);
@@ -72463,11 +72621,16 @@ button.chat-hidden-note:hover { color: var(--white-a65); }
 .chat-composer--locked .chat-tbtn--side { opacity: 0.35; cursor: not-allowed; }
 .chat-composer--locked .chat-composer-panel { opacity: 0.75; }
 /* pickers + reply bar anchor to the whole composer now (it's the positioned box) */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .chat-emoji-pop { bottom: calc(100% + 6px); left: 10px; }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .chat-gif-pop { bottom: calc(100% + 6px); left: 10px; right: 10px; }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .chat-reply-bar { position: static; margin: 0 0 8px; }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .chat-jump-pill { bottom: 128px; }
 /* the mention pop sits above the (taller) composer now */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .chat-mention-pop { bottom: 132px; }
 
 /* discography gap-fill (#1067): source badge on cards from other sources */
@@ -72778,8 +72941,11 @@ button.chat-hidden-note:hover { color: var(--white-a65); }
    Leave each taking a WHOLE line — the buttons were full-size in a rail this
    narrow, so every one of them wrapped. Compact them and they sit two or three
    to a row instead of four stacked. */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .chat-watch-now { min-width: 0; }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .chat-watch-now-main { flex: 1 1 auto; min-width: 0; }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .chat-watch-now-ti { overflow: hidden; text-overflow: ellipsis; }
 .chat-watch-now-acts > * { flex: 0 0 auto; }
 .chat-watch-now-acts .chat-arc-btn {
@@ -72856,6 +73022,7 @@ button.chat-hidden-note:hover { color: var(--white-a65); }
 }
 .chat-watch-reskind--show { background: rgba(151, 117, 250, 0.16); color: #c9b8ff; }
 /* the affordance whispers until you hover — the whole row is the button */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .chat-watch-resact {
     flex: 0 0 auto; align-self: center; white-space: nowrap;
     font-size: 11.5px; font-weight: 600; color: rgba(var(--accent-light-rgb), 0.9);
@@ -73064,6 +73231,7 @@ a.chat-jbx-title:hover { color: rgb(var(--accent-light-rgb)); }
 
 /* chat modal polish: browse retry + the note save button follow the accent */
 .chat-browse-retry-row { display: flex; justify-content: center; padding: 6px 0 10px; }
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .chat-card-note-save {
     background: rgba(var(--accent-rgb), 0.15);
     color: rgb(var(--accent-light-rgb));
@@ -74227,6 +74395,7 @@ a.chat-jbx-title:hover { color: rgb(var(--accent-light-rgb)); }
 
     .pl-grid { padding: 2px 2px 10px; }
 
+    /* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
     .library-filters { margin-left: 2px; margin-right: 2px; }
 
     .sync-header { margin-bottom: 16px; }
@@ -74772,6 +74941,7 @@ a.chat-jbx-title:hover { color: rgb(var(--accent-light-rgb)); }
     margin-bottom: 0 !important;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .explorer-playlist-picker {
     position: relative;
     display: flex;
@@ -74871,6 +75041,7 @@ a.chat-jbx-title:hover { color: rgb(var(--accent-light-rgb)); }
     font-weight: 850;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .explorer-picker-top {
     display: flex;
     align-items: center;
@@ -74907,6 +75078,7 @@ a.chat-jbx-title:hover { color: rgb(var(--accent-light-rgb)); }
     transition: background var(--dur-quick) ease, border-color var(--dur-quick) ease, color var(--dur-quick) ease, transform var(--dur-quick) ease;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .explorer-mode-btn {
     font-size: 11px;
     border: 0;
@@ -74979,6 +75151,7 @@ a.chat-jbx-title:hover { color: rgb(var(--accent-light-rgb)); }
     border-radius: var(--radius-pill);
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .explorer-picker-card {
     position: relative;
     display: grid;
@@ -75026,6 +75199,7 @@ a.chat-jbx-title:hover { color: rgb(var(--accent-light-rgb)); }
     border-color: rgba(74, 222, 128, 0.42);
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .explorer-picker-card-art {
     position: relative;
     width: 92px;
@@ -75080,6 +75254,7 @@ a.chat-jbx-title:hover { color: rgb(var(--accent-light-rgb)); }
     white-space: nowrap;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .explorer-picker-card-info {
     min-width: 0;
     display: flex;
@@ -75094,6 +75269,7 @@ a.chat-jbx-title:hover { color: rgb(var(--accent-light-rgb)); }
     gap: 8px;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .explorer-picker-card-name {
     min-width: 0;
     color: rgba(255, 255, 255, 0.92);
@@ -75106,6 +75282,7 @@ a.chat-jbx-title:hover { color: rgb(var(--accent-light-rgb)); }
     overflow: hidden;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .explorer-picker-card-badge {
     flex-shrink: 0;
     min-width: 24px;
@@ -75126,6 +75303,7 @@ a.chat-jbx-title:hover { color: rgb(var(--accent-light-rgb)); }
     border: 1px solid rgba(74, 222, 128, 0.32);
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .explorer-picker-card-badge.ready {
     background: rgba(251, 191, 36, 0.14);
     color: #fbbf24;
@@ -75150,6 +75328,7 @@ a.chat-jbx-title:hover { color: rgb(var(--accent-light-rgb)); }
     border: 1px solid rgba(96, 165, 250, 0.3);
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .explorer-picker-card-meta {
     min-height: 32px;
     color: rgba(255, 255, 255, 0.48);
@@ -75229,6 +75408,7 @@ a.chat-jbx-title:hover { color: rgb(var(--accent-light-rgb)); }
     letter-spacing: 0.6px;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .explorer-picker-discover-btn {
     min-height: 26px;
     padding: 5px 10px;
@@ -75268,6 +75448,7 @@ a.chat-jbx-title:hover { color: rgb(var(--accent-light-rgb)); }
     background: var(--black-a15);
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .explorer-build-row {
     display: flex;
     align-items: center;
@@ -75276,6 +75457,7 @@ a.chat-jbx-title:hover { color: rgb(var(--accent-light-rgb)); }
     padding-top: 2px;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .explorer-build-hint {
     min-width: 0;
     color: rgba(255, 255, 255, 0.48);
@@ -75286,6 +75468,7 @@ a.chat-jbx-title:hover { color: rgb(var(--accent-light-rgb)); }
     white-space: nowrap;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .explorer-build-btn {
     position: relative;
     min-height: 42px;
@@ -75339,6 +75522,7 @@ a.chat-jbx-title:hover { color: rgb(var(--accent-light-rgb)); }
     box-shadow: none;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .explorer-action-bar {
     display: flex;
     align-items: center;
@@ -75368,6 +75552,7 @@ a.chat-jbx-title:hover { color: rgb(var(--accent-light-rgb)); }
     }
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .explorer-action-left {
     display: flex;
     flex-direction: column;
@@ -75396,6 +75581,7 @@ a.chat-jbx-title:hover { color: rgb(var(--accent-light-rgb)); }
     flex-wrap: wrap;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .explorer-nav-hint {
     width: 100%;
     color: rgba(255, 255, 255, 0.32);
@@ -75447,6 +75633,7 @@ a.chat-jbx-title:hover { color: rgb(var(--accent-light-rgb)); }
     opacity: 1;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .explorer-tree {
     position: relative;
     display: flex;
@@ -75594,6 +75781,7 @@ a.chat-jbx-title:hover { color: rgb(var(--accent-light-rgb)); }
     white-space: nowrap;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .explorer-zoom-controls {
     position: sticky;
     top: 14px;
@@ -75696,6 +75884,7 @@ a.chat-jbx-title:hover { color: rgb(var(--accent-light-rgb)); }
     display: none;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .explorer-node {
     position: relative;
     overflow: hidden;
@@ -75726,10 +75915,12 @@ a.chat-jbx-title:hover { color: rgb(var(--accent-light-rgb)); }
     height: 100%;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .explorer-node-img {
     object-fit: cover;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .explorer-node-img-placeholder {
     display: flex;
     align-items: center;
@@ -75778,6 +75969,7 @@ a.chat-jbx-title:hover { color: rgb(var(--accent-light-rgb)); }
     font-weight: 650;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .explorer-node-root {
     width: 172px;
     height: 172px;
@@ -75879,6 +76071,7 @@ a.chat-jbx-title:hover { color: rgb(var(--accent-light-rgb)); }
     transition: transform var(--dur-base) ease, color var(--dur-base) ease, background var(--dur-base) ease;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .explorer-node-artist:hover .explorer-node-expand-hint {
     background: rgba(var(--accent-rgb), 0.24);
     color: #fff;
@@ -75998,10 +76191,12 @@ a.chat-jbx-title:hover { color: rgb(var(--accent-light-rgb)); }
     white-space: nowrap;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .explorer-node-badge-float.owned {
     background: rgba(var(--success-strong-rgb), 0.88);
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .explorer-node-badge-float.playlist {
     top: 7px;
     left: 7px;
@@ -76423,15 +76618,18 @@ a.chat-jbx-title:hover { color: rgb(var(--accent-light-rgb)); }
 }
 
 /* ── stations: two named controls per card ──────────────────────────────── */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .discover-stations-row {
     grid-auto-columns: 196px;
 }
 
 /* the card is no longer a button, so it must not look like one */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .discover-station-card {
     cursor: default;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .discover-station-card:hover {
     transform: none;
 }
@@ -76501,6 +76699,7 @@ a.chat-jbx-title:hover { color: rgb(var(--accent-light-rgb)); }
 }
 
 /* Discover previews stay compact; expansion is deliberate. */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 .bylt-section { max-width: 1120px; }
 .bylt-section .discover-section-header { gap: 16px; flex-wrap: wrap; }
 .bylt-section .bylt-track { padding: 6px 8px; }
@@ -77587,6 +77786,7 @@ body.src-modal-open { overflow: hidden; }
 
    --brand falls back to the user's accent, so a source with no colour defined
    still looks deliberate rather than broken. */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 #settings-page .dlchain-tile,
 #settings-page .dlchain-step,
 #settings-page .src-tile { --brand: var(--accent-rgb); }

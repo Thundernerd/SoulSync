@@ -1206,6 +1206,7 @@ body.max-performance #dashboard-page .listen-hero-play::after {
     background: none;
 }
 /* Stat modules become bare text groups. */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 #dashboard-page .dash-hero-number {
     background: none;
     border: 0;
@@ -1213,6 +1214,7 @@ body.max-performance #dashboard-page .listen-hero-play::after {
     padding: 2px 0;
 }
 /* Plex strip becomes a floating toolbar. */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 #dashboard-page .dash-hero-library .library-status-header {
     background: none;
     border: 0;
@@ -1227,6 +1229,7 @@ body.max-performance #dashboard-page .listen-hero-play::after {
     box-shadow: none;
 }
 /* Right-column cards dissolve into floating panels. */
+/* stylelint-disable-next-line no-duplicate-selectors -- order-sensitive: a rule of equal specificity between the copies sets the same property (see STYLE.md) */
 #dashboard-page .dash-side-card {
     background: none;
     border: 0;
