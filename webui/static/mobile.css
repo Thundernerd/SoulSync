@@ -600,7 +600,6 @@
     /* Always show play button on touch devices */
     .enh-item-play-btn {
         opacity: 1 !important;
-        transform: translateY(-50%) !important;
         position: static !important;
         transform: none !important;
         padding: 6px 10px;

@@ -3,16 +3,17 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "check": "oxfmt --check src && oxlint --type-check src",
+    "check": "oxfmt --check src && oxlint --type-check src && npm run lint:css",
     "dev": "vite",
-    "fix": "oxfmt src && oxlint --type-check src --fix",
+    "fix": "oxfmt src && oxlint --type-check src --fix && npm run lint:css -- --fix",
     "build": "vite build && vite build -c vite.shell.config.ts",
     "build:shell": "vite build -c vite.shell.config.ts",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:e2e": "playwright test",
     "test:visual": "vite build && playwright test -c playwright.visual.config.ts",
-    "test:visual:update": "vite build && playwright test -c playwright.visual.config.ts --update-snapshots"
+    "test:visual:update": "vite build && playwright test -c playwright.visual.config.ts --update-snapshots",
+    "lint:css": "stylelint \"src/**/*.css\" \"static/**/*.css\""
   },
   "dependencies": {
     "@base-ui/react": "^1.4.1",
@@ -41,6 +42,8 @@
     "oxfmt": "^0.47.0",
     "oxlint": "^1.62.0",
     "oxlint-tsgolint": "^0.22.1",
+    "stylelint": "^17.16.0",
+    "stylelint-config-standard": "^40.0.0",
     "typescript": "^6.0.3",
     "vite": "^8.0.10",
     "vitest": "^4.1.5"
