@@ -15,12 +15,6 @@
    pass (--accent-rgb and friends).
    ═══════════════════════════════════════════════════════════════════════════ */
 
-.automx {
-  --automx-danger: 244, 63, 94;
-  --automx-warn: 245, 158, 11;
-  --automx-ok: 34, 197, 94;
-}
-
 /* ── App frame ──────────────────────────────────────────────────────────── */
 .page-shell.automx {
   display: flex;
@@ -88,7 +82,7 @@
   font-size: 13.5px;
   font-family: inherit;
   padding: 10px 32px 10px 34px;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: border-color var(--dur-base) ease, box-shadow var(--dur-base) ease;
 }
 .automx-search-input::placeholder { color: var(--white-a40); }
 .automx-search-input:focus {
@@ -192,10 +186,10 @@
   border-color: rgba(var(--accent-rgb), 0.3);
 }
 .automx-nav-count.alert {
-  background: rgba(var(--automx-danger), 0.16);
+  background: rgba(var(--danger-rgb), 0.16);
   color: rgb(253, 164, 175);
-  border-color: rgba(var(--automx-danger), 0.4);
-  box-shadow: 0 0 10px rgba(var(--automx-danger), 0.25);
+  border-color: rgba(var(--danger-rgb), 0.4);
+  box-shadow: 0 0 10px rgba(var(--danger-rgb), 0.25);
 }
 .automx-nav-attention .automx-nav-label { color: rgb(253, 164, 175); }
 .automx-nav-attention.active .automx-nav-label { color: #fff; }
@@ -206,11 +200,11 @@
   border-radius: var(--radius-circle);
   flex-shrink: 0;
 }
-.automx-health-dot.ok { background: rgb(var(--automx-ok)); box-shadow: 0 0 6px rgba(var(--automx-ok), 0.8); }
-.automx-health-dot.warn { background: rgb(var(--automx-warn)); box-shadow: 0 0 6px rgba(var(--automx-warn), 0.8); }
+.automx-health-dot.ok { background: rgb(var(--success-strong-rgb)); box-shadow: 0 0 6px rgba(var(--success-strong-rgb), 0.8); }
+.automx-health-dot.warn { background: rgb(var(--warning-strong-rgb)); box-shadow: 0 0 6px rgba(var(--warning-strong-rgb), 0.8); }
 .automx-health-dot.bad {
-  background: rgb(var(--automx-danger));
-  box-shadow: 0 0 8px rgba(var(--automx-danger), 0.9);
+  background: rgb(var(--danger-rgb));
+  box-shadow: 0 0 8px rgba(var(--danger-rgb), 0.9);
   animation: automx-blink 1.6s ease-in-out infinite;
 }
 .automx-health-dot.none { display: none; }
@@ -270,16 +264,16 @@
   border-radius: var(--radius-circle);
   background: #fff;
   transition: transform 0.22s var(--ease-emphasized);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 1px 4px var(--black-a40);
 }
-.automx-master.on { color: rgb(134, 239, 172); border-color: rgba(var(--automx-ok), 0.35); }
-.automx-master.on .automx-master-sw { background: rgba(var(--automx-ok), 0.55); }
+.automx-master.on { color: rgb(134, 239, 172); border-color: rgba(var(--success-strong-rgb), 0.35); }
+.automx-master.on .automx-master-sw { background: rgba(var(--success-strong-rgb), 0.55); }
 .automx-master.on .automx-master-sw::after { transform: translateX(14px); }
 .automx-master:disabled { opacity: 0.55; cursor: default; }
 
 .automx-new-btn {
   border: none;
-  border-radius: 10px;
+  border-radius: var(--radius-control);
   padding: 11px 14px;
   font-size: 13.5px;
   font-weight: 700;
@@ -326,14 +320,14 @@
   border-radius: var(--radius-circle);
   filter: blur(90px);
   pointer-events: none;
-  transition: background 0.5s ease;
+  transition: background var(--dur-slowest) ease;
 }
 .automx-hero.ok .automx-hero-glow {
-  background: radial-gradient(circle, rgba(var(--automx-ok), 0.22), transparent 65%);
+  background: radial-gradient(circle, rgba(var(--success-strong-rgb), 0.22), transparent 65%);
   animation: automx-breathe 5s ease-in-out infinite;
 }
 .automx-hero.warn .automx-hero-glow {
-  background: radial-gradient(circle, rgba(var(--automx-warn), 0.26), transparent 65%);
+  background: radial-gradient(circle, rgba(var(--warning-strong-rgb), 0.26), transparent 65%);
   animation: automx-breathe 3.2s ease-in-out infinite;
 }
 .automx-hero.paused .automx-hero-glow {
@@ -359,13 +353,13 @@
 }
 .automx-hero.ok .automx-hero-mark {
   color: rgb(134, 239, 172);
-  border-color: rgba(var(--automx-ok), 0.45);
-  box-shadow: 0 0 26px rgba(var(--automx-ok), 0.28), inset 0 1px 0 var(--white-a12);
+  border-color: rgba(var(--success-strong-rgb), 0.45);
+  box-shadow: 0 0 26px rgba(var(--success-strong-rgb), 0.28), inset 0 1px 0 var(--white-a12);
 }
 .automx-hero.warn .automx-hero-mark {
   color: rgb(253, 224, 171);
-  border-color: rgba(var(--automx-warn), 0.5);
-  box-shadow: 0 0 26px rgba(var(--automx-warn), 0.3), inset 0 1px 0 var(--white-a12);
+  border-color: rgba(var(--warning-strong-rgb), 0.5);
+  box-shadow: 0 0 26px rgba(var(--warning-strong-rgb), 0.3), inset 0 1px 0 var(--white-a12);
 }
 .automx-hero-text { position: relative; flex: 1; min-width: 0; }
 .automx-hero-title {
@@ -384,7 +378,7 @@
   border: 1px solid rgba(var(--accent-rgb), 0.35);
   background: rgba(var(--accent-rgb), 0.1);
   color: rgb(var(--accent-light-rgb));
-  border-radius: 10px;
+  border-radius: var(--radius-control);
   padding: 10px 18px;
   font-size: 13.5px;
   font-weight: 650;
@@ -482,7 +476,7 @@
   border-radius: var(--radius-circle);
   background: rgb(var(--accent-rgb));
   box-shadow: 0 0 10px rgba(var(--accent-rgb), 0.7);
-  border: 2px solid rgba(0, 0, 0, 0.55);
+  border: 2px solid var(--black-a55);
 }
 .automx-time-chip {
   flex-shrink: 0;
@@ -514,7 +508,7 @@
   font-family: inherit;
   text-align: left;
   cursor: pointer;
-  transition: background 0.15s ease;
+  transition: background var(--dur-fast) ease;
 }
 .automx-row-main:hover { background: var(--white-a05); }
 .automx-row-icon { font-size: 14px; flex-shrink: 0; }
@@ -557,7 +551,7 @@
   margin: 0 -8px;
   border-radius: var(--radius-lg);
   border: 1px solid transparent;
-  transition: background 0.15s ease, border-color 0.15s ease;
+  transition: background var(--dur-fast) ease, border-color var(--dur-fast) ease;
 }
 .automx-attention-row:hover,
 .automx-recent-row:hover {
@@ -565,10 +559,10 @@
   border-color: var(--white-a06);
 }
 .automx-attention-row.failed {
-  background: rgba(var(--automx-danger), 0.07);
-  border-color: rgba(var(--automx-danger), 0.22);
+  background: rgba(var(--danger-rgb), 0.07);
+  border-color: rgba(var(--danger-rgb), 0.22);
 }
-.automx-attention-row.failed:hover { background: rgba(var(--automx-danger), 0.11); }
+.automx-attention-row.failed:hover { background: rgba(var(--danger-rgb), 0.11); }
 .automx-attention-row.failed .automx-row-sub {
   color: rgb(253, 164, 175);
   white-space: normal;
@@ -578,7 +572,7 @@
   gap: 4px;
   flex-shrink: 0;
   opacity: 0;
-  transition: opacity 0.15s ease;
+  transition: opacity var(--dur-fast) ease;
 }
 .automx-attention-row:hover .automx-row-actions,
 .automx-attention-row:focus-within .automx-row-actions {
@@ -596,7 +590,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.15s ease;
+  transition: all var(--dur-fast) ease;
 }
 .automx-mini-btn:hover {
   background: rgba(var(--accent-rgb), 0.16);
@@ -636,7 +630,7 @@
   width: 46px;
   height: 46px;
   flex-shrink: 0;
-  border-radius: 14px;
+  border-radius: var(--radius-card);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -670,7 +664,7 @@
   border: 1px solid var(--line);
   background: var(--white-a04);
   color: var(--white-a65);
-  border-radius: 10px;
+  border-radius: var(--radius-control);
   padding: 8px 13px;
   font-size: 12.5px;
   font-weight: 600;
@@ -685,8 +679,8 @@
   border-color: var(--white-a18);
 }
 .automx-chip-danger:hover {
-  background: rgba(var(--automx-danger), 0.12);
-  border-color: rgba(var(--automx-danger), 0.4);
+  background: rgba(var(--danger-rgb), 0.12);
+  border-color: rgba(var(--danger-rgb), 0.4);
   color: rgb(253, 164, 175);
 }
 .automx-rename-input {
@@ -695,9 +689,9 @@
   letter-spacing: -0.015em;
   font-family: inherit;
   color: var(--text-1);
-  background: rgba(0, 0, 0, 0.3);
+  background: var(--black-a30);
   border: 1px solid rgba(var(--accent-rgb), 0.5);
-  border-radius: 10px;
+  border-radius: var(--radius-control);
   padding: 4px 10px;
   width: 100%;
   max-width: 420px;
@@ -723,7 +717,7 @@
   padding: 9px 13px;
   font-size: 13px;
   font-family: inherit;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: border-color var(--dur-base) ease, box-shadow var(--dur-base) ease;
 }
 .automx-filter-search { flex: 1; min-width: 200px; }
 .automx-filter-search::placeholder { color: var(--white-a40); }

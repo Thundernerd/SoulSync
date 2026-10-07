@@ -3,18 +3,12 @@
    file table. */
 
 .popup {
-  --em-raised: #1a1c23;
-  --em-raised-2: #22242d;
-  --em-text: #f3f4f8;
-  --em-faint: #6b6d7c;
-  --em-mono: 'SF Mono', ui-monospace, 'Cascadia Code', Consolas, monospace;
-
   width: min(880px, 100%) !important;
   height: min(720px, 92vh);
   border-radius: 20px !important;
   background: #15161c !important;
   border-color: var(--line-strong) !important;
-  color: var(--em-text);
+  color: var(--text-bright);
 }
 
 /* zero specificity, so each control's own size and weight still win */
@@ -60,7 +54,7 @@
 }
 
 .sep {
-  color: var(--em-faint);
+  color: var(--text-faint);
   padding-inline: 5px;
 }
 
@@ -72,7 +66,7 @@
   padding: 0;
   list-style: none;
   font-size: 12.5px;
-  color: var(--em-faint);
+  color: var(--text-faint);
 }
 
 .steps li + li::before {
@@ -86,7 +80,7 @@
 }
 
 .steps li[data-on] {
-  color: var(--em-text);
+  color: var(--text-bright);
   font-weight: 600;
 }
 
@@ -97,7 +91,7 @@
   height: 30px;
   border: none;
   border-radius: var(--radius-circle);
-  background: var(--em-raised);
+  background: var(--bg-raised);
   color: var(--text-secondary) !important;
   font-size: 18px;
   line-height: 1;
@@ -124,7 +118,7 @@
   padding: 5px 12px;
   border: 1px solid var(--white-a07);
   border-radius: var(--radius-pill);
-  background: var(--em-raised);
+  background: var(--bg-raised);
   font-size: 12.5px;
   color: var(--text-secondary);
   cursor: pointer;
@@ -132,8 +126,8 @@
 
 .providers button[aria-pressed='true'] {
   border-color: var(--line-strong);
-  background: var(--em-raised-2);
-  color: var(--em-text);
+  background: var(--bg-raised-2);
+  color: var(--text-bright);
 }
 
 .field {
@@ -143,7 +137,7 @@
   padding: 0 12px;
   border: 1px solid var(--white-a07);
   border-radius: 11px;
-  background: var(--em-raised);
+  background: var(--bg-raised);
 }
 
 .field:focus-within {
@@ -154,7 +148,7 @@
   width: 15px;
   height: 15px;
   flex-shrink: 0;
-  color: var(--em-faint);
+  color: var(--text-faint);
 }
 
 .field input {
@@ -176,7 +170,7 @@
 .error {
   margin: 0;
   padding: 10px 12px;
-  border-radius: 10px;
+  border-radius: var(--radius-control);
   background: rgba(248, 113, 113, 0.1);
   color: #fca5a5;
   font-size: 13px;
@@ -194,13 +188,13 @@
   min-width: 0;
   padding: 10px;
   border: 1px solid var(--white-a07);
-  border-radius: 14px;
-  background: var(--em-raised);
+  border-radius: var(--radius-card);
+  background: var(--bg-raised);
   text-align: left;
   cursor: pointer;
   transition:
-    border-color 0.15s ease,
-    box-shadow 0.15s ease;
+    border-color var(--dur-fast) ease,
+    box-shadow var(--dur-fast) ease;
 }
 
 .candidate:hover {
@@ -262,13 +256,13 @@
 .summary {
   padding: 10px 12px;
   border-radius: 11px;
-  background: var(--em-raised);
+  background: var(--bg-raised);
   color: var(--text-secondary);
   font-size: 13px;
 }
 
 .summary b {
-  color: var(--em-text);
+  color: var(--text-bright);
 }
 
 .tableWrap {
@@ -288,7 +282,7 @@
   font-weight: 500;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--em-faint);
+  color: var(--text-faint);
 }
 
 .map td {
@@ -299,7 +293,7 @@
 
 .fileName {
   max-width: 320px;
-  font-family: var(--em-mono);
+  font-family: var(--font-mono);
   font-size: 11.5px;
   color: var(--text-secondary);
   white-space: nowrap;
@@ -313,7 +307,7 @@
   padding: 6px 8px;
   border: 1px solid var(--line-strong);
   border-radius: var(--radius-md);
-  background: var(--em-raised);
+  background: var(--bg-raised);
   font-size: 12.5px;
 }
 
@@ -338,7 +332,7 @@
 }
 
 .conf[data-level='skip'] i {
-  background: var(--em-faint);
+  background: var(--text-faint);
 }
 
 .foot {
@@ -353,7 +347,7 @@
 .note {
   margin-right: auto;
   min-width: 0;
-  color: var(--em-faint);
+  color: var(--text-faint);
   font-size: 12.5px;
   white-space: nowrap;
   overflow: hidden;
@@ -365,7 +359,7 @@
   padding: 9px 18px;
   border: 1px solid var(--line-strong);
   border-radius: var(--radius-pill);
-  background: var(--em-raised);
+  background: var(--bg-raised);
   font-size: 13.5px;
   font-weight: 600;
   cursor: pointer;
@@ -378,7 +372,7 @@
 
 .primary {
   border-color: transparent;
-  background: var(--em-text);
+  background: var(--text-bright);
   color: #0c0d11 !important;
 }
 

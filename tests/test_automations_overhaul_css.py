@@ -9,9 +9,10 @@ tests hold its four promises:
    automations page or any other surface.
 3. Every automx-* class it styles exists in the real JSX — a typo'd selector
    silently no-ops, which ships an unstyled element.
-4. The design-token definitions live on a selector that actually matches
-   rendered markup. (Regression: they once sat on `.autmx`, a typo that
-   matched nothing, silently killing every var(--automx-*) on the page.)
+4. Every custom property it reads is defined — by the global tokens.css or by
+   the sheet itself. (Regression: its own tokens once sat on `.autmx`, a typo
+   that matched nothing, silently killing every var(--automx-*) on the page.
+   They now live in tokens.css.)
 
 Plus a structural parse: balanced braces, non-empty rules.
 """
@@ -103,18 +104,19 @@ def test_every_automx_class_exists_in_the_markup():
     assert not missing, f"selectors referencing unknown classes: {missing[:8]}"
 
 
-def test_token_definitions_live_on_a_rendered_selector():
-    """The --automx-* custom properties must be defined on a class the page
-    actually renders, or every var(--automx-*) on the page silently dies."""
-    defining = [sel for sel, body in _rules() if re.search(r"--automx-[\w-]+\s*:", body)]
-    assert defining, "no rule defines the --automx-* design tokens"
-    for sel in defining:
-        classes = re.findall(r"\.([a-zA-Z][\w-]*)", sel)
-        assert classes, f"token rule has no class selector: {sel}"
-        assert any(c in _SOURCES for c in classes), (
-            f"design tokens are defined on {sel}, which nothing renders — "
-            "every var(--automx-*) on the page resolves to nothing"
-        )
+def test_every_custom_property_it_reads_is_defined():
+    """A var() nothing defines resolves to nothing and silently drops the
+    declaration. The sheet reads the global tokens (tokens.css, linked first)
+    plus whatever it, or the markup, sets itself."""
+    tokens = (_ROOT / "webui" / "static" / "tokens.css").read_text(encoding="utf-8")
+    defined = set(re.findall(r"(--[\w-]+)\s*:", tokens + _CSS)) | set(
+        re.findall(r"--[a-zA-Z][\w-]*", _SOURCES)
+    )
+    used = set(re.findall(r"var\(\s*(--[\w-]+)", _strip_comments(_CSS)))
+    assert not (used - defined), f"var() with no definition: {sorted(used - defined)}"
+    assert not any(name.startswith("--automx-") for name in used), (
+        "the page's colours come from tokens.css now, not a local --automx-* palette"
+    )
 
 
 def test_no_video_page_selectors():

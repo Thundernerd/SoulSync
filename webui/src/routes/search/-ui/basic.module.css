@@ -2,21 +2,14 @@
    one search field with the source inside it, quiet rows, one download button
    per row. the choice of HOW a file comes in lives in the chooser modal, not
    on the row. colours come from the app accent (--accent-rgb), everything else
-   is a small set of greys defined here. */
+   from the solid-surface and text tokens in tokens.css. */
 
 .panel {
-  --bs-surface: #13141a;
-  --bs-raised: #1a1c23;
-  --bs-raised-2: #22242d;
-  --bs-text: #f3f4f8;
-  --bs-faint: #6b6d7c;
-  --bs-mono: 'SF Mono', ui-monospace, 'Cascadia Code', Consolas, monospace;
-
   /* no display here. style.css hides .search-section and shows it as a flex
      column only when .active, a display on this class overrides that and the
      panel shows on every search tab */
   gap: 16px;
-  color: var(--bs-text);
+  color: var(--text-bright);
   min-width: 0;
 }
 
@@ -40,12 +33,12 @@
   align-items: center;
   gap: 4px;
   padding: 6px;
-  background: var(--bs-surface);
+  background: var(--bg-surface);
   border: 1px solid var(--line-strong);
-  border-radius: 14px;
+  border-radius: var(--radius-card);
   transition:
-    border-color 0.15s ease,
-    box-shadow 0.15s ease;
+    border-color var(--dur-fast) ease,
+    box-shadow var(--dur-fast) ease;
 }
 
 .searchBox:focus-within {
@@ -62,8 +55,8 @@
   gap: 8px;
   flex-shrink: 0;
   padding: 8px 12px;
-  border-radius: 10px;
-  background: var(--bs-raised);
+  border-radius: var(--radius-control);
+  background: var(--bg-raised);
   font-size: 13px;
   font-weight: 600;
   white-space: nowrap;
@@ -88,7 +81,7 @@
 .caret {
   width: 11px;
   height: 11px;
-  color: var(--bs-faint);
+  color: var(--text-faint);
 }
 
 .input {
@@ -102,7 +95,7 @@
 }
 
 .input::placeholder {
-  color: var(--bs-faint);
+  color: var(--text-faint);
 }
 
 .input:disabled {
@@ -116,11 +109,11 @@
 .goButton {
   flex-shrink: 0;
   border: none;
-  border-radius: 10px;
+  border-radius: var(--radius-control);
   padding: 9px 18px;
   font-size: 13.5px;
   font-weight: 600;
-  background: var(--bs-text);
+  background: var(--text-bright);
   color: #0c0d11 !important;
   cursor: pointer;
 }
@@ -132,11 +125,11 @@
 .cancelButton {
   flex-shrink: 0;
   border: 1px solid var(--line-strong);
-  border-radius: 10px;
+  border-radius: var(--radius-control);
   padding: 8px 16px;
   font-size: 13.5px;
   font-weight: 600;
-  background: var(--bs-raised);
+  background: var(--bg-raised);
   cursor: pointer;
 }
 
@@ -156,7 +149,7 @@
 }
 
 .count b {
-  color: var(--bs-text);
+  color: var(--text-bright);
   font-weight: 600;
 }
 
@@ -164,8 +157,8 @@
   display: inline-flex;
   padding: 3px;
   border: 1px solid var(--white-a07);
-  border-radius: 10px;
-  background: var(--bs-surface);
+  border-radius: var(--radius-control);
+  background: var(--bg-surface);
 }
 
 .segmented button {
@@ -180,9 +173,9 @@
 }
 
 .segmented button[aria-pressed='true'] {
-  background: var(--bs-raised-2);
-  color: var(--bs-text);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  background: var(--bg-raised-2);
+  color: var(--text-bright);
+  box-shadow: 0 1px 2px var(--black-a40);
 }
 
 .menu {
@@ -192,14 +185,14 @@
   gap: 6px;
   padding: 6px 10px;
   border: 1px solid var(--white-a07);
-  border-radius: 10px;
-  background: var(--bs-surface);
+  border-radius: var(--radius-control);
+  background: var(--bg-surface);
   font-size: 12.5px;
   color: var(--text-secondary);
 }
 
 .menu b {
-  color: var(--bs-text);
+  color: var(--text-bright);
   font-weight: 500;
 }
 
@@ -221,8 +214,8 @@
   width: 30px;
   height: 30px;
   border: 1px solid var(--white-a07);
-  border-radius: 10px;
-  background: var(--bs-surface);
+  border-radius: var(--radius-control);
+  background: var(--bg-surface);
   color: var(--text-secondary);
   cursor: pointer;
 }
@@ -230,7 +223,7 @@
 .orderButton svg {
   width: 13px;
   height: 13px;
-  transition: transform 0.2s ease;
+  transition: transform var(--dur-base) ease;
 }
 
 .orderButton[data-reversed='true'] svg {
@@ -242,7 +235,7 @@
 .list {
   border: 1px solid var(--white-a07);
   border-radius: var(--radius-xl);
-  background: var(--bs-surface);
+  background: var(--bg-surface);
   overflow: hidden;
 }
 
@@ -265,7 +258,7 @@
   gap: 16px;
   padding: 12px 16px;
   border-top: 1px solid var(--white-a07);
-  transition: background 0.12s ease;
+  transition: background var(--dur-xfast) ease;
 }
 
 .list > .item:first-child > .row {
@@ -343,8 +336,8 @@
   width: 14px;
   height: 14px;
   flex-shrink: 0;
-  color: var(--bs-faint);
-  transition: transform 0.2s ease;
+  color: var(--text-faint);
+  transition: transform var(--dur-base) ease;
 }
 
 .expand[aria-expanded='true'] .chevron {
@@ -360,7 +353,7 @@
 }
 
 .sep {
-  color: var(--bs-faint);
+  color: var(--text-faint);
   padding-inline: 5px;
 }
 
@@ -375,17 +368,17 @@
 }
 
 .dim {
-  color: var(--bs-faint);
+  color: var(--text-faint);
 }
 
 .badge {
   padding: 3px 7px;
   border: 1px solid var(--line-strong);
   border-radius: var(--radius-sm);
-  font-family: var(--bs-mono);
+  font-family: var(--font-mono);
   font-size: 11px;
   letter-spacing: 0.02em;
-  color: var(--bs-text);
+  color: var(--text-bright);
   white-space: nowrap;
 }
 
@@ -400,7 +393,7 @@
   padding: 0;
   border: none;
   background: none;
-  color: var(--bs-faint) !important;
+  color: var(--text-faint) !important;
   font-size: 12px;
   text-decoration: none !important;
   white-space: nowrap;
@@ -410,7 +403,7 @@
 }
 
 .uploader:hover {
-  color: var(--bs-text) !important;
+  color: var(--text-bright) !important;
   text-decoration: underline;
 }
 
@@ -421,11 +414,11 @@
   padding: 7px 14px;
   border: 1px solid var(--line-strong);
   border-radius: var(--radius-pill);
-  background: var(--bs-raised);
+  background: var(--bg-raised);
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.15s ease;
+  transition: all var(--dur-fast) ease;
 }
 
 .download svg {
@@ -455,7 +448,7 @@
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--bs-faint);
+  color: var(--text-faint);
 }
 
 .track {
@@ -476,14 +469,14 @@
 }
 
 .trackNumber {
-  font-family: var(--bs-mono);
+  font-family: var(--font-mono);
   font-size: 11.5px;
-  color: var(--bs-faint);
+  color: var(--text-faint);
 }
 
 .trackTitle {
   min-width: 0;
-  color: var(--bs-text);
+  color: var(--text-bright);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -500,7 +493,7 @@
   background: none;
   font-size: 12px;
   font-weight: 600;
-  color: var(--bs-faint) !important;
+  color: var(--text-faint) !important;
   cursor: pointer;
 }
 
